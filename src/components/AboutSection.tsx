@@ -14,7 +14,7 @@ const AboutSection = () => {
     description: "Race against time to scrub away grime and earn your freedom"
   }, {
     icon: Wrench,
-    title: "Tool Time",
+    title: "Whale Traversal",
     description: "The ocean's messes aren't alike. Each needs the right tool"
   }, {
     icon: Waves,
