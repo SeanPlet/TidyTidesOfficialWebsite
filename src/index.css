@@ -41,9 +41,17 @@ All colors MUST be HSL.
     --ocean-surface: linear-gradient(180deg, hsl(190 80% 70%), hsl(200 90% 40%));
     --seamless-depth: linear-gradient(180deg, 
       hsl(200 90% 40%) 0%, 
-      hsl(205 85% 38%) 25%, 
-      hsl(210 80% 32%) 50%, 
-      hsl(220 70% 25%) 75%, 
+      hsl(202 88% 38%) 12%, 
+      hsl(204 86% 36%) 20%, 
+      hsl(206 84% 34%) 28%, 
+      hsl(208 82% 32%) 36%, 
+      hsl(210 80% 30%) 44%, 
+      hsl(212 78% 28%) 52%, 
+      hsl(214 76% 26%) 60%, 
+      hsl(216 74% 24%) 68%, 
+      hsl(218 72% 22%) 76%, 
+      hsl(220 70% 20%) 84%, 
+      hsl(225 65% 16%) 92%, 
       hsl(230 60% 12%) 100%);
     --ocean-abyss: linear-gradient(180deg, hsl(220 70% 12%), hsl(230 60% 8%));
     
