@@ -15,7 +15,7 @@ const ContactSection = () => {
             Stay Connected
           </h2>
           <div className="w-24 h-1 bg-accent mx-auto mb-8" />
-          <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-4xl mx-auto">
             Join our community and be the first to know about updates, beta tests, and release dates
           </p>
         </div>
