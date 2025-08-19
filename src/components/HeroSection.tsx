@@ -31,7 +31,7 @@ const HeroSection = () => {
           }`}
         >
           Dive Into The
-          <span className={`block ${shouldShine ? 'text-shine-active' : 'text-accent'}`}>Chaos</span>
+          <span className={`block ${shouldShine ? 'text-shine-accent' : 'text-accent'}`}>Chaos</span>
         </h1>
         
         {/* Subtitle */}

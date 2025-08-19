@@ -336,4 +336,18 @@ All colors MUST be HSL.
     color: transparent;
     animation: textShine 2.5s ease-in-out;
   }
+
+  .text-shine-accent {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--accent)) 20%,
+      hsl(var(--caustic-light)) 50%,
+      hsl(var(--accent)) 80%
+    );
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: textShine 2.5s ease-in-out;
+  }
 }
