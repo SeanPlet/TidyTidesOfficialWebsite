@@ -3,7 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Mail, MessageCircle, Users, Bell, Phone } from 'lucide-react';
 const ContactSection = () => {
-  return <section className="py-24 ocean-deep relative">
+  return <section className="py-24 ocean-flow-end relative">
       <div className="caustic-lights" />
       
       <div className="container mx-auto px-6 relative z-10">

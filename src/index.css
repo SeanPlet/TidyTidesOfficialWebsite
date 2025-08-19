@@ -42,6 +42,11 @@ All colors MUST be HSL.
     --ocean-deep: linear-gradient(180deg, hsl(200 90% 40%), hsl(220 70% 12%));
     --ocean-abyss: linear-gradient(180deg, hsl(220 70% 12%), hsl(230 60% 8%));
     
+    /* Continuous ocean flow gradients */
+    --ocean-flow-start: linear-gradient(180deg, hsl(200 90% 40%), hsl(210 80% 28%));
+    --ocean-flow-middle: linear-gradient(180deg, hsl(210 80% 28%), hsl(220 70% 20%));
+    --ocean-flow-end: linear-gradient(180deg, hsl(220 70% 20%), hsl(220 70% 12%));
+    
     /* Bubble and particle effects */
     --bubble-glow: 190 100% 80%;
     --caustic-light: 190 80% 85%;
@@ -200,6 +205,18 @@ All colors MUST be HSL.
 
   .ocean-abyss {
     background: var(--ocean-abyss);
+  }
+
+  .ocean-flow-start {
+    background: var(--ocean-flow-start);
+  }
+
+  .ocean-flow-middle {
+    background: var(--ocean-flow-middle);
+  }
+
+  .ocean-flow-end {
+    background: var(--ocean-flow-end);
   }
 
   /* Caustic light effects */
