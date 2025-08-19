@@ -8,35 +8,51 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Ocean depths color palette */
+    --background: 220 70% 12%;
+    --foreground: 190 100% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 60% 15%;
+    --card-foreground: 190 90% 90%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 50% 18%;
+    --popover-foreground: 190 90% 90%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 190 100% 60%;
+    --primary-foreground: 220 70% 10%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 30 100% 65%;
+    --secondary-foreground: 220 70% 10%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 40% 25%;
+    --muted-foreground: 190 30% 70%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 30 100% 65%;
+    --accent-foreground: 220 70% 10%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 30% 30%;
+    --input: 220 30% 20%;
+    --ring: 190 100% 60%;
 
-    --radius: 0.5rem;
+    /* Ocean gradients */
+    --ocean-surface: linear-gradient(180deg, hsl(190 80% 70%), hsl(200 90% 40%));
+    --ocean-deep: linear-gradient(180deg, hsl(200 90% 40%), hsl(220 70% 12%));
+    --ocean-abyss: linear-gradient(180deg, hsl(220 70% 12%), hsl(230 60% 8%));
+    
+    /* Bubble and particle effects */
+    --bubble-glow: 190 100% 80%;
+    --caustic-light: 190 80% 85%;
+    --coral-accent: 30 100% 65%;
+    
+    /* Animation transitions */
+    --wave-motion: 4s ease-in-out infinite alternate;
+    --bubble-rise: 6s linear infinite;
+    --float-gentle: 3s ease-in-out infinite alternate;
+
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +117,109 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    background: var(--ocean-abyss);
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  /* Underwater animations */
+  @keyframes bubbleRise {
+    0% {
+      opacity: 0;
+      transform: translateY(100vh) scale(0);
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-10vh) scale(1.2);
+    }
+  }
+
+  @keyframes floatGentle {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) rotate(1deg);
+    }
+  }
+
+  @keyframes waveMotion {
+    0%, 100% {
+      transform: translateX(0px);
+    }
+    50% {
+      transform: translateX(30px);
+    }
+  }
+
+  @keyframes causticShimmer {
+    0%, 100% {
+      opacity: 0.3;
+      transform: translateX(-50px);
+    }
+    50% {
+      opacity: 0.7;
+      transform: translateX(50px);
+    }
+  }
+
+  /* Bubble component */
+  .bubble {
+    position: absolute;
+    background: radial-gradient(circle, hsl(var(--bubble-glow) / 0.6), transparent);
+    border-radius: 50%;
+    animation: bubbleRise var(--bubble-rise);
+    pointer-events: none;
+  }
+
+  /* Floating elements */
+  .float-gentle {
+    animation: floatGentle var(--float-gentle);
+  }
+
+  /* Wave motion */
+  .wave-motion {
+    animation: waveMotion var(--wave-motion);
+  }
+
+  /* Ocean section backgrounds */
+  .ocean-surface {
+    background: var(--ocean-surface);
+  }
+
+  .ocean-deep {
+    background: var(--ocean-deep);
+  }
+
+  .ocean-abyss {
+    background: var(--ocean-abyss);
+  }
+
+  /* Caustic light effects */
+  .caustic-lights {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(ellipse at 20% 30%, hsl(var(--caustic-light) / 0.1) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 70%, hsl(var(--caustic-light) / 0.1) 0%, transparent 50%);
+    animation: causticShimmer 8s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  /* Glass/water effects */
+  .underwater-glass {
+    backdrop-filter: blur(8px);
+    background: hsl(var(--card) / 0.7);
+    border: 1px solid hsl(var(--border) / 0.3);
   }
 }
