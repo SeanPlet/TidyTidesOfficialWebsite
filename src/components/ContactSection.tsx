@@ -78,7 +78,7 @@ const ContactSection = () => {
                   <span>General inquiries & support</span>
                 </div>
                 <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                  <Users className="h-4 w-4" />
+                  <MessageCircle className="h-4 w-4" />
                   <span>Tell us a fin-tastic pun</span>
                 </div>
               </div>
