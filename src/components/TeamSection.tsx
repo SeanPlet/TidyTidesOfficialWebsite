@@ -53,8 +53,8 @@ const TeamSection = () => {
             Meet the Crew
           </h2>
           <div className="w-24 h-1 bg-accent mx-auto mb-8" />
-          <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
-            The talented crew bringing Tidy Tides Co. to life
+          <p className="text-xl text-foreground/80 max-w-4xl mx-auto">
+            The talented team swimming against the current to bring Tidy Tides Co. to life
           </p>
         </div>
 
