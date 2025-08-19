@@ -24,6 +24,15 @@ const AboutSection = () => {
   return <section className="py-16 ocean-shallow relative">
       <div className="caustic-shallow" />
       
+      {/* Waving Character */}
+      <div className="absolute right-4 md:right-12 top-16 z-0 opacity-60">
+        <img 
+          src="/lovable-uploads/d7343682-d0d3-4165-a73c-33ee92ccf12f.png" 
+          alt="Friendly orange character" 
+          className="w-32 h-32 md:w-48 md:h-48 lg:w-64 lg:h-64 animate-wave"
+        />
+      </div>
+      
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
