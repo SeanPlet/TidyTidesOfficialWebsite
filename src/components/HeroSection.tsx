@@ -26,9 +26,7 @@ const HeroSection = () => {
         </h1>
         
         {/* Subtitle */}
-        <p className="text-xl md:text-2xl text-foreground/90 mb-8 mx-auto leading-relaxed">
-          A fast-paced, four-player cooperative cleaning adventure in the depths of the ocean
-        </p>
+        <p className="text-xl md:text-2xl text-foreground/90 mb-8 max-w-2xl mx-auto leading-relaxed">Cleaning whales has never been messier with friends</p>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
