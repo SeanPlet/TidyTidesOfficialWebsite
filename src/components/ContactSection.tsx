@@ -83,7 +83,7 @@ const ContactSection = () => {
                 </div>
               </div>
               
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-full w-full mt-auto" onClick={() => window.open('mailto:team@tidytidesco.com', '_blank')}>
+              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground px-6 py-3 rounded-full w-full mt-auto" onClick={() => window.open('mailto:team@tidytidesco.com', '_blank')}>
                 <Mail className="mr-2 h-4 w-4" />
                 Email Us
               </Button>
