@@ -4,7 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { Code, Palette, Music, Gamepad2, Zap } from 'lucide-react';
 const TeamSection = () => {
   const teamMembers = [{
-    name: "PletPlays",
+    name: "Plet2428",
     role: "Developer",
     icon: Code,
     description: "Dives deep into the codebase to bring the underwater world to life",
