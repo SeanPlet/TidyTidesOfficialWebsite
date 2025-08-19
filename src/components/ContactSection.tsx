@@ -41,7 +41,7 @@ const ContactSection = () => {
               <div className="space-y-3 mb-6">
                 <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
                   <Users className="h-4 w-4" />
-                  <span>Join 500+ community members</span>
+                  <span>Join 10+ community members</span>
                 </div>
                 <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
                   <Bell className="h-4 w-4" />
