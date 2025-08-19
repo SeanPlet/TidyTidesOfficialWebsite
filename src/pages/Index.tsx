@@ -19,13 +19,13 @@ const Index = () => {
       {/* Sections */}
       <HeroSection />
       <AboutSection />
-      <PatchNotesSection />
       <TeamSection />
+      <PatchNotesSection />
       <ContactSection />
       
       {/* Footer */}
       <footer className="py-8 text-center text-muted-foreground border-t border-border/30">
-        <p>© 2025 Tidy Tides Co. All rights reserved. Made with 🩵 and ☕</p>
+        <p>© 2025 'Tidy Tides Co. All rights reserved. Made with 🩵 and ☕</p>
       </footer>
     </div>;
 };
