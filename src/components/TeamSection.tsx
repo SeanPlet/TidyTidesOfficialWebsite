@@ -49,46 +49,27 @@ const TeamSection = () => {
           </p>
         </div>
 
-        {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
-          {teamMembers.map((member, index) => (
-            <Card 
-              key={index} 
-              className="group relative overflow-hidden bg-card/50 backdrop-blur-sm border-border/30 hover:border-accent/50 transition-all duration-500 hover:shadow-xl hover:shadow-accent/20 animate-fade-in opacity-0"
-              style={{
-                animationDelay: `${index * 0.2}s`,
-                animationFillMode: 'forwards'
-              }}
-            >
-              <CardContent className="p-6 text-center">
-                <div className="relative mb-4">
-                  <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center border-2 border-accent/30 group-hover:border-accent/60 group-hover:scale-110 transition-all duration-300 mx-auto">
-                    <member.icon className="h-8 w-8 text-accent" />
-                  </div>
+        {/* Team Grid - Single Row */}
+        <div className="flex flex-wrap justify-center gap-8 lg:gap-12">
+          {teamMembers.map((member, index) => <div key={index} className="flex flex-col items-center space-y-3 float-gentle" style={{
+          animationDelay: `${index * 0.2}s`
+        }}>
+              <div className="relative">
+                <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center border-2 border-accent/30 hover:border-accent/60 transition-colors">
+                  <member.icon className="h-8 w-8 text-accent" />
                 </div>
                 
-                <h3 className="text-lg font-semibold text-primary mb-2">
+              </div>
+              
+              <div className="text-center">
+                <h3 className="text-sm font-semibold text-primary mb-1">
                   {member.name}
                 </h3>
-                
-                <Badge className="bg-accent/20 text-accent border-accent/30 mb-3">
+                <Badge className="bg-accent/20 text-accent border-accent/30 text-xs">
                   {member.role}
                 </Badge>
-                
-                <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                  {member.description}
-                </p>
-                
-                <div className="space-y-1">
-                  {member.specialties.map((specialty, idx) => (
-                    <div key={idx} className="text-xs text-accent/80 bg-accent/10 rounded-full px-2 py-1 inline-block mr-1">
-                      {specialty}
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+              </div>
+            </div>)}
         </div>
       </div>
     </section>;
