@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { Calendar, Plus, Bug, Wrench, Sparkles } from 'lucide-react';
 const PatchNotesSection = () => {
   const patchNotes = [{
@@ -132,7 +133,16 @@ const PatchNotesSection = () => {
             </Card>)}
         </div>
 
-        {/* Coming Soon Teaser */}
+        {/* View All Button */}
+        <div className="text-center mt-12">
+          <Button 
+            variant="outline" 
+            size="lg"
+            className="bg-primary/10 border-primary/30 text-primary hover:bg-primary/20 hover:border-primary/50 transition-all duration-300"
+          >
+            View All Patch Notes
+          </Button>
+        </div>
         
       </div>
     </section>;
