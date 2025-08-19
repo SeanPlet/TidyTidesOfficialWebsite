@@ -6,7 +6,7 @@ import whaleClient from '@/assets/whale-client.jpg';
 import { useScrollShine } from '@/hooks/useScrollShine';
 const AboutSection = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
-  const { shouldShine } = useScrollShine(titleRef);
+  const { shouldShine, hasShined } = useScrollShine(titleRef);
   
   const features = [{
     icon: Users,
@@ -34,7 +34,7 @@ const AboutSection = () => {
           <h2 
             ref={titleRef}
             className={`text-5xl md:text-6xl font-bold mb-6 ${
-              shouldShine ? 'text-shine-active' : 'text-primary'
+              shouldShine ? 'text-shine-active' : hasShined ? 'text-shine-static' : 'text-primary'
             }`}
           >
             The Story

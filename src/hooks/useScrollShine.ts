@@ -2,11 +2,13 @@ import { useEffect, useState } from 'react';
 
 interface UseScrollShineReturn {
   shouldShine: boolean;
+  hasShined: boolean;
 }
 
 export const useScrollShine = (elementRef: React.RefObject<HTMLElement>): UseScrollShineReturn => {
   const [shouldShine, setShouldShine] = useState(false);
   const [hasShined, setHasShined] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,11 +26,12 @@ export const useScrollShine = (elementRef: React.RefObject<HTMLElement>): UseScr
       
       // Only shine when element is in viewport and has sufficient scroll progress
       if (isInViewport && progress > 0.3) {
+        setIsAnimating(true);
         setShouldShine(true);
         setHasShined(true);
         
-        // Reset shine after animation completes
-        setTimeout(() => setShouldShine(false), 2500);
+        // Stop animation after it completes, but keep shined state
+        setTimeout(() => setIsAnimating(false), 2500);
       }
     };
 
@@ -38,5 +41,5 @@ export const useScrollShine = (elementRef: React.RefObject<HTMLElement>): UseScr
     return () => window.removeEventListener('scroll', handleScroll);
   }, [elementRef, hasShined]);
 
-  return { shouldShine };
+  return { shouldShine: shouldShine && isAnimating, hasShined: shouldShine };
 };

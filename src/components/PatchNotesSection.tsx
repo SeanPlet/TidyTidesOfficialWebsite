@@ -6,7 +6,7 @@ import { Calendar, Plus, Bug, Wrench, Sparkles } from 'lucide-react';
 import { useScrollShine } from '@/hooks/useScrollShine';
 const PatchNotesSection = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
-  const { shouldShine } = useScrollShine(titleRef);
+  const { shouldShine, hasShined } = useScrollShine(titleRef);
   
   const patchNotes = [{
     version: "0.3.2",
@@ -96,7 +96,7 @@ const PatchNotesSection = () => {
           <h2 
             ref={titleRef}
             className={`text-5xl md:text-6xl font-bold mb-6 ${
-              shouldShine ? 'text-shine-active' : 'text-primary'
+              shouldShine ? 'text-shine-active' : hasShined ? 'text-shine-static' : 'text-primary'
             }`}
           >
             Patch Notes

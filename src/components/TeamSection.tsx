@@ -5,7 +5,7 @@ import { Code, Palette, Music, Gamepad2, Zap } from 'lucide-react';
 import { useScrollShine } from '@/hooks/useScrollShine';
 const TeamSection = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
-  const { shouldShine } = useScrollShine(titleRef);
+  const { shouldShine, hasShined } = useScrollShine(titleRef);
   
   const teamMembers = [{
     name: "Plet2428",
@@ -47,7 +47,7 @@ const TeamSection = () => {
           <h2 
             ref={titleRef}
             className={`text-5xl md:text-6xl font-bold mb-6 ${
-              shouldShine ? 'text-shine-active' : 'text-primary'
+              shouldShine ? 'text-shine-active' : hasShined ? 'text-shine-static' : 'text-primary'
             }`}
           >
             Meet the Crew

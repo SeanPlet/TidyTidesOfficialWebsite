@@ -5,7 +5,7 @@ import underwaterHero from '@/assets/underwater-hero.jpg';
 import { useScrollShine } from '@/hooks/useScrollShine';
 const HeroSection = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
-  const { shouldShine } = useScrollShine(titleRef);
+  const { shouldShine, hasShined } = useScrollShine(titleRef);
   
   return <section className="relative min-h-screen flex items-center justify-center ocean-surface">
       {/* Background Image */}
@@ -27,11 +27,11 @@ const HeroSection = () => {
         <h1 
           ref={titleRef}
           className={`text-6xl md:text-8xl font-bold mb-6 drop-shadow-lg ${
-            shouldShine ? 'text-shine-active' : 'text-primary'
+            shouldShine ? 'text-shine-active' : hasShined ? 'text-shine-static' : 'text-primary'
           }`}
         >
           Dive Into The
-          <span className={`block ${shouldShine ? 'text-shine-accent' : 'text-accent'}`}>Chaos</span>
+          <span className={`block ${shouldShine ? 'text-shine-accent' : hasShined ? 'text-shine-accent-static' : 'text-accent'}`}>Chaos</span>
         </h1>
         
         {/* Subtitle */}
