@@ -47,14 +47,22 @@ const InteractiveBubbles = () => {
 
     // Handle clicks
     const handleClick = (e: MouseEvent) => {
+      e.preventDefault();
       const burstCount = 5 + Math.random() * 5;
       const newClickBubbles: ClickBubble[] = [];
       
+      // Get exact click position
+      const clickX = e.clientX;
+      const clickY = e.clientY;
+      
       for (let i = 0; i < burstCount; i++) {
+        const angle = (Math.PI * 2 * i) / burstCount + Math.random() * 0.5;
+        const distance = Math.random() * 30 + 10;
+        
         newClickBubbles.push({
           id: bubbleId + i,
-          x: e.clientX + (Math.random() - 0.5) * 50,
-          y: e.clientY + (Math.random() - 0.5) * 50,
+          x: clickX + Math.cos(angle) * distance,
+          y: clickY + Math.sin(angle) * distance,
           size: Math.random() * 15 + 8,
           opacity: 0.8,
           scale: 0.1,
