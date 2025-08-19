@@ -4,31 +4,31 @@ import { Badge } from '@/components/ui/badge';
 import { Code, Palette, Music, Gamepad2, Zap } from 'lucide-react';
 const TeamSection = () => {
   const teamMembers = [{
-    name: "Venom1283",
+    name: "PletPlays",
     role: "Lead Developer",
     icon: Code,
     description: "Dives deep into the codebase to bring the underwater world to life",
     specialties: ["Gameplay Programming", "Physics Systems", "Co-op Networking"]
   }, {
-    name: "Coral Brushstroke",
+    name: "Venom1283",
     role: "Art Director",
     icon: Palette,
     description: "Creates the vibrant underwater visuals and character designs",
     specialties: ["Character Design", "Environment Art", "Visual Effects"]
   }, {
-    name: "Echo Soundwave",
+    name: "Bluffbi",
     role: "Audio Designer",
     icon: Music,
     description: "Crafts the immersive underwater soundscape and whale songs",
     specialties: ["Sound Effects", "Music Composition", "Audio Implementation"]
   }, {
-    name: "Finn Gameflow",
+    name: "Marlou",
     role: "Game Designer",
     icon: Gamepad2,
     description: "Designs the chaotic cleaning mechanics and level progression",
     specialties: ["Level Design", "Gameplay Balance", "Player Experience"]
   }, {
-    name: "Splash Sparkle",
+    name: "Chantallion",
     role: "VFX Artist",
     icon: Zap,
     description: "Makes the bubbles pop and the water effects mesmerize",
