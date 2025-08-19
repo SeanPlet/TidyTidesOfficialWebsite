@@ -21,7 +21,7 @@ const AboutSection = () => {
     title: "Underwater Chaos",
     description: "Navigate chaotic underwater environments while staying afloat"
   }];
-  return <section className="py-24 relative">
+  return <section className="py-24 ocean-deep relative">
       <div className="caustic-lights" />
       
       <div className="container mx-auto px-6 relative z-10">

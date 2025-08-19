@@ -117,7 +117,7 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    background: linear-gradient(180deg, hsl(190 80% 70%), hsl(200 90% 40%), hsl(220 70% 12%), hsl(230 60% 8%));
+    background: var(--ocean-abyss);
     overflow-x: hidden;
   }
 }
