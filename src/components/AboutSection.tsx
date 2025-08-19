@@ -41,7 +41,7 @@ const AboutSection = () => {
                 <h3 className="text-2xl font-bold text-accent mb-4">
                   The Curse
                 </h3>
-                <p className="text-lg text-foreground/90 leading-relaxed">You and your fishy friends are cursed and can no longer swim after you ruined the Flying Dutchman's whale-taxi business and now have to repay your debts.</p>
+                <p className="text-lg text-foreground/90 leading-relaxed">After destroying the Flying Dutchman's whale-taxi business, you and your crew have been cursed to lose your ability to swim. Now you must work off your debt through endless whale cleaning.</p>
               </CardContent>
             </Card>
 
