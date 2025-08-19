@@ -2,48 +2,39 @@ import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Code, Palette, Music, Gamepad2, Zap } from 'lucide-react';
-
 const TeamSection = () => {
-  const teamMembers = [
-    {
-      name: "Marina Deepcode",
-      role: "Lead Developer",
-      icon: Code,
-      description: "Dives deep into the codebase to bring the underwater world to life",
-      specialties: ["Gameplay Programming", "Physics Systems", "Co-op Networking"]
-    },
-    {
-      name: "Coral Brushstroke",
-      role: "Art Director",
-      icon: Palette,
-      description: "Creates the vibrant underwater visuals and character designs",
-      specialties: ["Character Design", "Environment Art", "Visual Effects"]
-    },
-    {
-      name: "Echo Soundwave",
-      role: "Audio Designer",
-      icon: Music,
-      description: "Crafts the immersive underwater soundscape and whale songs",
-      specialties: ["Sound Effects", "Music Composition", "Audio Implementation"]
-    },
-    {
-      name: "Finn Gameflow",
-      role: "Game Designer",
-      icon: Gamepad2,
-      description: "Designs the chaotic cleaning mechanics and level progression",
-      specialties: ["Level Design", "Gameplay Balance", "Player Experience"]
-    },
-    {
-      name: "Splash Sparkle",
-      role: "VFX Artist",
-      icon: Zap,
-      description: "Makes the bubbles pop and the water effects mesmerize",
-      specialties: ["Particle Systems", "Lighting Effects", "Animation"]
-    }
-  ];
-
-  return (
-    <section className="py-24 ocean-abyss relative">
+  const teamMembers = [{
+    name: "Marina Deepcode",
+    role: "Lead Developer",
+    icon: Code,
+    description: "Dives deep into the codebase to bring the underwater world to life",
+    specialties: ["Gameplay Programming", "Physics Systems", "Co-op Networking"]
+  }, {
+    name: "Coral Brushstroke",
+    role: "Art Director",
+    icon: Palette,
+    description: "Creates the vibrant underwater visuals and character designs",
+    specialties: ["Character Design", "Environment Art", "Visual Effects"]
+  }, {
+    name: "Echo Soundwave",
+    role: "Audio Designer",
+    icon: Music,
+    description: "Crafts the immersive underwater soundscape and whale songs",
+    specialties: ["Sound Effects", "Music Composition", "Audio Implementation"]
+  }, {
+    name: "Finn Gameflow",
+    role: "Game Designer",
+    icon: Gamepad2,
+    description: "Designs the chaotic cleaning mechanics and level progression",
+    specialties: ["Level Design", "Gameplay Balance", "Player Experience"]
+  }, {
+    name: "Splash Sparkle",
+    role: "VFX Artist",
+    icon: Zap,
+    description: "Makes the bubbles pop and the water effects mesmerize",
+    specialties: ["Particle Systems", "Lighting Effects", "Animation"]
+  }];
+  return <section className="py-24 ocean-abyss relative">
       <div className="caustic-lights" />
       
       <div className="container mx-auto px-6 relative z-10">
@@ -60,13 +51,14 @@ const TeamSection = () => {
 
         {/* Team Grid - Single Row */}
         <div className="flex flex-wrap justify-center gap-8 lg:gap-12">
-          {teamMembers.map((member, index) => (
-            <div key={index} className="flex flex-col items-center space-y-3 float-gentle" style={{ animationDelay: `${index * 0.2}s` }}>
+          {teamMembers.map((member, index) => <div key={index} className="flex flex-col items-center space-y-3 float-gentle" style={{
+          animationDelay: `${index * 0.2}s`
+        }}>
               <div className="relative">
                 <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center border-2 border-accent/30 hover:border-accent/60 transition-colors">
                   <member.icon className="h-8 w-8 text-accent" />
                 </div>
-                <div className="absolute -top-1 -right-1 w-4 h-4 bg-primary rounded-full" />
+                
               </div>
               
               <div className="text-center">
@@ -77,12 +69,9 @@ const TeamSection = () => {
                   {member.role}
                 </Badge>
               </div>
-            </div>
-          ))}
+            </div>)}
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default TeamSection;
