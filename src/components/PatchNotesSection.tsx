@@ -136,8 +136,9 @@ const PatchNotesSection = () => {
         {/* View All Button */}
         <div className="text-center mt-12">
           <Button 
+            variant="outline" 
             size="lg"
-            className="transition-all duration-300"
+            className="bg-primary/10 border-primary/30 text-primary hover:bg-primary/20 hover:border-primary/50 transition-all duration-300"
           >
             View All Patch Notes
           </Button>
