@@ -299,53 +299,48 @@ All colors MUST be HSL.
     }
   }
 
-  /* Scroll-triggered light shine effect */
-  @keyframes lightShine {
+  /* Scroll-triggered light shine effect - text only */
+  @keyframes textShine {
     0% {
-      transform: translateX(-100%);
-      opacity: 0;
-    }
-    50% {
-      opacity: 1;
+      background-position: -200% center;
     }
     100% {
-      transform: translateX(100%);
-      opacity: 0;
+      background-position: 200% center;
     }
   }
 
   .heading-shine {
     position: relative;
-    overflow: hidden;
-  }
-
-  .heading-shine::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     background: linear-gradient(
-      90deg, 
-      transparent 0%, 
-      hsl(var(--caustic-light) / 0.6) 40%, 
-      hsl(var(--primary) / 0.8) 50%, 
-      hsl(var(--caustic-light) / 0.6) 60%, 
-      transparent 100%
+      90deg,
+      hsl(var(--primary)) 0%,
+      hsl(var(--primary)) 30%,
+      hsl(var(--caustic-light)) 40%,
+      hsl(var(--primary) / 0.9) 45%,
+      hsl(var(--caustic-light)) 50%,
+      hsl(var(--primary) / 0.9) 55%,
+      hsl(var(--caustic-light)) 60%,
+      hsl(var(--primary)) 70%,
+      hsl(var(--primary)) 100%
     );
-    transform: translateX(-100%);
-    opacity: 0;
-    pointer-events: none;
-    z-index: 1;
+    background-size: 200% 100%;
+    background-position: -200% center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
   }
 
-  .heading-shine.animate-shine::before {
-    animation: lightShine 2.5s ease-out;
+  .heading-shine.animate-shine {
+    animation: textShine 2.5s ease-out forwards;
   }
 
-  .heading-shine > * {
-    position: relative;
-    z-index: 2;
+  /* Ensure span elements inside also get the effect */
+  .heading-shine span {
+    background: inherit;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
   }
 }
