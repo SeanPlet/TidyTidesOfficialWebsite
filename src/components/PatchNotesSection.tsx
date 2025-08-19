@@ -85,19 +85,19 @@ const PatchNotesSection = () => {
   return <section className="py-24 ocean-deep relative">
       <div className="caustic-lights" />
       
+      {/* Floating Construction Worker */}
+      <img 
+        src="/lovable-uploads/f75f9177-b6c5-4d25-8c2b-2cba43b83c37.png" 
+        alt="Construction worker character with hard hat and hammer" 
+        className="absolute top-8 right-8 w-24 h-24 object-contain animate-bounce z-20 opacity-80 hover:opacity-100 transition-opacity duration-300"
+      />
+      
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="flex flex-col items-center gap-6">
-            <img 
-              src="/lovable-uploads/f75f9177-b6c5-4d25-8c2b-2cba43b83c37.png" 
-              alt="Construction worker character with hard hat and hammer" 
-              className="w-32 h-32 object-contain animate-bounce"
-            />
-            <h2 className="text-5xl md:text-6xl font-bold text-primary mb-6">
-              Patch Notes
-            </h2>
-          </div>
+          <h2 className="text-5xl md:text-6xl font-bold text-primary mb-6">
+            Patch Notes
+          </h2>
           <div className="w-24 h-1 bg-accent mx-auto mb-8" />
           <p className="text-xl text-foreground/80 max-w-4xl mx-auto">
             Dive into the latest updates and improvements to your underwater cleaning adventure
