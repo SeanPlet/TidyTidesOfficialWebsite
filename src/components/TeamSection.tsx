@@ -40,8 +40,8 @@ const TeamSection = () => {
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold text-primary mb-6">
-            Meet the Crew
+          <h2 className="text-5xl md:text-6xl font-bold mb-6">
+            <span className="hero-shine">Meet the Crew</span>
           </h2>
           <div className="w-24 h-1 bg-accent mx-auto mb-8" />
           <p className="text-xl text-foreground/80 max-w-4xl mx-auto">The talented team swimming against the current to bring 'Tidy Tides Co.' to life</p>

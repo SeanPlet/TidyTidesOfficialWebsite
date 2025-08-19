@@ -27,8 +27,8 @@ const AboutSection = () => {
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold text-primary mb-6">
-            The Story
+          <h2 className="text-5xl md:text-6xl font-bold mb-6">
+            <span className="hero-shine">The Story</span>
           </h2>
           <div className="w-24 h-1 bg-accent mx-auto mb-8" />
         </div>
