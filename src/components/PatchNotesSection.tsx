@@ -73,11 +73,11 @@ const PatchNotesSection = () => {
   const getTypeBadge = (type: string) => {
     switch (type) {
       case "Feature Update":
-        return <Badge className="bg-primary/20 text-primary border-primary/30">Feature Update</Badge>;
+        return <Badge className="bg-primary/20 text-primary border-primary/30 hover:bg-primary/30 hover:border-primary/50 transition-all duration-300">Feature Update</Badge>;
       case "Bug Fixes":
-        return <Badge className="bg-accent/20 text-accent border-accent/30">Bug Fixes</Badge>;
+        return <Badge className="bg-accent/20 text-accent border-accent/30 hover:bg-accent/30 hover:border-accent/50 transition-all duration-300">Bug Fixes</Badge>;
       case "Major Update":
-        return <Badge className="bg-secondary/20 text-secondary border-secondary/30">Major Update</Badge>;
+        return <Badge className="bg-secondary/20 text-secondary border-secondary/30 hover:bg-secondary/30 hover:border-secondary/50 transition-all duration-300">Major Update</Badge>;
       default:
         return <Badge variant="outline">Update</Badge>;
     }
