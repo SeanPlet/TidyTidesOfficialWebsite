@@ -21,7 +21,7 @@ const AboutSection = () => {
     title: "Whale Traversal",
     description: "Bounce on jellyfish and swing from hooks to traverse massive whales"
   }];
-  return <section className="py-24 relative">
+  return <section className="py-24 seamless-depth relative">
       <div className="caustic-lights" />
       
       <div className="container mx-auto px-6 relative z-10">
