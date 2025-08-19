@@ -36,7 +36,7 @@ const HeroSection = () => {
             <Play className="mr-2 h-5 w-5" />
             Watch Trailer
           </Button>
-          <Button variant="outline" size="lg" className="border-2 border-accent text-accent bg-accent/20 hover:bg-accent hover:text-accent-foreground px-8 py-6 text-lg font-semibold rounded-full backdrop-blur-sm shadow-lg">
+          <Button variant="outline" size="lg" className="border-2 border-accent text-accent bg-accent/5 hover:bg-accent hover:text-accent-foreground px-8 py-6 text-lg font-semibold rounded-full backdrop-blur-md shadow-lg">
             <ExternalLink className="mr-2 h-5 w-5" />
             Join Discord
           </Button>
