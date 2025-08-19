@@ -15,7 +15,7 @@ const AboutSection = () => {
   }, {
     icon: Wrench,
     title: "Tool Time",
-    description: "The ocean's messes aren't alike. Each needs the right tool"
+    description: "The ocean's messes aren't alike, each needs the right tool"
   }, {
     icon: Waves,
     title: "Whale Traversal",
