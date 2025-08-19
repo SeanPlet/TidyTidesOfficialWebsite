@@ -21,7 +21,7 @@ const ContactSection = () => {
         {/* Contact Options */}
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
           {/* Discord */}
-          <Card className="underwater-glass border-border/30 hover:border-primary/50 transition-all duration-300 flex flex-col">
+          <Card className="underwater-glass border-border/30 hover:border-primary/50 transition-all duration-300 flex flex-col hover:scale-105 hover:shadow-xl hover:shadow-primary/20">
             <CardContent className="p-8 text-center flex flex-col flex-1">
               <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <svg className="h-10 w-10 text-primary" viewBox="0 0 24 24" fill="currentColor">
@@ -57,7 +57,7 @@ const ContactSection = () => {
           </Card>
 
           {/* Email */}
-          <Card className="underwater-glass border-border/30 hover:border-accent/50 transition-all duration-300 flex flex-col">
+          <Card className="underwater-glass border-border/30 hover:border-accent/50 transition-all duration-300 flex flex-col hover:scale-105 hover:shadow-xl hover:shadow-accent/20">
             <CardContent className="p-8 text-center flex flex-col flex-1">
               <div className="w-20 h-20 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Mail className="h-10 w-10 text-accent" />
