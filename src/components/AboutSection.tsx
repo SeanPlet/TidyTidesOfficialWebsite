@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Users, Waves, Timer, Fish } from 'lucide-react';
+import { Users, Waves, Timer, Wrench } from 'lucide-react';
 import cleaningCrew from '@/assets/cleaning-crew.jpg';
 import whaleClient from '@/assets/whale-client.jpg';
 const AboutSection = () => {
@@ -13,7 +13,7 @@ const AboutSection = () => {
     title: "Fast-Paced Action",
     description: "Race against time to scrub away grime and earn your freedom"
   }, {
-    icon: Fish,
+    icon: Wrench,
     title: "Tool Time",
     description: "Play as fish who can't swim and are stuck in a fishbowl"
   }, {
