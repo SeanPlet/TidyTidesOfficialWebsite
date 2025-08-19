@@ -12,25 +12,25 @@ const TeamSection = () => {
   }, {
     name: "Venom1283",
     role: "Developer",
-    icon: Palette,
+    icon: Code,
     description: "Creates the vibrant underwater visuals and character designs",
     specialties: ["Character Design", "Environment Art", "Visual Effects"]
   }, {
     name: "Bluffbi",
     role: "Developer",
-    icon: Music,
+    icon: Code,
     description: "Crafts the immersive underwater soundscape and whale songs",
     specialties: ["Sound Effects", "Music Composition", "Audio Implementation"]
   }, {
     name: "Marlou",
     role: "Developer",
-    icon: Gamepad2,
+    icon: Code,
     description: "Designs the chaotic cleaning mechanics and level progression",
     specialties: ["Level Design", "Gameplay Balance", "Player Experience"]
   }, {
     name: "Chantallion",
     role: "Designer",
-    icon: Zap,
+    icon: Palette,
     description: "Makes the bubbles pop and the water effects mesmerize",
     specialties: ["Particle Systems", "Lighting Effects", "Animation"]
   }];
