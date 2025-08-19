@@ -47,17 +47,17 @@ const Navigation = () => {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/30">
+    <nav className="fixed top-0 left-0 right-0 z-50 underwater-glass border-b border-border/10">
       <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-12">
           {/* Logo */}
           <div className="flex items-center">
             <img 
               src="/lovable-uploads/e3893670-1ae5-43cd-bdc3-a513bc008677.png" 
               alt="Tidy Tides Co." 
-              className="h-10 w-auto"
+              className="h-8 w-auto opacity-80"
             />
-            <span className="ml-3 text-xl font-bold text-primary hidden sm:block">
+            <span className="ml-2 text-lg font-medium text-foreground/70 hidden sm:block">
               Tidy Tides Co.
             </span>
           </div>
@@ -68,10 +68,10 @@ const Navigation = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.href)}
-                className={`text-sm font-medium transition-all duration-300 hover:text-primary ${
+                className={`text-xs font-medium transition-all duration-300 hover:text-primary/80 ${
                   activeSection === item.id 
-                    ? 'text-primary border-b-2 border-primary pb-1' 
-                    : 'text-foreground/80'
+                    ? 'text-primary/90 border-b border-primary/50' 
+                    : 'text-foreground/60 hover:text-foreground/80'
                 }`}
               >
                 {item.label}
