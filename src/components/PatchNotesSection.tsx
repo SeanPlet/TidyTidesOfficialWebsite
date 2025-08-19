@@ -6,7 +6,7 @@ import { Calendar, Plus, Bug, Wrench, Sparkles } from 'lucide-react';
 const PatchNotesSection = () => {
   const patchNotes = [{
     version: "0.3.2",
-    date: "March 15, 2024",
+    date: "March 15, 2025",
     type: "Feature Update",
     changes: [{
       type: "added",
@@ -23,7 +23,7 @@ const PatchNotesSection = () => {
     }]
   }, {
     version: "0.3.1",
-    date: "March 1, 2024",
+    date: "March 1, 2025",
     type: "Bug Fixes",
     changes: [{
       type: "fixed",
@@ -40,7 +40,7 @@ const PatchNotesSection = () => {
     }]
   }, {
     version: "0.3.0",
-    date: "February 20, 2024",
+    date: "February 20, 2025",
     type: "Major Update",
     changes: [{
       type: "added",
