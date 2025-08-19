@@ -1,5 +1,6 @@
 import React from 'react';
 import BubbleEffect from '@/components/BubbleEffect';
+import InteractiveBubbles from '@/components/InteractiveBubbles';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import TeamSection from '@/components/TeamSection';
@@ -13,6 +14,7 @@ const Index = () => {
       
       {/* Global Effects */}
       <BubbleEffect />
+      <InteractiveBubbles />
       
       {/* Sections */}
       <HeroSection />
