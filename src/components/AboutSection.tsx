@@ -19,7 +19,7 @@ const AboutSection = () => {
   }, {
     icon: Waves,
     title: "Whale Traversal",
-    description: "Navigate chaotic underwater environments while staying afloat"
+    description: "Bounce on jellyfish and swing from hooks to traverse massive whales"
   }];
   return <section className="py-24 ocean-deep relative">
       <div className="caustic-lights" />
