@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Mail, MessageCircle, Users, Bell } from 'lucide-react';
+import { ExternalLink, Mail, MessageCircle, Users, Bell, Phone } from 'lucide-react';
 const ContactSection = () => {
   return <section className="py-24 ocean-abyss relative">
       <div className="caustic-lights" />
@@ -74,7 +74,7 @@ const ContactSection = () => {
               
               <div className="space-y-3 mb-6">
                 <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                  <MessageCircle className="h-4 w-4" />
+                  <Phone className="h-4 w-4" />
                   <span>General inquiries & support</span>
                 </div>
                 <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
