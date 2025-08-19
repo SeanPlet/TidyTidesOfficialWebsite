@@ -79,7 +79,7 @@ const ContactSection = () => {
                 </div>
                 <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
                   <Users className="h-4 w-4" />
-                  <span>Tell Us We’re Fin-tastic</span>
+                  <span>Tell us a fin-tastic pun</span>
                 </div>
               </div>
               
