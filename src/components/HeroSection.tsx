@@ -16,7 +16,7 @@ const HeroSection = () => {
       <div className="relative z-20 text-center max-w-4xl mx-auto px-6">
         {/* Logo */}
         <div className="mb-8 float-gentle">
-          <img src="/lovable-uploads/e3893670-1ae5-43cd-bdc3-a513bc008677.png" alt="Tidy Tides Co. Logo" className="h-32 mx-auto drop-shadow-2xl" />
+          <img src="/lovable-uploads/e3893670-1ae5-43cd-bdc3-a513bc008677.png" alt="Tidy Tides Co. Logo" className="h-32 mx-auto drop-shadow-2xl logo-glow hover:scale-105 transition-transform duration-300" />
         </div>
 
         {/* Main Title */}

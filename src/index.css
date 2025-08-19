@@ -222,4 +222,19 @@ All colors MUST be HSL.
     background: hsl(var(--card) / 0.7);
     border: 1px solid hsl(var(--border) / 0.3);
   }
+
+  /* Logo glow animation */
+  .logo-glow {
+    filter: drop-shadow(0 0 20px hsl(var(--primary) / 0.3));
+    animation: logoGlow 4s ease-in-out infinite alternate;
+  }
+
+  @keyframes logoGlow {
+    0% {
+      filter: drop-shadow(0 0 20px hsl(var(--primary) / 0.3));
+    }
+    100% {
+      filter: drop-shadow(0 0 30px hsl(var(--primary) / 0.5));
+    }
+  }
 }
