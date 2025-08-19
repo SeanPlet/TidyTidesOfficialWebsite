@@ -15,7 +15,7 @@ const AboutSection = () => {
   }, {
     icon: Wrench,
     title: "Tool Time",
-    description: "Different grime, different gear. Algae, barnacles, and slime won't clean themselves"
+    description: "The ocean's messes aren't alike. Each needs the right tool"
   }, {
     icon: Waves,
     title: "Underwater Chaos",
