@@ -2,7 +2,10 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Play } from 'lucide-react';
 import underwaterHero from '@/assets/underwater-hero.jpg';
+import { useScrollShine } from '@/hooks/useScrollShine';
 const HeroSection = () => {
+  const visibleHeadings = useScrollShine();
+  
   return <section className="relative min-h-screen flex items-center justify-center ocean-surface">
       {/* Background Image */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30" style={{
@@ -20,7 +23,10 @@ const HeroSection = () => {
         </div>
 
         {/* Main Title */}
-        <h1 className="text-6xl md:text-8xl font-bold text-primary mb-6 drop-shadow-lg">
+        <h1 
+          className={`text-6xl md:text-8xl font-bold text-primary mb-6 drop-shadow-lg heading-shine ${visibleHeadings.has('hero') ? 'animate-shine' : ''}`}
+          data-heading-id="hero"
+        >
           Dive Into The
           <span className="block text-accent">Chaos</span>
         </h1>

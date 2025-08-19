@@ -3,7 +3,10 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Users, Fish, Timer, Wrench } from 'lucide-react';
 import cleaningCrew from '@/assets/cleaning-crew.jpg';
 import whaleClient from '@/assets/whale-client.jpg';
+import { useScrollShine } from '@/hooks/useScrollShine';
 const AboutSection = () => {
+  const visibleHeadings = useScrollShine();
+  
   const features = [{
     icon: Users,
     title: "4-Player Co-op",
@@ -27,7 +30,10 @@ const AboutSection = () => {
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold text-primary mb-6">
+          <h2 
+            className={`text-5xl md:text-6xl font-bold text-primary mb-6 heading-shine ${visibleHeadings.has('story') ? 'animate-shine' : ''}`}
+            data-heading-id="story"
+          >
             The Story
           </h2>
           <div className="w-24 h-1 bg-accent mx-auto mb-8" />

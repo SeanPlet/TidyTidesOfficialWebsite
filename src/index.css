@@ -298,4 +298,54 @@ All colors MUST be HSL.
       filter: drop-shadow(0 0 30px hsl(var(--primary) / 0.5));
     }
   }
+
+  /* Scroll-triggered light shine effect */
+  @keyframes lightShine {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+
+  .heading-shine {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .heading-shine::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      90deg, 
+      transparent 0%, 
+      hsl(var(--caustic-light) / 0.6) 40%, 
+      hsl(var(--primary) / 0.8) 50%, 
+      hsl(var(--caustic-light) / 0.6) 60%, 
+      transparent 100%
+    );
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .heading-shine.animate-shine::before {
+    animation: lightShine 2.5s ease-out;
+  }
+
+  .heading-shine > * {
+    position: relative;
+    z-index: 2;
+  }
 }
