@@ -78,7 +78,7 @@ const PatchNotesSection = () => {
         {/* Patch Notes */}
         <div className="max-w-4xl mx-auto space-y-8">
           {patchNotes.map((patch, index) => (
-            <Card key={index} className="underwater-glass border-border/30 hover:border-primary/30 transition-all duration-300" style={{ animationDelay: `${index * 0.5}s` }}>
+            <Card key={index} className="underwater-glass border-border/30 hover:border-primary/30 transition-all duration-300 animate-fade-in" style={{ animationDelay: `${index * 0.3}s` }}>
               <CardHeader className="border-b border-border/20">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                   <CardTitle className="text-2xl font-bold text-primary">
