@@ -63,7 +63,7 @@ const TeamSection = () => {
                 <h3 className="text-sm font-semibold text-primary mb-1">
                   {member.name}
                 </h3>
-                <Badge className="bg-accent/20 text-accent border-accent/30 text-xs">
+                <Badge className="bg-accent/20 text-accent border-accent/30 hover:bg-accent/30 hover:border-accent/50 transition-all duration-300 text-xs">
                   {member.role}
                 </Badge>
               </div>
