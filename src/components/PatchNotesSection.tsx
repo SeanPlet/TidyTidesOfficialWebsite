@@ -99,7 +99,7 @@ const PatchNotesSection = () => {
 
         {/* Patch Notes */}
         <div className="max-w-4xl mx-auto space-y-8">
-          {patchNotes.map((patch, index) => <Card key={index} className="underwater-glass border-border/30 hover:border-primary/30 transition-all duration-500 animate-fade-in group hover:scale-105 hover:shadow-xl hover:shadow-primary/20" style={{
+          {patchNotes.map((patch, index) => <Card key={index} className="bg-card/90 border-border/30 hover:border-primary/30 transition-all duration-500 animate-fade-in group hover:scale-105 hover:shadow-xl hover:shadow-primary/20" style={{
           animationDelay: `${index * 0.3}s`
         }}>
               <CardHeader className="border-b border-border/20">
