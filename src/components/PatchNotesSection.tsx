@@ -83,7 +83,7 @@ const PatchNotesSection = () => {
         return <Badge variant="outline">Update</Badge>;
     }
   };
-  return <section className="py-24 ocean-medium relative depth-transition">
+  return <section className="py-24 ocean-medium relative">
       <div className="caustic-medium" />
       
       <div className="container mx-auto px-6 relative z-10">

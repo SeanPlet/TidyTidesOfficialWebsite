@@ -222,18 +222,6 @@ All colors MUST be HSL.
     position: relative;
   }
 
-  /* Depth transition effects */
-  .depth-transition::before {
-    content: '';
-    position: absolute;
-    top: -50px;
-    left: 0;
-    right: 0;
-    height: 100px;
-    background: linear-gradient(180deg, transparent 0%, currentColor 100%);
-    pointer-events: none;
-    z-index: 1;
-  }
 
   /* Enhanced caustic light variations */
   .caustic-shallow {
