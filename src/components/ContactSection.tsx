@@ -2,10 +2,8 @@ import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Mail, MessageCircle, Users, Bell } from 'lucide-react';
-
 const ContactSection = () => {
-  return (
-    <section className="py-24 ocean-abyss relative">
+  return <section className="py-24 ocean-abyss relative">
       <div className="caustic-lights" />
       
       <div className="container mx-auto px-6 relative z-10">
@@ -49,10 +47,7 @@ const ContactSection = () => {
                 </div>
               </div>
               
-              <Button 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-full w-full"
-                onClick={() => window.open('https://discord.gg/tidytidesco', '_blank')}
-              >
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-full w-full" onClick={() => window.open('https://discord.gg/tidytidesco', '_blank')}>
                 <ExternalLink className="mr-2 h-4 w-4" />
                 Join Discord Server
               </Button>
@@ -87,11 +82,7 @@ const ContactSection = () => {
                 </div>
               </div>
               
-              <Button 
-                variant="outline"
-                className="border-accent text-accent hover:bg-accent hover:text-accent-foreground px-6 py-3 rounded-full w-full"
-                onClick={() => window.open('mailto:team@tidytidesco.com', '_blank')}
-              >
+              <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground px-6 py-3 rounded-full w-full" onClick={() => window.open('mailto:team@tidytidesco.com', '_blank')}>
                 <Mail className="mr-2 h-4 w-4" />
                 Email Us
               </Button>
@@ -100,34 +91,8 @@ const ContactSection = () => {
         </div>
 
         {/* Newsletter Signup */}
-        <Card className="underwater-glass border-border/30 max-w-2xl mx-auto">
-          <CardContent className="p-8 text-center">
-            <h3 className="text-2xl font-bold text-primary mb-4">
-              🌊 Newsletter Signup
-            </h3>
-            <p className="text-foreground/80 mb-6">
-              Get monthly development updates delivered straight to your inbox
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="your.email@ocean.com"
-                className="flex-1 px-4 py-3 rounded-full bg-input border border-border text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground px-6 py-3 rounded-full">
-                Subscribe
-              </Button>
-            </div>
-            
-            <p className="text-xs text-muted-foreground mt-4">
-              No spam, just whale-sized updates! Unsubscribe anytime.
-            </p>
-          </CardContent>
-        </Card>
+        
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ContactSection;
