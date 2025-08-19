@@ -146,7 +146,7 @@ All colors MUST be HSL.
       transform: translateY(0px) rotate(0deg);
     }
     50% {
-      transform: translateY(-8px) rotate(0.5deg);
+      transform: translateY(-3px) rotate(0.2deg);
     }
   }
 
@@ -155,7 +155,7 @@ All colors MUST be HSL.
       transform: translateX(0px);
     }
     50% {
-      transform: translateX(12px);
+      transform: translateX(4px);
     }
   }
 
