@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Users, Waves, Timer, Fish } from 'lucide-react';
 import cleaningCrew from '@/assets/cleaning-crew.jpg';
 import whaleClient from '@/assets/whale-client.jpg';
@@ -7,19 +8,23 @@ const AboutSection = () => {
   const features = [{
     icon: Users,
     title: "4-Player Co-op",
-    description: "Team up with friends to tackle the messiest whales in the ocean"
+    description: "Team up with friends to tackle the messiest whales in the ocean",
+    details: "Work together with up to 3 friends in seamless online co-op. Coordinate your cleaning efforts, share tools, and compete for the highest cleaning scores. Each player can specialize in different cleaning techniques for maximum efficiency."
   }, {
     icon: Timer,
     title: "Fast-Paced Action",
-    description: "Race against time to scrub away grime and earn your freedom"
+    description: "Race against time to scrub away grime and earn your freedom",
+    details: "Each whale cleaning session is a frantic race against the clock. The longer you take, the more dirt accumulates! Master quick cleaning combos, power-ups, and speed bonuses to complete your tasks before time runs out."
   }, {
     icon: Fish,
     title: "Cursed Crew",
-    description: "Play as fish who can't swim - trapped in a cleaning nightmare"
+    description: "Play as fish who can't swim - trapped in a cleaning nightmare",
+    details: "Experience the unique challenge of being aquatic creatures who've lost their natural abilities. Use special flotation devices, air bubbles, and creative movement techniques to navigate while cleaning the massive whales."
   }, {
     icon: Waves,
     title: "Underwater Chaos",
-    description: "Navigate chaotic underwater environments while staying afloat"
+    description: "Navigate chaotic underwater environments while staying afloat",
+    details: "Battle strong underwater currents, avoid dangerous sea creatures, and work around constantly changing water pressure. The ocean environment itself becomes both your biggest challenge and most beautiful backdrop."
   }];
   return <section className="py-24 ocean-deep relative">
       <div className="caustic-lights" />
@@ -65,22 +70,38 @@ const AboutSection = () => {
           </div>
         </div>
 
-        {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {features.map((feature, index) => <Card key={index} className="underwater-glass border-border/30 hover:border-primary/50 transition-colors wave-motion" style={{
-          animationDelay: `${index * 0.5}s`
-        }}>
-              <CardContent className="p-6 text-center">
-                <feature.icon className="h-12 w-12 text-accent mx-auto mb-4" />
-                <h4 className="text-xl font-bold text-primary mb-2">
-                  {feature.title}
-                </h4>
-                <p className="text-foreground/80">
-                  {feature.description}
-                </p>
-              </CardContent>
-            </Card>)}
-        </div>
+        {/* Interactive Features Grid */}
+        <Accordion type="single" collapsible className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          {features.map((feature, index) => (
+            <AccordionItem 
+              key={index} 
+              value={`feature-${index}`}
+              className="underwater-glass border-border/30 hover:border-primary/50 transition-colors wave-motion rounded-lg overflow-hidden"
+              style={{
+                animationDelay: `${index * 0.5}s`
+              }}
+            >
+              <AccordionTrigger className="p-6 text-center hover:no-underline [&[data-state=open]>div>svg]:rotate-180">
+                <div className="flex flex-col items-center w-full">
+                  <feature.icon className="h-12 w-12 text-accent mx-auto mb-4" />
+                  <h4 className="text-xl font-bold text-primary mb-2">
+                    {feature.title}
+                  </h4>
+                  <p className="text-foreground/80 mb-2">
+                    {feature.description}
+                  </p>
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="px-6 pb-6">
+                <div className="pt-4 border-t border-border/20">
+                  <p className="text-foreground/90 leading-relaxed">
+                    {feature.details}
+                  </p>
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
 
         {/* Whale Client Showcase */}
         
