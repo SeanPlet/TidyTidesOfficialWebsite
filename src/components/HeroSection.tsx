@@ -20,8 +20,8 @@ const HeroSection = () => {
         </div>
 
         {/* Main Title */}
-        <h1 className="text-6xl md:text-8xl font-bold mb-6 drop-shadow-lg">
-          <span className="hero-shine">Dive Into The</span>
+        <h1 className="text-6xl md:text-8xl font-bold text-primary mb-6 drop-shadow-lg">
+          Dive Into The
           <span className="block text-accent">Chaos</span>
         </h1>
         

@@ -173,15 +173,6 @@ All colors MUST be HSL.
     }
   }
 
-  @keyframes textShine {
-    0% {
-      background-position: -200% center;
-    }
-    100% {
-      background-position: 200% center;
-    }
-  }
-
   /* Bubble component */
   .bubble {
     position: absolute;
@@ -244,23 +235,6 @@ All colors MUST be HSL.
       radial-gradient(ellipse at 70% 80%, hsl(var(--caustic-light) / 0.1) 0%, transparent 50%);
     animation: causticShimmer 6s ease-in-out infinite;
     pointer-events: none;
-  }
-
-  /* Hero text shine effect */
-  .hero-shine {
-    background: linear-gradient(
-      110deg,
-      hsl(var(--primary)) 0%,
-      hsl(var(--primary)) 40%,
-      hsl(var(--caustic-light)) 50%,
-      hsl(var(--primary)) 60%,
-      hsl(var(--primary)) 100%
-    );
-    background-size: 200% 100%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: textShine 3s ease-in-out infinite;
   }
 
   .caustic-medium {
