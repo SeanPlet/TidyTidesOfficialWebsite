@@ -301,27 +301,30 @@ All colors MUST be HSL.
 
   @keyframes wave {
     0%, 100% {
-      transform: translateY(0px);
+      transform: translateY(0px) translateZ(0);
     }
     50% {
-      transform: translateY(-8px);
+      transform: translateY(-6px) translateZ(0);
     }
   }
 
   @keyframes waveHand {
     0%, 100% {
-      transform: rotate(0deg);
+      transform: rotate(0deg) translateZ(0);
     }
     25% {
-      transform: rotate(8deg);
+      transform: rotate(5deg) translateZ(0);
     }
     75% {
-      transform: rotate(-8deg);
+      transform: rotate(-5deg) translateZ(0);
     }
   }
 
   .animate-wave {
-    animation: wave 6s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite, waveHand 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+    animation: wave 8s cubic-bezier(0.4, 0, 0.6, 1) infinite, waveHand 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     transform-origin: center bottom;
+    will-change: transform;
+    backface-visibility: hidden;
+    perspective: 1000px;
   }
 }
