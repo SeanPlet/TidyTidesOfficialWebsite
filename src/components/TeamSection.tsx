@@ -51,8 +51,10 @@ const TeamSection = () => {
 
         {/* Team Grid - Single Row */}
         <div className="flex flex-wrap justify-center gap-8 lg:gap-12">
-          {teamMembers.map((member, index) => <div key={index} className="flex flex-col items-center space-y-3 float-gentle" style={{
-          animationDelay: `${index * 0.2}s`
+          {teamMembers.map((member, index) => <div key={index} className="flex flex-col items-center space-y-3 animate-fade-in opacity-0" style={{
+          animationDelay: `${index * 0.3}s`,
+          animationFillMode: 'forwards',
+          transform: 'translateY(30px)'
         }}>
               <div className="relative">
                 <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center border-2 border-accent/30 hover:border-accent/60 transition-colors">
