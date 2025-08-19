@@ -146,7 +146,7 @@ All colors MUST be HSL.
       transform: translateY(0px);
     }
     50% {
-      transform: translateY(-1px);
+      transform: translateY(-10px);
     }
   }
 
