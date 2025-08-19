@@ -138,7 +138,7 @@ const PatchNotesSection = () => {
           <Button 
             variant="outline" 
             size="lg"
-            className="bg-primary/10 border-primary/30 text-primary hover:bg-primary/15 hover:border-primary/40 transition-all duration-300"
+            className="bg-primary/10 border-primary/30 text-primary hover:bg-primary/20 hover:border-primary/50 transition-colors duration-300"
           >
             View All Patch Notes
           </Button>
