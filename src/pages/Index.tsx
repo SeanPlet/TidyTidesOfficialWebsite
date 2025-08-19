@@ -19,8 +19,8 @@ const Index = () => {
       {/* Sections */}
       <HeroSection />
       <AboutSection />
-      <TeamSection />
       <PatchNotesSection />
+      <TeamSection />
       <ContactSection />
       
       {/* Footer */}
