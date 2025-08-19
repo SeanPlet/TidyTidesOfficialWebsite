@@ -298,49 +298,4 @@ All colors MUST be HSL.
       filter: drop-shadow(0 0 30px hsl(var(--primary) / 0.5));
     }
   }
-
-  /* Scroll-triggered light shine effect - text only */
-  @keyframes textShine {
-    0% {
-      background-position: -200% center;
-    }
-    100% {
-      background-position: 200% center;
-    }
-  }
-
-  .heading-shine {
-    position: relative;
-    background: linear-gradient(
-      90deg,
-      hsl(var(--primary)) 0%,
-      hsl(var(--primary)) 30%,
-      hsl(var(--caustic-light)) 40%,
-      hsl(var(--primary) / 0.9) 45%,
-      hsl(var(--caustic-light)) 50%,
-      hsl(var(--primary) / 0.9) 55%,
-      hsl(var(--caustic-light)) 60%,
-      hsl(var(--primary)) 70%,
-      hsl(var(--primary)) 100%
-    );
-    background-size: 200% 100%;
-    background-position: -200% center;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
-  }
-
-  .heading-shine.animate-shine {
-    animation: textShine 2.5s ease-out forwards;
-  }
-
-  /* Ensure span elements inside also get the effect */
-  .heading-shine span {
-    background: inherit;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
-  }
 }
