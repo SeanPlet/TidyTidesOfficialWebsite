@@ -51,26 +51,21 @@ const TeamSection = () => {
 
         {/* Team Grid - Single Row */}
         <div className="flex flex-wrap justify-center gap-8 lg:gap-12">
-          {teamMembers.map((member, index) => <div 
-            key={index} 
-            className="flex flex-col items-center space-y-3 float-gentle opacity-0 animate-fade-in hover:scale-105 transition-all duration-500" 
-            style={{
-              animationDelay: `${index * 0.3}s`,
-              animationFillMode: 'forwards'
-            }}
-          >
+          {teamMembers.map((member, index) => <div key={index} className="flex flex-col items-center space-y-3 float-gentle" style={{
+          animationDelay: `${index * 0.2}s`
+        }}>
               <div className="relative">
-                <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center border-2 border-accent/30 hover:border-accent/60 hover:shadow-lg hover:shadow-accent/20 transition-all duration-300">
-                  <member.icon className="h-8 w-8 text-accent transition-transform duration-300 hover:scale-110" />
+                <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center border-2 border-accent/30 hover:border-accent/60 transition-colors">
+                  <member.icon className="h-8 w-8 text-accent" />
                 </div>
                 
               </div>
               
               <div className="text-center">
-                <h3 className="text-sm font-semibold text-primary mb-1 transition-colors duration-300 hover:text-accent">
+                <h3 className="text-sm font-semibold text-primary mb-1">
                   {member.name}
                 </h3>
-                <Badge className="bg-accent/20 text-accent border-accent/30 text-xs hover:bg-accent/30 transition-colors duration-300">
+                <Badge className="bg-accent/20 text-accent border-accent/30 text-xs">
                   {member.role}
                 </Badge>
               </div>
