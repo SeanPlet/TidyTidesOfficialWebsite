@@ -15,7 +15,7 @@ const AboutSection = () => {
   }, {
     icon: Fish,
     title: "Cursed Crew",
-    description: "Play as fish who can't swim - trapped in a fishbowl"
+    description: "Play as fish who can't swim and are stuck in a fishbowl"
   }, {
     icon: Waves,
     title: "Underwater Chaos",
