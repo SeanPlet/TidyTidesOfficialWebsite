@@ -18,7 +18,7 @@ const AboutSection = () => {
     description: "The ocean's messes aren't alike. Each needs the right tool"
   }, {
     icon: Waves,
-    title: "Underwater Chaos",
+    title: "Whale Traversal",
     description: "Navigate chaotic underwater environments while staying afloat"
   }];
   return <section className="py-24 ocean-deep relative">
