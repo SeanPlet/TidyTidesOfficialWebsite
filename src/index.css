@@ -143,19 +143,19 @@ All colors MUST be HSL.
 
   @keyframes floatGentle {
     0%, 100% {
-      transform: translateY(0px) rotate(0deg);
+      transform: translateY(0px);
     }
     50% {
-      transform: translateY(-3px) rotate(0.2deg);
+      transform: translateY(-1px);
     }
   }
 
   @keyframes waveMotion {
     0%, 100% {
-      transform: translateX(0px);
+      transform: translateY(0px);
     }
     50% {
-      transform: translateX(4px);
+      transform: translateY(-1px);
     }
   }
 
