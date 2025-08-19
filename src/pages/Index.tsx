@@ -5,10 +5,14 @@ import AboutSection from '@/components/AboutSection';
 import TeamSection from '@/components/TeamSection';
 import PatchNotesSection from '@/components/PatchNotesSection';
 import ContactSection from '@/components/ContactSection';
+import ScrollProgressBar from '@/components/ScrollProgressBar';
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      {/* Scroll Progress Bar */}
+      <ScrollProgressBar />
+      
       {/* Global Effects */}
       <BubbleEffect />
       
