@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Play } from 'lucide-react';
 import underwaterHero from '@/assets/underwater-hero.jpg';
+import { useScrollShine } from '@/hooks/useScrollShine';
 const HeroSection = () => {
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const { shouldShine } = useScrollShine(titleRef);
+  
   return <section className="relative min-h-screen flex items-center justify-center ocean-surface">
       {/* Background Image */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30" style={{
@@ -20,9 +24,14 @@ const HeroSection = () => {
         </div>
 
         {/* Main Title */}
-        <h1 className="text-6xl md:text-8xl font-bold text-primary mb-6 drop-shadow-lg">
+        <h1 
+          ref={titleRef}
+          className={`text-6xl md:text-8xl font-bold mb-6 drop-shadow-lg ${
+            shouldShine ? 'text-shine-active' : 'text-primary'
+          }`}
+        >
           Dive Into The
-          <span className="block text-accent">Chaos</span>
+          <span className={`block ${shouldShine ? 'text-shine-active' : 'text-accent'}`}>Chaos</span>
         </h1>
         
         {/* Subtitle */}

@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Mail, MessageCircle, Users, Bell, Phone } from 'lucide-react';
+import { useScrollShine } from '@/hooks/useScrollShine';
 const ContactSection = () => {
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const { shouldShine } = useScrollShine(titleRef);
+  
   return <section className="py-16 ocean-deeper relative">
       <div className="caustic-deep" />
       
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold text-primary mb-6">
+          <h2 
+            ref={titleRef}
+            className={`text-5xl md:text-6xl font-bold mb-6 ${
+              shouldShine ? 'text-shine-active' : 'text-primary'
+            }`}
+          >
             Stay Connected
           </h2>
           <div className="w-24 h-1 bg-accent mx-auto mb-8" />
