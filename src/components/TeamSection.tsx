@@ -51,25 +51,32 @@ const TeamSection = () => {
 
         {/* Team Grid - Single Row */}
         <div className="flex flex-wrap justify-center gap-8 lg:gap-12">
-          {teamMembers.map((member, index) => <div key={index} className="flex flex-col items-center space-y-3 animate-fade-in opacity-0" style={{
+          {teamMembers.map((member, index) => <div key={index} className="flex flex-col items-center space-y-3 animate-fade-in opacity-0 float-gentle hover-scale group cursor-pointer" style={{
           animationDelay: `${index * 0.3}s`,
           animationFillMode: 'forwards',
           transform: 'translateY(30px)'
         }}>
               <div className="relative">
-                <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center border-2 border-accent/30 hover:border-accent/60 transition-colors">
-                  <member.icon className="h-8 w-8 text-accent" />
+                <div className="w-20 h-20 bg-accent/20 rounded-full flex items-center justify-center border-2 border-accent/30 group-hover:border-accent group-hover:bg-accent/30 transition-all duration-500 group-hover:shadow-lg group-hover:shadow-accent/20">
+                  <member.icon className="h-10 w-10 text-accent group-hover:scale-110 transition-transform duration-300" />
                 </div>
                 
+                {/* Animated ring effect */}
+                <div className="absolute inset-0 rounded-full border-2 border-accent/20 group-hover:scale-125 group-hover:border-accent/40 transition-all duration-500 opacity-0 group-hover:opacity-100" />
               </div>
               
-              <div className="text-center">
-                <h3 className="text-sm font-semibold text-primary mb-1">
+              <div className="text-center transition-all duration-300 group-hover:scale-105">
+                <h3 className="text-base font-semibold text-primary mb-2 group-hover:text-accent transition-colors duration-300">
                   {member.name}
                 </h3>
-                <Badge className="bg-accent/20 text-accent border-accent/30 text-xs">
+                <Badge className="bg-accent/20 text-accent border-accent/30 text-sm group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-300">
                   {member.role}
                 </Badge>
+                
+                {/* Description on hover */}
+                <p className="text-xs text-foreground/60 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 max-w-32">
+                  {member.description}
+                </p>
               </div>
             </div>)}
         </div>
