@@ -6,10 +6,8 @@ import TeamSection from '@/components/TeamSection';
 import PatchNotesSection from '@/components/PatchNotesSection';
 import ContactSection from '@/components/ContactSection';
 import ScrollProgressBar from '@/components/ScrollProgressBar';
-
 const Index = () => {
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       {/* Scroll Progress Bar */}
       <ScrollProgressBar />
       
@@ -25,10 +23,8 @@ const Index = () => {
       
       {/* Footer */}
       <footer className="py-8 text-center text-muted-foreground border-t border-border/30">
-        <p>&copy; 2024 Tidy Tides Co. All rights reserved. Made with 🌊 and ☕</p>
+        <p>© 2025 Tidy Tides Co. All rights reserved. Made with 🌊 and ☕</p>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
