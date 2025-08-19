@@ -32,11 +32,11 @@ const HeroSection = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg font-semibold rounded-full">
+          <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg font-semibold rounded-full shadow-lg backdrop-blur-md">
             <Play className="mr-2 h-5 w-5" />
             Watch Trailer
           </Button>
-          <Button variant="outline" size="lg" className="border-2 border-accent text-accent bg-accent/5 hover:bg-accent hover:text-accent-foreground px-8 py-6 text-lg font-semibold rounded-full backdrop-blur-md shadow-lg">
+          <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg font-semibold rounded-full shadow-lg backdrop-blur-md">
             <ExternalLink className="mr-2 h-5 w-5" />
             Join Discord
           </Button>
