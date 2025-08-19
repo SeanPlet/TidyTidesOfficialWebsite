@@ -15,7 +15,7 @@ const AboutSection = () => {
   }, {
     icon: Wrench,
     title: "Tool Time",
-    description: "Play as fish who can't swim and are stuck in a fishbowl"
+    description: "Different grime, different gear. Algae, barnacles, and slime won't clean themselves"
   }, {
     icon: Waves,
     title: "Underwater Chaos",
