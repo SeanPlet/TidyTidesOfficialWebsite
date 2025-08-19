@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Users, Waves, Timer, Wrench } from 'lucide-react';
+import { Users, Fish, Timer, Wrench } from 'lucide-react';
 import cleaningCrew from '@/assets/cleaning-crew.jpg';
 import whaleClient from '@/assets/whale-client.jpg';
 const AboutSection = () => {
@@ -17,7 +17,7 @@ const AboutSection = () => {
     title: "Tool Time",
     description: "The ocean's messes aren't alike, each needs the right tool"
   }, {
-    icon: Waves,
+    icon: Fish,
     title: "Whale Traversal",
     description: "Bounce on jellyfish and swing from hooks to traverse massive whales"
   }];
