@@ -14,7 +14,7 @@ const AboutSection = () => {
     description: "Race against time to scrub away grime and earn your freedom"
   }, {
     icon: Fish,
-    title: "Cursed Crew",
+    title: "Tool Time",
     description: "Play as fish who can't swim and are stuck in a fishbowl"
   }, {
     icon: Waves,
