@@ -42,7 +42,7 @@ const AboutSection = () => {
 
         {/* Features Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {features.map((feature, index) => <Card key={index} className="underwater-glass border-border/30 hover:border-primary/50 transition-all duration-300 wave-motion hover:scale-105 hover:shadow-xl hover:shadow-primary/20" style={{
+          {features.map((feature, index) => <Card key={index} className="underwater-glass border-border/30 hover:border-primary/50 transition-colors wave-motion" style={{
           animationDelay: `${index * 0.5}s`
         }}>
               <CardContent className="p-6 text-center">
