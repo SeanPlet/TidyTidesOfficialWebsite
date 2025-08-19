@@ -18,19 +18,15 @@ const Index = () => {
       
       {/* Sections */}
       <HeroSection />
+      <AboutSection />
+      <PatchNotesSection />
+      <TeamSection />
+      <ContactSection />
       
-      {/* All sections after hero share one continuous gradient */}
-      <div className="seamless-depth">
-        <AboutSection />
-        <PatchNotesSection />
-        <TeamSection />
-        <ContactSection />
-        
-        {/* Footer */}
-        <footer className="py-8 text-center text-muted-foreground border-t border-border/30">
-          <p>© 2025 'Tidy Tides Co.' All rights reserved. Made with 🩵 and ☕</p>
-        </footer>
-      </div>
+      {/* Footer */}
+      <footer className="py-8 text-center text-muted-foreground border-t border-border/30">
+        <p>© 2025 'Tidy Tides Co.' All rights reserved. Made with 🩵 and ☕</p>
+      </footer>
     </div>;
 };
 export default Index;

@@ -82,7 +82,7 @@ const PatchNotesSection = () => {
         return <Badge variant="outline">Update</Badge>;
     }
   };
-  return <section className="py-24 relative">
+  return <section className="py-24 ocean-deep relative">
       <div className="caustic-lights" />
       
       <div className="container mx-auto px-6 relative z-10">
@@ -99,7 +99,7 @@ const PatchNotesSection = () => {
 
         {/* Patch Notes */}
         <div className="max-w-4xl mx-auto space-y-8">
-          {patchNotes.map((patch, index) => <Card key={index} className="bg-card/90 border-border/30 hover:border-primary/30 transition-all duration-500 animate-fade-in group hover:shadow-xl hover:shadow-primary/20" style={{
+          {patchNotes.map((patch, index) => <Card key={index} className="underwater-glass border-border/30 hover:border-primary/30 transition-all duration-500 animate-fade-in group hover:scale-105 hover:shadow-xl hover:shadow-primary/20" style={{
           animationDelay: `${index * 0.3}s`
         }}>
               <CardHeader className="border-b border-border/20">
@@ -119,7 +119,7 @@ const PatchNotesSection = () => {
               
               <CardContent className="p-6">
                 <div className="space-y-4">
-                  {patch.changes.map((change, changeIndex) => <div key={changeIndex} className="flex items-center gap-3 p-3 rounded-lg bg-background/5 hover:bg-primary/10 transition-all duration-300 cursor-pointer hover:border-l-4 hover:border-primary">
+                  {patch.changes.map((change, changeIndex) => <div key={changeIndex} className="flex items-center gap-3 p-3 rounded-lg bg-background/5 hover:bg-primary/10 transition-all duration-300 hover:transform hover:scale-102 cursor-pointer hover:border-l-4 hover:border-primary">
                       <div className="group-hover:animate-pulse">
                         {getTypeIcon(change.type)}
                       </div>

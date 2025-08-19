@@ -21,7 +21,7 @@ const AboutSection = () => {
     title: "Whale Traversal",
     description: "Bounce on jellyfish and swing from hooks to traverse massive whales"
   }];
-  return <section className="py-24 relative">
+  return <section className="py-24 ocean-deep relative">
       <div className="caustic-lights" />
       
       <div className="container mx-auto px-6 relative z-10">
@@ -36,7 +36,7 @@ const AboutSection = () => {
         {/* Story Content */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
           <div className="space-y-6">
-            <Card className="bg-card/90 border-border/30">
+            <Card className="underwater-glass border-border/30">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold text-accent mb-4">
                   The Curse
@@ -45,7 +45,7 @@ const AboutSection = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-card/90 border-border/30">
+            <Card className="underwater-glass border-border/30">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold text-accent mb-4">
                   The Prison
@@ -67,7 +67,7 @@ const AboutSection = () => {
 
         {/* Features Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {features.map((feature, index) => <Card key={index} className="bg-card/90 border-border/30 hover:border-primary/50 transition-colors wave-motion" style={{
+          {features.map((feature, index) => <Card key={index} className="underwater-glass border-border/30 hover:border-primary/50 transition-colors wave-motion" style={{
           animationDelay: `${index * 0.5}s`
         }}>
               <CardContent className="p-6 text-center">
