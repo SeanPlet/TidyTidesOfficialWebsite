@@ -48,6 +48,7 @@ const InteractiveBubbles = () => {
     // Handle clicks
     const handleClick = (e: MouseEvent) => {
       e.preventDefault();
+      console.log('Click at:', e.clientX, e.clientY); // Debug log
       const burstCount = 5 + Math.random() * 5;
       const newClickBubbles: ClickBubble[] = [];
       
@@ -59,10 +60,15 @@ const InteractiveBubbles = () => {
         const angle = (Math.PI * 2 * i) / burstCount + Math.random() * 0.5;
         const distance = Math.random() * 30 + 10;
         
+        const bubbleX = clickX + Math.cos(angle) * distance;
+        const bubbleY = clickY + Math.sin(angle) * distance;
+        
+        console.log('Creating bubble at:', bubbleX, bubbleY); // Debug log
+        
         newClickBubbles.push({
           id: bubbleId + i,
-          x: clickX + Math.cos(angle) * distance,
-          y: clickY + Math.sin(angle) * distance,
+          x: bubbleX,
+          y: bubbleY,
           size: Math.random() * 15 + 8,
           opacity: 0.8,
           scale: 0.1,
@@ -158,7 +164,6 @@ const InteractiveBubbles = () => {
             transform: `scale(${bubble.scale})`,
             background: 'radial-gradient(circle, rgba(59, 130, 246, 0.6) 0%, rgba(59, 130, 246, 0.3) 40%, transparent 70%)',
             boxShadow: '0 0 15px rgba(59, 130, 246, 0.5), inset 0 0 8px rgba(255, 255, 255, 0.3)',
-            animation: 'bubbleRise 2s ease-out forwards',
           }}
         />
       ))}
