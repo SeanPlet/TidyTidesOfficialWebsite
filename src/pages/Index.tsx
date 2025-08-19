@@ -1,6 +1,5 @@
 import React from 'react';
 import BubbleEffect from '@/components/BubbleEffect';
-import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import TeamSection from '@/components/TeamSection';
@@ -9,9 +8,6 @@ import ContactSection from '@/components/ContactSection';
 import ScrollProgressBar from '@/components/ScrollProgressBar';
 const Index = () => {
   return <div className="min-h-screen">
-      {/* Navigation */}
-      <Navigation />
-      
       {/* Scroll Progress Bar */}
       <ScrollProgressBar />
       
@@ -19,21 +15,11 @@ const Index = () => {
       <BubbleEffect />
       
       {/* Sections */}
-      <section id="home">
-        <HeroSection />
-      </section>
-      <section id="about">
-        <AboutSection />
-      </section>
-      <section id="team">
-        <TeamSection />
-      </section>
-      <section id="patches">
-        <PatchNotesSection />
-      </section>
-      <section id="contact">
-        <ContactSection />
-      </section>
+      <HeroSection />
+      <AboutSection />
+      <TeamSection />
+      <PatchNotesSection />
+      <ContactSection />
       
       {/* Footer */}
       <footer className="py-8 text-center text-muted-foreground border-t border-border/30">
