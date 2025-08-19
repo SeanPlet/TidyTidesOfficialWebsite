@@ -49,7 +49,7 @@ const ContactSection = () => {
                 </div>
               </div>
               
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-full w-full mt-auto" onClick={() => window.open('https://discord.gg/tidytidesco', '_blank')}>
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-full w-full mt-auto" onClick={() => window.open('https://discord.gg/qJBrjPSstD', '_blank')}>
                 <ExternalLink className="mr-2 h-4 w-4" />
                 Join Discord Server
               </Button>
