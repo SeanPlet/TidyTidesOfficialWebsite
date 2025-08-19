@@ -118,14 +118,14 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
     background: linear-gradient(180deg, 
-      hsl(190 80% 75%) 0%, 
-      hsl(195 85% 65%) 15%,
-      hsl(200 90% 55%) 35%, 
-      hsl(205 85% 45%) 50%,
-      hsl(210 80% 35%) 65%, 
-      hsl(220 70% 25%) 80%, 
-      hsl(225 65% 15%) 90%,
-      hsl(230 60% 8%) 100%);
+      hsl(200 85% 65%) 0%, 
+      hsl(200 87% 58%) 15%,
+      hsl(205 88% 52%) 30%, 
+      hsl(210 85% 45%) 45%,
+      hsl(215 80% 38%) 60%, 
+      hsl(220 70% 30%) 75%, 
+      hsl(225 65% 20%) 88%,
+      hsl(230 60% 12%) 100%);
     background-attachment: fixed;
     background-size: 100% 100%;
     overflow-x: hidden;
