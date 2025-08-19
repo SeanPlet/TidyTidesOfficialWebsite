@@ -35,8 +35,8 @@ const InteractiveBubbles = () => {
           id: bubbleId,
           x: e.clientX + (Math.random() - 0.5) * 20,
           y: e.clientY + (Math.random() - 0.5) * 20,
-          size: Math.random() * 12 + 8,
-          opacity: 0.8,
+          size: Math.random() * 8 + 4,
+          opacity: 0.6,
           life: 1,
         };
         
@@ -69,8 +69,8 @@ const InteractiveBubbles = () => {
           id: bubbleId + i,
           x: bubbleX,
           y: bubbleY,
-          size: Math.random() * 20 + 12,
-          opacity: 1,
+          size: Math.random() * 15 + 8,
+          opacity: 0.8,
           scale: 0.1,
         });
       }
@@ -128,8 +128,8 @@ const InteractiveBubbles = () => {
         style={{
           left: mousePosition.x - 12,
           top: mousePosition.y - 12,
-          background: 'radial-gradient(circle, rgba(59, 130, 246, 0.5) 0%, rgba(59, 130, 246, 0.2) 50%, transparent 100%)',
-          boxShadow: '0 0 25px rgba(59, 130, 246, 0.6), inset 0 0 15px rgba(255, 255, 255, 0.3)',
+          background: 'radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, rgba(59, 130, 246, 0.1) 50%, transparent 100%)',
+          boxShadow: '0 0 20px rgba(59, 130, 246, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.2)',
         }}
       />
 
@@ -144,8 +144,8 @@ const InteractiveBubbles = () => {
             width: bubble.size,
             height: bubble.size,
             opacity: bubble.opacity,
-            background: 'radial-gradient(circle, rgba(59, 130, 246, 0.6) 0%, rgba(59, 130, 246, 0.3) 50%, transparent 100%)',
-            boxShadow: '0 0 15px rgba(59, 130, 246, 0.5), inset 0 0 8px rgba(255, 255, 255, 0.3)',
+            background: 'radial-gradient(circle, rgba(59, 130, 246, 0.4) 0%, rgba(59, 130, 246, 0.2) 50%, transparent 100%)',
+            boxShadow: '0 0 10px rgba(59, 130, 246, 0.3), inset 0 0 5px rgba(255, 255, 255, 0.2)',
           }}
         />
       ))}
@@ -162,8 +162,8 @@ const InteractiveBubbles = () => {
             height: bubble.size,
             opacity: bubble.opacity,
             transform: `scale(${bubble.scale})`,
-            background: 'radial-gradient(circle, rgba(59, 130, 246, 0.8) 0%, rgba(59, 130, 246, 0.4) 40%, transparent 70%)',
-            boxShadow: '0 0 20px rgba(59, 130, 246, 0.7), inset 0 0 12px rgba(255, 255, 255, 0.4)',
+            background: 'radial-gradient(circle, rgba(59, 130, 246, 0.6) 0%, rgba(59, 130, 246, 0.3) 40%, transparent 70%)',
+            boxShadow: '0 0 15px rgba(59, 130, 246, 0.5), inset 0 0 8px rgba(255, 255, 255, 0.3)',
           }}
         />
       ))}
