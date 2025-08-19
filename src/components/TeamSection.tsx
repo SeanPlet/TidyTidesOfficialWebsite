@@ -34,8 +34,8 @@ const TeamSection = () => {
     description: "Makes the bubbles pop and the water effects mesmerize",
     specialties: ["Particle Systems", "Lighting Effects", "Animation"]
   }];
-  return <section className="py-24 ocean-abyss relative">
-      <div className="caustic-lights" />
+  return <section className="py-24 ocean-deeper relative depth-transition">
+      <div className="caustic-deep" />
       
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}

@@ -3,8 +3,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Mail, MessageCircle, Users, Bell, Phone } from 'lucide-react';
 const ContactSection = () => {
-  return <section className="py-24 ocean-abyss relative">
-      <div className="caustic-lights" />
+  return <section className="py-24 ocean-abyss relative depth-transition">
+      <div className="caustic-deep" />
       
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}

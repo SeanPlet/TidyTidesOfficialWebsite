@@ -37,10 +37,13 @@ All colors MUST be HSL.
     --input: 220 30% 20%;
     --ring: 190 100% 60%;
 
-    /* Ocean gradients */
+    /* Ocean depth progression gradients */
     --ocean-surface: linear-gradient(180deg, hsl(190 80% 70%), hsl(200 90% 40%));
-    --ocean-deep: linear-gradient(180deg, hsl(200 90% 40%), hsl(220 70% 12%));
-    --ocean-abyss: linear-gradient(180deg, hsl(220 70% 12%), hsl(230 60% 8%));
+    --ocean-shallow: linear-gradient(180deg, hsl(200 90% 40%), hsl(210 80% 30%));
+    --ocean-medium: linear-gradient(180deg, hsl(210 80% 30%), hsl(220 70% 20%));
+    --ocean-deep: linear-gradient(180deg, hsl(220 70% 20%), hsl(225 65% 15%));
+    --ocean-deeper: linear-gradient(180deg, hsl(225 65% 15%), hsl(230 60% 10%));
+    --ocean-abyss: linear-gradient(180deg, hsl(230 60% 10%), hsl(235 55% 6%));
     
     /* Bubble and particle effects */
     --bubble-glow: 190 100% 80%;
@@ -189,17 +192,87 @@ All colors MUST be HSL.
     animation: waveMotion var(--wave-motion);
   }
 
-  /* Ocean section backgrounds */
+  /* Ocean depth progression backgrounds */
   .ocean-surface {
     background: var(--ocean-surface);
   }
 
+  .ocean-shallow {
+    background: var(--ocean-shallow);
+    position: relative;
+  }
+
+  .ocean-medium {
+    background: var(--ocean-medium);
+    position: relative;
+  }
+
   .ocean-deep {
     background: var(--ocean-deep);
+    position: relative;
+  }
+
+  .ocean-deeper {
+    background: var(--ocean-deeper);
+    position: relative;
   }
 
   .ocean-abyss {
     background: var(--ocean-abyss);
+    position: relative;
+  }
+
+  /* Depth transition effects */
+  .depth-transition::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(180deg, transparent 0%, currentColor 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Enhanced caustic light variations */
+  .caustic-shallow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(ellipse at 30% 20%, hsl(var(--caustic-light) / 0.15) 0%, transparent 60%),
+      radial-gradient(ellipse at 70% 80%, hsl(var(--caustic-light) / 0.1) 0%, transparent 50%);
+    animation: causticShimmer 6s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .caustic-medium {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(ellipse at 25% 40%, hsl(var(--caustic-light) / 0.12) 0%, transparent 55%),
+      radial-gradient(ellipse at 75% 60%, hsl(var(--caustic-light) / 0.08) 0%, transparent 45%);
+    animation: causticShimmer 8s ease-in-out infinite reverse;
+    pointer-events: none;
+  }
+
+  .caustic-deep {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(ellipse at 40% 30%, hsl(var(--caustic-light) / 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 60% 70%, hsl(var(--caustic-light) / 0.05) 0%, transparent 40%);
+    animation: causticShimmer 10s ease-in-out infinite;
+    pointer-events: none;
   }
 
   /* Caustic light effects */
