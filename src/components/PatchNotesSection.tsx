@@ -1,13 +1,9 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Calendar, Plus, Bug, Wrench, Sparkles } from 'lucide-react';
-import { useScrollShine } from '@/hooks/useScrollShine';
 const PatchNotesSection = () => {
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const { shouldShine, hasShined } = useScrollShine(titleRef);
-  
   const patchNotes = [{
     version: "0.3.2",
     date: "March 15, 2024",
@@ -93,12 +89,7 @@ const PatchNotesSection = () => {
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 
-            ref={titleRef}
-            className={`text-5xl md:text-6xl font-bold mb-6 ${
-              shouldShine ? 'text-shine-active' : hasShined ? 'text-shine-static' : 'text-primary'
-            }`}
-          >
+          <h2 className="text-5xl md:text-6xl font-bold text-primary mb-6">
             Patch Notes
           </h2>
           <div className="w-24 h-1 bg-accent mx-auto mb-8" />
