@@ -189,20 +189,55 @@ All colors MUST be HSL.
     animation: waveMotion var(--wave-motion);
   }
 
-  /* Ocean section backgrounds */
+  /* Ocean section backgrounds - unified with different overlays */
   .ocean-surface {
     background: var(--ocean-surface);
   }
 
-  .ocean-deep {
-    background: var(--ocean-deep);
-  }
-
-  .ocean-abyss {
+  .ocean-unified {
     background: var(--ocean-abyss);
+    position: relative;
   }
 
-  /* Caustic light effects */
+  /* Section-specific overlays for distinction */
+  .section-overlay-light {
+    position: relative;
+  }
+  
+  .section-overlay-light::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, hsl(var(--primary) / 0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .section-overlay-medium {
+    position: relative;
+  }
+  
+  .section-overlay-medium::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, hsl(var(--accent) / 0.03) 0%, transparent 50%, hsl(var(--secondary) / 0.03) 100%);
+    pointer-events: none;
+  }
+
+  .section-overlay-deep {
+    position: relative;
+    border-top: 1px solid hsl(var(--border) / 0.1);
+  }
+  
+  .section-overlay-deep::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at bottom, hsl(var(--muted) / 0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  /* Caustic light effects - different intensities */
   .caustic-lights {
     position: absolute;
     top: 0;
@@ -213,6 +248,33 @@ All colors MUST be HSL.
       radial-gradient(ellipse at 20% 30%, hsl(var(--caustic-light) / 0.1) 0%, transparent 50%),
       radial-gradient(ellipse at 80% 70%, hsl(var(--caustic-light) / 0.1) 0%, transparent 50%);
     animation: causticShimmer 8s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .caustic-lights-subtle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(ellipse at 30% 40%, hsl(var(--caustic-light) / 0.06) 0%, transparent 60%),
+      radial-gradient(ellipse at 70% 60%, hsl(var(--caustic-light) / 0.06) 0%, transparent 60%);
+    animation: causticShimmer 12s ease-in-out infinite reverse;
+    pointer-events: none;
+  }
+
+  .caustic-lights-intense {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(ellipse at 15% 25%, hsl(var(--caustic-light) / 0.15) 0%, transparent 45%),
+      radial-gradient(ellipse at 85% 75%, hsl(var(--caustic-light) / 0.15) 0%, transparent 45%),
+      radial-gradient(ellipse at 50% 50%, hsl(var(--primary) / 0.05) 0%, transparent 70%);
+    animation: causticShimmer 6s ease-in-out infinite;
     pointer-events: none;
   }
 
