@@ -117,7 +117,7 @@ const PatchNotesSection: React.FC<PatchNotesSectionProps> = ({ fishOffsetY = -80
                       pointer-events-none select-none
                       absolute -right-6 md:-right-10
                       w-24 md:w-36 lg:w-44
-                      z-0
+                      z-0 float-gentle
                     "
                     style={{ top: `${fishOffsetY}px` }}
                   />
