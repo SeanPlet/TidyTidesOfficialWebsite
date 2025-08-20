@@ -11,8 +11,8 @@ type ContactSectionProps = {
 };
 
 const ContactSection: React.FC<ContactSectionProps> = ({
-  discordFishX = -16,
-  discordFishY = -70,
+  discordFishX = -45,
+  discordFishY = -80,
 }) => {
   return (
     <section className="py-16 ocean-deeper relative">
