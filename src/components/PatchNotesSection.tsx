@@ -88,10 +88,22 @@ const PatchNotesSection = () => {
       
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold text-primary mb-6">
-            Patch Notes
-          </h2>
+        <div className="text-center mb-16 relative">
+          <div className="flex items-center justify-center gap-8 mb-6">
+            <img 
+              src="/lovable-uploads/d4fa9ce0-9e49-43e2-8b1d-cdf41ad0e120.png" 
+              alt="Construction worker character" 
+              className="w-24 h-24 animate-bounce hidden md:block"
+            />
+            <h2 className="text-5xl md:text-6xl font-bold text-primary">
+              Patch Notes
+            </h2>
+            <img 
+              src="/lovable-uploads/d4fa9ce0-9e49-43e2-8b1d-cdf41ad0e120.png" 
+              alt="Construction worker character" 
+              className="w-24 h-24 animate-bounce hidden md:block scale-x-[-1]"
+            />
+          </div>
           <div className="w-24 h-1 bg-accent mx-auto mb-8" />
           <p className="text-xl text-foreground/80 max-w-4xl mx-auto">
             Dive into the latest updates and improvements to your underwater cleaning adventure
