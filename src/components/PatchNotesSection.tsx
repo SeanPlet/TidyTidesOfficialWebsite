@@ -124,7 +124,7 @@ const PatchNotesSection: React.FC<PatchNotesSectionProps> = ({ fishOffsetY = -80
                   {/* Optional soft glow */}
                   <div
                     aria-hidden="true"
-                    className="absolute -right-10 w-40 h-40 md:w-56 md:h-56 rounded-full blur-2xl z-0"
+                    className="absolute -right-10 w-40 h-40 md:w-56 md:h-56 rounded-full blur-2xl z-0 float-gentle"
                     style={{
                       top: `${fishOffsetY - 20}px`,
                       background:
