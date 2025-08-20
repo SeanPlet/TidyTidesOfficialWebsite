@@ -111,27 +111,31 @@ const PatchNotesSection: React.FC<PatchNotesSectionProps> = ({
               {/* Mascot behind the FIRST card only */}
               {index === 0 && (
                 <div
-                  className="absolute top-0 left-0 pointer-events-none select-none z-0"
+                  className="absolute top-0 left-0 pointer-events-none select-none"
                   style={{ transform: `translate(${fishOffsetX}px, ${fishOffsetY}px)` }}
                 >
-                  <img
-                    src={fish}
-                    alt=""
-                    aria-hidden="true"
-                    className="w-24 md:w-36 lg:w-44 float-gentle"
-                  />
-                  <div
-                    aria-hidden="true"
-                    className="rounded-full blur-2xl float-gentle"
-                    style={{
-                      width: '14rem',
-                      height: '14rem',
-                      marginTop: '-1.25rem',
-                      marginLeft: '-0.625rem',
-                      background:
-                        'radial-gradient(closest-side, rgba(59,130,246,0.32), rgba(59,130,246,0))',
-                    }}
-                  />
+                  <div className="relative z-0">
+                    {/* Glow BEHIND the fish (no animation) */}
+                    <div
+                      aria-hidden="true"
+                      className="absolute -z-10 rounded-full blur-2xl"
+                      style={{
+                        width: '12rem',
+                        height: '12rem',
+                        top: '-1.5rem',
+                        left: '-1.25rem',
+                        background:
+                          'radial-gradient(closest-side, rgba(240, 225, 12, 0.55), rgba(147,197,253,0))',
+                      }}
+                    />
+                    {/* Fish ABOVE the glow */}
+                    <img
+                      src={fish}
+                      alt=""
+                      aria-hidden="true"
+                      className="relative z-10 w-24 md:w-32 lg:w-40 float-gentle"
+                    />
+                  </div>
                 </div>
               )}
 

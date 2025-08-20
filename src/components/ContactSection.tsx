@@ -34,30 +34,31 @@ const ContactSection: React.FC<ContactSectionProps> = ({
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
           {/* Discord */}
           <div className="relative">
-            {/* Wrapper applies base offset; inner elements animate up/down */}
-            <div
-              className="absolute top-0 left-0 pointer-events-none select-none z-0"
-              style={{ transform: `translate(${discordFishX}px, ${discordFishY}px)` }}
-            >
-              <img
-                src={contactUsFish}
-                alt=""
-                aria-hidden="true"
-                className="w-24 md:w-32 lg:w-40 float-gentle"
-              />
-              {/* Optional soft glow that floats with the fish */}
-              <div
-                aria-hidden="true"
-                className="rounded-full blur-2xl float-gentle"
-                style={{
-                  width: '12rem',
-                  height: '12rem',
-                  marginTop: '-1.25rem',
-                  marginLeft: '-0.625rem',
-                  background:
-                    'radial-gradient(closest-side, rgba(59,130,246,0.32), rgba(59,130,246,0))',
-                }}
-              />
+            {/* Wrapper applies base offset; inner elements float, glow sits behind */}
+            <div className="absolute top-0 left-0 pointer-events-none select-none"
+                 style={{ transform: `translate(${discordFishX}px, ${discordFishY}px)` }}>
+              <div className="relative z-0">
+                {/* Glow BEHIND the fish */}
+                <div
+                  aria-hidden="true"
+                  className="absolute -z-10 rounded-full blur-2xl float-gentle"
+                  style={{
+                    width: '12rem',
+                    height: '12rem',
+                    top: '-1.25rem',
+                    left: '-1.75rem',
+                    background:
+                      'radial-gradient(closest-side, rgba(59,130,246,0.32), rgba(59,130,246,0))',
+                  }}
+                />
+                {/* Fish image ABOVE the glow */}
+                <img
+                  src={contactUsFish}
+                  alt=""
+                  aria-hidden="true"
+                  className="relative z-10 w-24 md:w-32 lg:w-40 float-gentle"
+                />
+              </div>
             </div>
 
             <Card className="relative z-10 underwater-glass border-border/30 hover:border-primary/50 transition-all duration-300 flex flex-col hover:scale-105 hover:shadow-xl hover:shadow-primary/20">
