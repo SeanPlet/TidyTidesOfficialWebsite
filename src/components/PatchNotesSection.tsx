@@ -100,18 +100,10 @@ const PatchNotesSection = () => {
 
         {/* Patch Notes */}
         <div className="max-w-4xl mx-auto space-y-8">
-          {patchNotes.map((patch, index) => <Card key={index} className="underwater-glass border-border/30 hover:border-primary/30 transition-all duration-500 animate-fade-in group hover:scale-105 hover:shadow-xl hover:shadow-primary/20 relative" style={{
+          {patchNotes.map((patch, index) => <Card key={index} className="underwater-glass border-border/30 hover:border-primary/30 transition-all duration-500 animate-fade-in group hover:scale-105 hover:shadow-xl hover:shadow-primary/20" style={{
           animationDelay: `${index * 0.3}s`
         }}>
-              {index === 0 && (
-                <img 
-                  src="/lovable-uploads/d275d2ca-a463-47fc-a823-164db3e34d3e.png" 
-                  alt="Construction worker penguin" 
-                  className="absolute -top-4 -right-4 w-20 h-20 z-0 animate-bounce opacity-80"
-                  style={{ animationDuration: '3s' }}
-                />
-              )}
-              <CardHeader className="border-b border-border/20 relative z-10">
+              <CardHeader className="border-b border-border/20">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                   <CardTitle className="text-2xl font-bold text-primary">
                     Version {patch.version}
