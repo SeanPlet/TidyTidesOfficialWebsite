@@ -115,7 +115,7 @@ const PatchNotesSection: React.FC<PatchNotesSectionProps> = ({ fishOffsetY = -80
                     aria-hidden="true"
                     className="
                       pointer-events-none select-none
-                      absolute -right-2 md:-right-6
+                      absolute -right-10 md:-right-14
                       w-24 md:w-36 lg:w-44
                       z-0 float-gentle
                     "
