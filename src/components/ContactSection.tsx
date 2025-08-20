@@ -11,8 +11,8 @@ type ContactSectionProps = {
 };
 
 const ContactSection: React.FC<ContactSectionProps> = ({
-  discordFishX = -45,
-  discordFishY = -80,
+  discordFishX = -50,
+  discordFishY = -100,
 }) => {
   return (
     <section className="py-16 ocean-deeper relative">
@@ -34,28 +34,31 @@ const ContactSection: React.FC<ContactSectionProps> = ({
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
           {/* Discord */}
           <div className="relative">
-            {/* Decorative fish in the top-left of the Discord card */}
-            <img
-              src={contactUsFish}
-              alt=""
-              aria-hidden="true"
-              className="absolute top-0 left-0 w-24 md:w-32 lg:w-40 pointer-events-none select-none z-0"
-              style={{
-                transform: `translate(${discordFishX}px, ${discordFishY}px)`,
-              }}
-            />
-            {/* Optional soft glow */}
+            {/* Wrapper applies base offset; inner elements animate up/down */}
             <div
-              aria-hidden="true"
-              className="absolute top-0 left-0 rounded-full blur-2xl z-0"
-              style={{
-                width: '12rem',
-                height: '12rem',
-                transform: `translate(${discordFishX - 10}px, ${discordFishY - 20}px)`,
-                background:
-                  'radial-gradient(closest-side, rgba(59,130,246,0.32), rgba(59,130,246,0))',
-              }}
-            />
+              className="absolute top-0 left-0 pointer-events-none select-none z-0"
+              style={{ transform: `translate(${discordFishX}px, ${discordFishY}px)` }}
+            >
+              <img
+                src={contactUsFish}
+                alt=""
+                aria-hidden="true"
+                className="w-24 md:w-32 lg:w-40 float-gentle"
+              />
+              {/* Optional soft glow that floats with the fish */}
+              <div
+                aria-hidden="true"
+                className="rounded-full blur-2xl float-gentle"
+                style={{
+                  width: '12rem',
+                  height: '12rem',
+                  marginTop: '-1.25rem',
+                  marginLeft: '-0.625rem',
+                  background:
+                    'radial-gradient(closest-side, rgba(59,130,246,0.32), rgba(59,130,246,0))',
+                }}
+              />
+            </div>
 
             <Card className="relative z-10 underwater-glass border-border/30 hover:border-primary/50 transition-all duration-300 flex flex-col hover:scale-105 hover:shadow-xl hover:shadow-primary/20">
               <CardContent className="p-8 text-center flex flex-col flex-1">

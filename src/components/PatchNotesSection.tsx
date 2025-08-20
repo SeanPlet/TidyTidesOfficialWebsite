@@ -7,10 +7,14 @@ import { Calendar, Plus, Bug, Wrench, Sparkles } from 'lucide-react';
 import fish from '@/assets/PatchNotesFish.png';
 
 type PatchNotesSectionProps = {
+  fishOffsetX?: number;
   fishOffsetY?: number;
 };
 
-const PatchNotesSection: React.FC<PatchNotesSectionProps> = ({ fishOffsetY = -80 }) => {
+const PatchNotesSection: React.FC<PatchNotesSectionProps> = ({
+  fishOffsetX = 785,
+  fishOffsetY = -90,
+}) => {
   const patchNotes = [
     {
       version: '0.3.2',
@@ -106,20 +110,29 @@ const PatchNotesSection: React.FC<PatchNotesSectionProps> = ({ fishOffsetY = -80
             <div key={index} className="relative">
               {/* Mascot behind the FIRST card only */}
               {index === 0 && (
-                <>
+                <div
+                  className="absolute top-0 left-0 pointer-events-none select-none z-0"
+                  style={{ transform: `translate(${fishOffsetX}px, ${fishOffsetY}px)` }}
+                >
                   <img
                     src={fish}
                     alt=""
                     aria-hidden="true"
-                    className="
-                      pointer-events-none select-none
-                      absolute -right-10 md:-right-14
-                      w-24 md:w-36 lg:w-44
-                      z-0 float-gentle
-                    "
-                    style={{ top: `${fishOffsetY - 10}px` }}
+                    className="w-24 md:w-36 lg:w-44 float-gentle"
                   />
-                </>
+                  <div
+                    aria-hidden="true"
+                    className="rounded-full blur-2xl float-gentle"
+                    style={{
+                      width: '14rem',
+                      height: '14rem',
+                      marginTop: '-1.25rem',
+                      marginLeft: '-0.625rem',
+                      background:
+                        'radial-gradient(closest-side, rgba(59,130,246,0.32), rgba(59,130,246,0))',
+                    }}
+                  />
+                </div>
               )}
 
               <Card
@@ -175,7 +188,5 @@ const PatchNotesSection: React.FC<PatchNotesSectionProps> = ({ fishOffsetY = -80
     </section>
   );
 };
-
-
 
 export default PatchNotesSection;
