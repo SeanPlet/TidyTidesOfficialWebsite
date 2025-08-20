@@ -39,7 +39,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
               src={contactUsFish}
               alt=""
               aria-hidden="true"
-              className="absolute top-0 left-0 w-24 md:w-32 lg:w-40 pointer-events-none select-none z-0 float-gentle"
+              className="absolute top-0 left-0 w-24 md:w-32 lg:w-40 pointer-events-none select-none z-0"
               style={{
                 transform: `translate(${discordFishX}px, ${discordFishY}px)`,
               }}
