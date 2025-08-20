@@ -173,17 +173,6 @@ All colors MUST be HSL.
     }
   }
 
-  @keyframes slowBounce {
-    0%, 100% {
-      transform: translateY(0);
-      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    }
-    50% {
-      transform: translateY(-25%);
-      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-    }
-  }
-
   /* Bubble component */
   .bubble {
     position: absolute;
@@ -201,11 +190,6 @@ All colors MUST be HSL.
   /* Wave motion */
   .wave-motion {
     animation: waveMotion var(--wave-motion);
-  }
-
-  /* Slow bounce animation */
-  .animate-slow-bounce {
-    animation: slowBounce 3s infinite;
   }
 
   /* Ocean depth progression backgrounds */
