@@ -119,7 +119,7 @@ const PatchNotesSection: React.FC<PatchNotesSectionProps> = ({ fishOffsetY = -80
                       w-24 md:w-36 lg:w-44
                       z-0 float-gentle
                     "
-                    style={{ top: `${fishOffsetY}px` }}
+                    style={{ top: `${fishOffsetY - 10}px` }}
                   />
                   {/* Optional soft glow */}
                   <div
