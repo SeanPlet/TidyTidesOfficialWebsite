@@ -1,8 +1,27 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Mail, MessageCircle, Users, Bell, Phone } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
+import { ExternalLink, Mail, MessageCircle, Users, Bell, Phone, Copy } from 'lucide-react';
 const ContactSection = () => {
+  const { toast } = useToast();
+
+  const copyEmailToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText('tidytidescogame@gmail.com');
+      toast({
+        title: "Email copied!",
+        description: "tidytidescogame@gmail.com has been copied to your clipboard",
+      });
+    } catch (err) {
+      toast({
+        title: "Copy failed",
+        description: "Please manually copy: tidytidescogame@gmail.com",
+        variant: "destructive",
+      });
+    }
+  };
+
   return <section className="py-16 ocean-deeper relative">
       <div className="caustic-deep" />
       
@@ -83,9 +102,9 @@ const ContactSection = () => {
                 </div>
               </div>
               
-              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground px-6 py-3 rounded-full w-full mt-auto" onClick={() => window.open('mailto:tidytidescogame@gmail.com', '_blank')}>
-                <Mail className="mr-2 h-4 w-4" />
-                Email Us
+              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground px-6 py-3 rounded-full w-full mt-auto" onClick={copyEmailToClipboard}>
+                <Copy className="mr-2 h-4 w-4" />
+                Copy Email
               </Button>
             </CardContent>
           </Card>
