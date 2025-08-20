@@ -1,25 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
-import { ExternalLink, Mail, MessageCircle, Users, Bell, Phone, Copy } from 'lucide-react';
+import { ExternalLink, Mail, MessageCircle, Users, Bell, Phone, Copy, ChevronDown } from 'lucide-react';
 const ContactSection = () => {
   const { toast } = useToast();
+  const [showEmailDropdown, setShowEmailDropdown] = useState(false);
+  const email = 'tidytidescogame@gmail.com';
 
   const copyEmailToClipboard = async () => {
     try {
-      await navigator.clipboard.writeText('tidytidescogame@gmail.com');
+      await navigator.clipboard.writeText(email);
       toast({
         title: "Email copied!",
-        description: "tidytidescogame@gmail.com has been copied to your clipboard",
+        description: `${email} has been copied to your clipboard`,
       });
     } catch (err) {
       toast({
         title: "Copy failed",
-        description: "Please manually copy: tidytidescogame@gmail.com",
+        description: `Please manually copy: ${email}`,
         variant: "destructive",
       });
     }
+    setShowEmailDropdown(false);
+  };
+
+  const openEmailClient = (client: string) => {
+    const subject = encodeURIComponent('Hello from Tidy Tides Website');
+    let url = '';
+    
+    switch (client) {
+      case 'gmail':
+        url = `https://mail.google.com/mail/?view=cm&to=${email}&su=${subject}`;
+        break;
+      case 'outlook':
+        url = `https://outlook.live.com/mail/0/deeplink/compose?to=${email}&subject=${subject}`;
+        break;
+      case 'yahoo':
+        url = `https://compose.mail.yahoo.com/?to=${email}&subject=${subject}`;
+        break;
+      case 'default':
+        url = `mailto:${email}?subject=${subject}`;
+        break;
+    }
+    
+    if (url) {
+      window.open(url, '_blank');
+    }
+    setShowEmailDropdown(false);
   };
 
   return <section className="py-16 ocean-deeper relative">
@@ -102,10 +130,58 @@ const ContactSection = () => {
                 </div>
               </div>
               
-              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground px-6 py-3 rounded-full w-full mt-auto" onClick={copyEmailToClipboard}>
-                <Copy className="mr-2 h-4 w-4" />
-                Copy Email
-              </Button>
+              <div className="relative">
+                <Button 
+                  className="bg-accent hover:bg-accent/90 text-accent-foreground px-6 py-3 rounded-full w-full mt-auto" 
+                  onClick={() => setShowEmailDropdown(!showEmailDropdown)}
+                >
+                  <Mail className="mr-2 h-4 w-4" />
+                  Email Us
+                  <ChevronDown className="ml-2 h-4 w-4" />
+                </Button>
+                
+                {showEmailDropdown && (
+                  <div className="absolute bottom-full mb-2 left-0 right-0 bg-card border border-border rounded-lg shadow-lg z-50">
+                    <div className="p-2 space-y-1">
+                      <button 
+                        onClick={() => openEmailClient('gmail')}
+                        className="w-full text-left px-3 py-2 text-sm hover:bg-accent/10 rounded-md transition-colors flex items-center gap-2"
+                      >
+                        <Mail className="h-4 w-4 text-accent" />
+                        Open in Gmail
+                      </button>
+                      <button 
+                        onClick={() => openEmailClient('outlook')}
+                        className="w-full text-left px-3 py-2 text-sm hover:bg-accent/10 rounded-md transition-colors flex items-center gap-2"
+                      >
+                        <Mail className="h-4 w-4 text-accent" />
+                        Open in Outlook
+                      </button>
+                      <button 
+                        onClick={() => openEmailClient('yahoo')}
+                        className="w-full text-left px-3 py-2 text-sm hover:bg-accent/10 rounded-md transition-colors flex items-center gap-2"
+                      >
+                        <Mail className="h-4 w-4 text-accent" />
+                        Open in Yahoo Mail
+                      </button>
+                      <button 
+                        onClick={() => openEmailClient('default')}
+                        className="w-full text-left px-3 py-2 text-sm hover:bg-accent/10 rounded-md transition-colors flex items-center gap-2"
+                      >
+                        <ExternalLink className="h-4 w-4 text-accent" />
+                        Default Email App
+                      </button>
+                      <button 
+                        onClick={copyEmailToClipboard}
+                        className="w-full text-left px-3 py-2 text-sm hover:bg-accent/10 rounded-md transition-colors flex items-center gap-2"
+                      >
+                        <Copy className="h-4 w-4 text-accent" />
+                        Copy Email Address
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
             </CardContent>
           </Card>
         </div>
