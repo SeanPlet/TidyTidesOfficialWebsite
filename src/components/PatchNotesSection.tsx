@@ -104,7 +104,7 @@ const PatchNotesSection = () => {
           <img 
             src="/lovable-uploads/d4fa9ce0-9e49-43e2-8b1d-cdf41ad0e120.png" 
             alt="Construction worker character" 
-            className="absolute -top-12 -right-8 w-32 h-32 animate-bounce opacity-80 z-0 hidden lg:block"
+            className="absolute -top-12 -right-16 w-32 h-32 animate-bounce opacity-80 z-0 hidden lg:block"
           />
           
           {patchNotes.map((patch, index) => <Card key={index} className="underwater-glass border-border/30 hover:border-primary/30 transition-all duration-500 animate-fade-in group hover:scale-105 hover:shadow-xl hover:shadow-primary/20 relative z-10" style={{
