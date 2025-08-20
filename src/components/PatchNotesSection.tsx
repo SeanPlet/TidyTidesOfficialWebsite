@@ -86,6 +86,15 @@ const PatchNotesSection = () => {
   return <section className="py-16 ocean-medium relative">
       <div className="caustic-medium" />
       
+      {/* Construction Worker Character */}
+      <div className="absolute top-8 right-8 z-20 animate-bounce">
+        <img 
+          src="/lovable-uploads/bff4146f-b0fe-45b9-807a-8764a6f1b5d3.png" 
+          alt="Construction worker character" 
+          className="w-20 h-20 md:w-24 md:h-24 drop-shadow-lg"
+        />
+      </div>
+      
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
