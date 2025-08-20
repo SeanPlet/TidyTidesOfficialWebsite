@@ -244,8 +244,10 @@ All colors MUST be HSL.
     right: 0;
     bottom: 0;
     background: 
-      radial-gradient(ellipse at 25% 40%, hsl(var(--caustic-light) / 0.12) 0%, transparent 55%),
-      radial-gradient(ellipse at 75% 60%, hsl(var(--caustic-light) / 0.08) 0%, transparent 45%);
+      radial-gradient(ellipse at 15% 25%, hsl(var(--caustic-light) / 0.12) 0%, transparent 55%),
+      radial-gradient(ellipse at 45% 70%, hsl(var(--caustic-light) / 0.08) 0%, transparent 45%),
+      radial-gradient(ellipse at 35% 15%, hsl(var(--caustic-light) / 0.06) 0%, transparent 40%),
+      radial-gradient(ellipse at 60% 45%, hsl(var(--caustic-light) / 0.07) 0%, transparent 50%);
     animation: causticShimmer 8s ease-in-out infinite reverse;
     pointer-events: none;
   }
