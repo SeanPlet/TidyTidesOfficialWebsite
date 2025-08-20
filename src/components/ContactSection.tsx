@@ -106,6 +106,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
         {/* Newsletter Signup */}
         
       </div>
-    </section>;
+    </section>
+  );
 };
 export default ContactSection;
