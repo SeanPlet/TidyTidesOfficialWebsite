@@ -108,24 +108,22 @@ const PatchNotesSection: React.FC<PatchNotesSectionProps> = ({
         <div className="max-w-4xl mx-auto space-y-8">
           {patchNotes.map((patch, index) => (
             <div key={index} className="relative">
-              {/* Mascot behind the FIRST card only - responsive positioning */}
+              {/* Mascot behind the FIRST card only */}
               {index === 0 && (
                 <div
-                  className="absolute top-0 left-0 pointer-events-none select-none hidden lg:block"
-                  style={{ 
-                    transform: `translate(calc(${fishOffsetX}px * 0.9), ${fishOffsetY}px)` 
-                  }}
+                  className="absolute top-0 left-0 pointer-events-none select-none"
+                  style={{ transform: `translate(${fishOffsetX}px, ${fishOffsetY}px)` }}
                 >
-                  <div className="relative z-0 xl:transform xl:scale-110">
+                  <div className="relative z-0">
                     {/* Glow BEHIND the fish (no animation) */}
                     <div
                       aria-hidden="true"
                       className="absolute -z-10 rounded-full blur-2xl"
                       style={{
-                        width: '8rem',
-                        height: '8rem',
-                        top: '-1rem',
-                        left: '-1rem',
+                        width: '12rem',
+                        height: '12rem',
+                        top: '-1.5rem',
+                        left: '-1.25rem',
                         background:
                           'radial-gradient(closest-side, rgba(217, 240, 12, 0.55), rgba(147,197,253,0))',
                       }}
@@ -135,7 +133,7 @@ const PatchNotesSection: React.FC<PatchNotesSectionProps> = ({
                       src={fish}
                       alt=""
                       aria-hidden="true"
-                      className="relative z-10 w-20 lg:w-24 xl:w-32 float-gentle"
+                      className="relative z-10 w-24 md:w-32 lg:w-40 float-gentle"
                     />
                   </div>
                 </div>
