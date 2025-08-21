@@ -4,7 +4,6 @@ import InteractiveBubbles from '@/components/InteractiveBubbles';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import TeamSection from '@/components/TeamSection';
-import RoadmapSection from '@/components/RoadmapSection';
 import PatchNotesSection from '@/components/PatchNotesSection';
 import ContactSection from '@/components/ContactSection';
 import ScrollProgressBar from '@/components/ScrollProgressBar';
@@ -22,7 +21,6 @@ const Index = () => {
       <AboutSection />
       <PatchNotesSection />
       <TeamSection />
-      <RoadmapSection />
       <ContactSection />
       
       {/* Footer */}
