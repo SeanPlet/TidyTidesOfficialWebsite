@@ -125,7 +125,7 @@ const PatchNotesSection: React.FC<PatchNotesSectionProps> = ({
                         top: '-1.5rem',
                         left: '-1.25rem',
                         background:
-                          'radial-gradient(closest-side, rgba(240, 225, 12, 0.55), rgba(147, 197, 253, 0));',
+                          'radial-gradient(closest-side, rgba(217, 240, 12, 0.55), rgba(147,197,253,0))',
                       }}
                     />
                     {/* Fish ABOVE the glow */}
