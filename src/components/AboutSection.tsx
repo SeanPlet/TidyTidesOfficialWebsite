@@ -1,8 +1,7 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Users, Fish, Timer, Wrench } from 'lucide-react';
-import cleaningCrew from '@/assets/cleaning-crew.jpg';
-import whaleClient from '@/assets/whale-client.jpg';
+
 const AboutSection = () => {
   const features = [{
     icon: Users,
@@ -55,10 +54,7 @@ const AboutSection = () => {
                 </p>
               </CardContent>
             </Card>)}
-        </div>
-
-        {/* Whale Client Showcase */}
-        
+        </div>        
       </div>
     </section>;
 };

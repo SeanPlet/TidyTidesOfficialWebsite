@@ -48,7 +48,7 @@ const InteractiveBubbles = () => {
     // Handle clicks
     const handleClick = (e: MouseEvent) => {
       e.preventDefault();
-      console.log('Click at:', e.clientX, e.clientY); // Debug log
+      console.log('Click at:', e.clientX, e.clientY); 
       const burstCount = 5 + Math.random() * 5;
       const newClickBubbles: ClickBubble[] = [];
       
@@ -63,7 +63,7 @@ const InteractiveBubbles = () => {
         const bubbleX = clickX + Math.cos(angle) * distance;
         const bubbleY = clickY + Math.sin(angle) * distance;
         
-        console.log('Creating bubble at:', bubbleX, bubbleY); // Debug log
+        console.log('Creating bubble at:', bubbleX, bubbleY);
         
         newClickBubbles.push({
           id: bubbleId + i,

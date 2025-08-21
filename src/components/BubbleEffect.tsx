@@ -12,37 +12,33 @@ const BubbleEffect = () => {
   const [bubbles, setBubbles] = useState<Bubble[]>([]);
 
   useEffect(() => {
-    // Initialize with some bubbles with staggered starts
     const initialBubbles: Bubble[] = [];
     for (let i = 0; i < 15; i++) {
       initialBubbles.push({
         id: Date.now() + i,
-        left: Math.random() * 100,
+        left: Math.random() * 500,
         size: Math.random() * 20 + 10,
-        delay: Math.random() * 4, // Shorter initial delay
+        delay: Math.random() * 4,
         duration: Math.random() * 4 + 6,
       });
     }
     setBubbles(initialBubbles);
 
-    // Continuously add new bubbles to maintain seamless flow
     const addBubble = () => {
       setBubbles(prev => {
-        // Remove old bubbles and add a new one
-        const activeBubbles = prev.filter((_, index) => index < 20); // Keep max 20 bubbles
+        const activeBubbles = prev.filter((_, index) => index < 20);
         const newBubble: Bubble = {
           id: Date.now() + Math.random(),
           left: Math.random() * 100,
           size: Math.random() * 20 + 10,
-          delay: 0, // Start immediately
+          delay: 0,
           duration: Math.random() * 4 + 6,
         };
         return [...activeBubbles, newBubble];
       });
     };
 
-    // Add a new bubble every 800ms for continuous flow
-    const interval = setInterval(addBubble, 800);
+    const interval = setInterval(addBubble, 600);
     return () => clearInterval(interval);
   }, []);
 

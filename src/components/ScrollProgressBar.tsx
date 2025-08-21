@@ -12,7 +12,7 @@ const ScrollProgressBar = () => {
     };
 
     window.addEventListener('scroll', updateScrollProgress);
-    updateScrollProgress(); // Initial calculation
+    updateScrollProgress();
 
     return () => window.removeEventListener('scroll', updateScrollProgress);
   }, []);
