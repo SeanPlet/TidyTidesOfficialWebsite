@@ -113,7 +113,7 @@ const PatchNotesSection: React.FC<PatchNotesSectionProps> = ({
                 <div
                   className="absolute top-0 left-0 pointer-events-none select-none hidden lg:block"
                   style={{ 
-                    transform: `translate(calc(${fishOffsetX}px * 0.6), ${fishOffsetY}px)` 
+                    transform: `translate(calc(${fishOffsetX}px * 0.9), ${fishOffsetY}px)` 
                   }}
                 >
                   <div className="relative z-0 xl:transform xl:scale-110">
