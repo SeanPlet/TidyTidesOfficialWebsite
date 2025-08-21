@@ -8,7 +8,7 @@ import PatchNotesSection from '@/components/PatchNotesSection';
 import ContactSection from '@/components/ContactSection';
 import ScrollProgressBar from '@/components/ScrollProgressBar';
 const Index = () => {
-  return <div className="min-h-screen">
+  return <div className="min-h-screen overflow-x-hidden">
       {/* Scroll Progress Bar */}
       <ScrollProgressBar />
       

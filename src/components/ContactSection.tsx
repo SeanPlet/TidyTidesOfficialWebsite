@@ -15,13 +15,13 @@ const ContactSection: React.FC<ContactSectionProps> = ({
   discordFishY = -100,
 }) => {
   return (
-    <section className="py-16 ocean-deeper relative">
+    <section className="py-16 ocean-deeper relative overflow-hidden">
       <div className="caustic-deep" />
       
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold text-primary mb-6">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold text-primary mb-6 break-words">
             Stay Connected
           </h2>
           <div className="w-24 h-1 bg-accent mx-auto mb-8" />
