@@ -57,6 +57,10 @@ const TeamSection = () => {
                   <member.icon className="h-8 w-8 text-accent" />
                 </div>
                 
+                {/* Small circle with same icon in top right */}
+                <div className="absolute -top-1 -right-1 w-6 h-6 bg-accent/30 rounded-full flex items-center justify-center border border-accent/50">
+                  <member.icon className="h-3 w-3 text-accent" />
+                </div>
               </div>
               
               <div className="text-center">
