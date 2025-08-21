@@ -35,7 +35,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
           {/* Discord */}
           <div className="relative">
             {/* Wrapper applies base offset; inner elements float, glow sits behind */}
-            <div className="absolute top-0 left-0 pointer-events-none select-none"
+            <div className="absolute top-0 left-0 pointer-events-none select-none hidden md:block"
                  style={{ transform: `translate(${discordFishX}px, ${discordFishY}px)` }}>
               <div className="relative z-0">
                 {/* Glow BEHIND the fish */}

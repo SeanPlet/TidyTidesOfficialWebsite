@@ -111,7 +111,7 @@ const PatchNotesSection: React.FC<PatchNotesSectionProps> = ({
               {/* Mascot behind the FIRST card only */}
               {index === 0 && (
                 <div
-                  className="absolute top-0 left-0 pointer-events-none select-none"
+                  className="absolute top-0 left-0 pointer-events-none select-none hidden md:block"
                   style={{ transform: `translate(${fishOffsetX}px, ${fishOffsetY}px)` }}
                 >
                   <div className="relative z-0">
