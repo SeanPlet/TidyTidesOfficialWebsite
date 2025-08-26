@@ -45,11 +45,15 @@ const AboutSection = () => {
             <div key={index} className="relative">
               {/* Background image for first card */}
               {index === 0 && (
-                <img 
-                  src="/lovable-uploads/42760621-1ed0-4d02-a1e0-e44d76b90546.png" 
-                  alt="Character illustration" 
-                  className="absolute -top-12 left-1/2 transform -translate-x-1/2 w-32 h-auto object-contain z-0 opacity-80"
-                />
+                <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 z-0">
+                  {/* Glow background */}
+                  <div className="absolute inset-0 bg-gradient-radial from-primary/30 via-primary/10 to-transparent blur-xl scale-150" />
+                  <img 
+                    src="/lovable-uploads/42760621-1ed0-4d02-a1e0-e44d76b90546.png" 
+                    alt="Character illustration" 
+                    className="relative w-32 h-auto object-contain opacity-90"
+                  />
+                </div>
               )}
               <Card className="underwater-glass border-border/30 hover:border-primary/50 transition-colors wave-motion relative z-10" style={{
                 animationDelay: `${index * 0.5}s`
