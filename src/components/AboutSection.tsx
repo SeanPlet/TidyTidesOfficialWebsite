@@ -3,26 +3,33 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Users, Fish, Timer, Wrench } from 'lucide-react';
 
 const AboutSection = () => {
-  const features = [{
-    icon: Users,
-    title: "4-Player Co-op",
-    description: "Team up with friends to tackle the messiest whales in the ocean"
-  }, {
-    icon: Timer,
-    title: "Fast-Paced Action",
-    description: "Race against time to scrub away grime and earn your freedom"
-  }, {
-    icon: Wrench,
-    title: "Tool Time",
-    description: "The ocean's messes aren't alike, each needs the right tool"
-  }, {
-    icon: Fish,
-    title: "Whale Traversal",
-    description: "Bounce on jellyfish and swing from hooks to traverse massive whales"
-  }];
-  return <section className="py-16 ocean-shallow relative">
+  const features = [
+    {
+      icon: Users,
+      title: "4-Player Co-op",
+      description: "Team up with friends to tackle the messiest whales in the ocean"
+    },
+    {
+      icon: Timer,
+      title: "Fast-Paced Action",
+      description: "Race against time to scrub away grime and earn your freedom"
+    },
+    {
+      icon: Wrench,
+      title: "Tool Time",
+      description: "The ocean's messes aren't alike, each needs the right tool"
+    },
+    {
+      icon: Fish,
+      title: "Whale Traversal",
+      description: "Bounce on jellyfish and swing from hooks to traverse massive whales"
+    }
+  ];
+
+  return (
+    <section className="py-16 ocean-shallow relative overflow-hidden">
       <div className="caustic-shallow" />
-      
+
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -42,37 +49,52 @@ const AboutSection = () => {
         {/* Features Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {features.map((feature, index) => (
-            <div key={index} className="relative">
-              {/* Background image for first card */}
+            <div key={index} className="relative overflow-visible">
+              {/* Mascot behind the first card */}
               {index === 0 && (
-                <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 z-0">
-                  {/* Glow background */}
-                  <div className="absolute inset-0 bg-gradient-radial from-primary/30 via-primary/10 to-transparent blur-xl scale-150" />
-                  <img 
-                    src="/lovable-uploads/42760621-1ed0-4d02-a1e0-e44d76b90546.png" 
-                    alt="Character illustration" 
-                    className="relative w-32 h-auto object-contain opacity-90 wave-motion"
-                    style={{ animationDelay: '0.5s' }}
-                  />
+                <div className="absolute lg:-top-28  sm:-top-24 left-1/2 transform -translate-x-1/2 z-0 pointer-events-none select-none hidden sm:block">
+                  <div className="relative z-0">
+                    {/* Glow behind the fish */}
+                    <div
+                      aria-hidden="true"
+                      className="absolute -z-10 rounded-full blur-2xl"
+                      style={{
+                        width: '24rem',
+                        height: '20rem',
+                        top: '-2rem',
+                        left: '-4rem',
+                        background:
+                          'radial-gradient(closest-side, rgba(255,255,255,0.9), rgba(147,197,253,0.6), rgba(147,197,253,0)'
+                      }}
+                    />
+                    {/* Fish ABOVE the glow */}
+                    <img
+                      src="src/assets/FourPlayerFish.png"
+                      alt="Character illustration"
+                      className="relative z-10 w-56 h-auto object-contain opacity-90 float-gentle max-w-none"
+                    />
+                  </div>
                 </div>
               )}
-              <Card className="underwater-glass border-border/30 hover:border-primary/50 transition-colors wave-motion relative z-10" style={{
-                animationDelay: `${index * 0.5}s`
-              }}>
+
+              <Card
+                className="underwater-glass border-border/30 hover:border-primary/50 transition-colors wave-motion relative z-10 overflow-visible"
+                style={{ animationDelay: `${index * 0.5}s` }}
+              >
                 <CardContent className="p-6 text-center">
                   <feature.icon className="h-12 w-12 text-accent mx-auto mb-4" />
                   <h4 className="text-xl font-bold text-primary mb-2">
                     {feature.title}
                   </h4>
-                  <p className="text-foreground/80">
-                    {feature.description}
-                  </p>
+                  <p className="text-foreground/80">{feature.description}</p>
                 </CardContent>
               </Card>
             </div>
           ))}
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default AboutSection;
