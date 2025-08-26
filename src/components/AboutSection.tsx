@@ -51,7 +51,8 @@ const AboutSection = () => {
                   <img 
                     src="/lovable-uploads/42760621-1ed0-4d02-a1e0-e44d76b90546.png" 
                     alt="Character illustration" 
-                    className="relative w-32 h-auto object-contain opacity-90"
+                    className="relative w-32 h-auto object-contain opacity-90 wave-motion"
+                    style={{ animationDelay: '0.5s' }}
                   />
                 </div>
               )}
