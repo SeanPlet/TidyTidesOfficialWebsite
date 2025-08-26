@@ -2,6 +2,8 @@ import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Users, Fish, Timer, Wrench } from 'lucide-react';
 
+import fourFishCharacters from '@/assets/FourPlayerFish.png';
+
 const AboutSection = () => {
   const features = [
     {
@@ -69,7 +71,7 @@ const AboutSection = () => {
                     />
                     {/* Fish ABOVE the glow */}
                     <img
-                      src="src/assets/FourPlayerFish.png"
+                      src={fourFishCharacters}
                       alt="Character illustration"
                       className="relative z-10 w-56 h-auto object-contain opacity-90 float-gentle max-w-none"
                     />

@@ -2,6 +2,9 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Play } from 'lucide-react';
 import underwaterHero from '@/assets/underwater-hero.jpg';
+
+import tidyTidesLogo from '@/assets/TidyTidesLogo.png';
+
 const HeroSection = () => {
   return <section className="relative min-h-screen flex items-center justify-center ocean-surface">
       {/* Background Image */}
@@ -16,7 +19,7 @@ const HeroSection = () => {
       <div className="relative z-20 text-center max-w-4xl mx-auto px-6">
         {/* Logo */}
         <div className="mb-8 float-gentle">
-          <img src="src/assets/TidyTidesLogo.png" alt="Tidy Tides Co. Logo" className="h-32 mx-auto drop-shadow-2xl logo-glow hover:scale-105 transition-transform duration-300" />
+          <img src={tidyTidesLogo} alt="Tidy Tides Co. Logo" className="h-32 mx-auto drop-shadow-2xl logo-glow hover:scale-105 transition-transform duration-300" />
         </div>
 
         {/* Main Title */}
