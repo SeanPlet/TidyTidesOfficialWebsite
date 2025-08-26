@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Play } from 'lucide-react';
-import underwaterHero from '@/assets/underwater-hero.jpg';
+import underwaterHero from '@/assets/Franchise.jpg';
 
 import tidyTidesLogo from '@/assets/TidyTidesLogo.png';
 
