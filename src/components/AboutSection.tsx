@@ -33,38 +33,37 @@ const AboutSection = () => {
         </div>
 
         {/* Story Content */}
-        <div className="max-w-4xl mx-auto text-center mb-20">
+        <div className="max-w-4xl mx-auto text-center mb-12">
           <p className="text-xl text-foreground/90 leading-relaxed">
             The crew ruined the Flying Dutchman's whale-taxi business and were cursed with the inability to swim. As punishment, they were trapped in a giant glass fishbowl at the bottom of the ocean, forced to clean whales for eternity until their debt is paid off. The only way out is to scrub their way to freedom, one whale at a time.
           </p>
         </div>
 
+        {/* Character Illustration */}
+        <div className="flex justify-center mb-20">
+          <img 
+            src="/lovable-uploads/42760621-1ed0-4d02-a1e0-e44d76b90546.png" 
+            alt="The crew characters" 
+            className="max-w-md w-full h-auto object-contain animate-fade-in"
+          />
+        </div>
+
         {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 relative">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {features.map((feature, index) => (
-            <div key={index} className="relative">
-              {/* Background image for first card */}
-              {index === 0 && (
-                <img 
-                  src="/lovable-uploads/42760621-1ed0-4d02-a1e0-e44d76b90546.png" 
-                  alt="Character illustration" 
-                  className="absolute inset-0 w-full h-full object-cover rounded-lg opacity-20 z-0"
-                />
-              )}
-              <Card className="underwater-glass border-border/30 hover:border-primary/50 transition-colors wave-motion relative z-10" style={{
-                animationDelay: `${index * 0.5}s`
-              }}>
-                <CardContent className="p-6 text-center">
-                  <feature.icon className="h-12 w-12 text-accent mx-auto mb-4" />
-                  <h4 className="text-xl font-bold text-primary mb-2">
-                    {feature.title}
-                  </h4>
-                  <p className="text-foreground/80">
-                    {feature.description}
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
+            <Card key={index} className="underwater-glass border-border/30 hover:border-primary/50 transition-colors wave-motion" style={{
+              animationDelay: `${index * 0.5}s`
+            }}>
+              <CardContent className="p-6 text-center">
+                <feature.icon className="h-12 w-12 text-accent mx-auto mb-4" />
+                <h4 className="text-xl font-bold text-primary mb-2">
+                  {feature.title}
+                </h4>
+                <p className="text-foreground/80">
+                  {feature.description}
+                </p>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>
