@@ -48,10 +48,10 @@ const AboutSection = () => {
                 <img 
                   src="/lovable-uploads/42760621-1ed0-4d02-a1e0-e44d76b90546.png" 
                   alt="Character illustration" 
-                  className="absolute inset-0 w-full h-full object-cover rounded-lg opacity-30 z-0"
+                  className="absolute -inset-4 w-[calc(100%+2rem)] h-[calc(100%+2rem)] object-cover rounded-lg opacity-50 z-0"
                 />
               )}
-              <Card className="underwater-glass border-border/30 hover:border-primary/50 transition-colors wave-motion relative z-10" style={{
+              <Card className="underwater-glass border-border/30 hover:border-primary/50 transition-colors wave-motion relative z-10 bg-background/70 backdrop-blur-sm" style={{
                 animationDelay: `${index * 0.5}s`
               }}>
                 <CardContent className="p-6 text-center">
