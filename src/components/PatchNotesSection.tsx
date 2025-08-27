@@ -2,8 +2,7 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/components/ui/collapsible';
-import { Calendar, Plus, Bug, Wrench, Sparkles, ChevronDown } from 'lucide-react';
+import { Calendar, Plus, Bug, Wrench, Sparkles } from 'lucide-react';
 
 import fish from '@/assets/PatchNotesFish.png';
 
@@ -140,106 +139,41 @@ const PatchNotesSection: React.FC<PatchNotesSectionProps> = ({
                 </div>
               )}
 
-              {index === 0 ? (
-                // First patch note - always fully shown
-                <Card
-                  className="relative z-10 underwater-glass border-border/30 hover:border-primary/30 transition-all duration-500 animate-fade-in group hover:scale-105 hover:shadow-xl hover:shadow-primary/20"
-                  style={{ animationDelay: `${index * 0.3}s` }}
-                >
-                  <CardHeader className="border-b border-border/20">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                      <CardTitle className="text-2xl font-bold text-primary">
-                        Version {patch.version}
-                      </CardTitle>
-                      <div className="flex items-center gap-4">
-                        {getTypeBadge(patch.type)}
-                        <div className="flex items-center text-muted-foreground">
-                          <Calendar className="h-4 w-4 mr-2" />
-                          {patch.date}
-                        </div>
+              <Card
+                className="relative z-10 underwater-glass border-border/30 hover:border-primary/30 transition-all duration-500 animate-fade-in group hover:scale-105 hover:shadow-xl hover:shadow-primary/20"
+                style={{ animationDelay: `${index * 0.3}s` }}
+              >
+                <CardHeader className="border-b border-border/20">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                    <CardTitle className="text-2xl font-bold text-primary">
+                      Version {patch.version}
+                    </CardTitle>
+                    <div className="flex items-center gap-4">
+                      {getTypeBadge(patch.type)}
+                      <div className="flex items-center text-muted-foreground">
+                        <Calendar className="h-4 w-4 mr-2" />
+                        {patch.date}
                       </div>
                     </div>
-                  </CardHeader>
+                  </div>
+                </CardHeader>
 
-                  <CardContent className="p-6">
-                    <div className="space-y-4">
-                      {patch.changes.map((change, changeIndex) => (
-                        <div
-                          key={changeIndex}
-                          className="flex items-center gap-3 p-3 rounded-lg bg-background/5 hover:bg-primary/10 transition-all duration-300 hover:transform hover:scale-102 cursor-pointer hover:border-l-4 hover:border-primary"
-                        >
-                          <div className="group-hover:animate-pulse">{getTypeIcon(change.type)}</div>
-                          <span className="text-foreground/90 leading-relaxed flex-1 group-hover:text-primary transition-colors duration-300">
-                            {change.text}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              ) : (
-                // Other patch notes - collapsible
-                <Collapsible>
-                  <Card
-                    className="relative z-10 underwater-glass border-border/30 hover:border-primary/30 transition-all duration-500 animate-fade-in group hover:scale-105 hover:shadow-xl hover:shadow-primary/20"
-                    style={{ animationDelay: `${index * 0.3}s` }}
-                  >
-                    <CollapsibleTrigger asChild>
-                      <CardHeader className="border-b border-border/20 cursor-pointer hover:bg-primary/5 transition-colors duration-300">
-                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                          <div className="flex items-center gap-3">
-                            <CardTitle className="text-2xl font-bold text-primary">
-                              Version {patch.version}
-                            </CardTitle>
-                            <ChevronDown className="h-5 w-5 text-primary transition-transform duration-300 group-data-[state=open]:rotate-180" />
-                          </div>
-                          <div className="flex items-center gap-4">
-                            {getTypeBadge(patch.type)}
-                            <div className="flex items-center text-muted-foreground">
-                              <Calendar className="h-4 w-4 mr-2" />
-                              {patch.date}
-                            </div>
-                          </div>
-                        </div>
-                      </CardHeader>
-                    </CollapsibleTrigger>
-
-                    <CardContent className="p-0">
-                      {/* Preview - First change always visible */}
-                      <div className="p-6 border-b border-border/10">
-                        <div className="flex items-center gap-3 p-3 rounded-lg bg-background/5">
-                          <div>{getTypeIcon(patch.changes[0].type)}</div>
-                          <span className="text-foreground/90 leading-relaxed flex-1">
-                            {patch.changes[0].text}
-                          </span>
-                        </div>
-                        {patch.changes.length > 1 && (
-                          <p className="text-sm text-muted-foreground mt-3 text-center">
-                            +{patch.changes.length - 1} more changes
-                          </p>
-                        )}
+                <CardContent className="p-6">
+                  <div className="space-y-4">
+                    {patch.changes.map((change, changeIndex) => (
+                      <div
+                        key={changeIndex}
+                        className="flex items-center gap-3 p-3 rounded-lg bg-background/5 hover:bg-primary/10 transition-all duration-300 hover:transform hover:scale-102 cursor-pointer hover:border-l-4 hover:border-primary"
+                      >
+                        <div className="group-hover:animate-pulse">{getTypeIcon(change.type)}</div>
+                        <span className="text-foreground/90 leading-relaxed flex-1 group-hover:text-primary transition-colors duration-300">
+                          {change.text}
+                        </span>
                       </div>
-
-                      {/* Collapsible content - Rest of changes */}
-                      <CollapsibleContent>
-                        <div className="p-6 space-y-4">
-                          {patch.changes.slice(1).map((change, changeIndex) => (
-                            <div
-                              key={changeIndex + 1}
-                              className="flex items-center gap-3 p-3 rounded-lg bg-background/5 hover:bg-primary/10 transition-all duration-300 hover:transform hover:scale-102 cursor-pointer hover:border-l-4 hover:border-primary"
-                            >
-                              <div className="group-hover:animate-pulse">{getTypeIcon(change.type)}</div>
-                              <span className="text-foreground/90 leading-relaxed flex-1 group-hover:text-primary transition-colors duration-300">
-                                {change.text}
-                              </span>
-                            </div>
-                          ))}
-                        </div>
-                      </CollapsibleContent>
-                    </CardContent>
-                  </Card>
-                </Collapsible>
-              )}
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           ))}
         </div>
