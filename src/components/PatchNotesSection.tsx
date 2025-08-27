@@ -181,7 +181,7 @@ const PatchNotesSection: React.FC<PatchNotesSectionProps> = ({
             if (index === 1) {
               return (
                 <div key={index} className="relative">
-                  <div className={`transition-all duration-500 ${!isExpanded ? 'opacity-50 blur-sm pointer-events-none' : 'opacity-100 blur-0'}`}>
+                  <div className={`transition-all duration-500 overflow-hidden ${!isExpanded ? 'max-h-48 relative' : 'max-h-screen'}`}>
                     <Card className="relative z-10 underwater-glass border-border/30 hover:border-primary/30 transition-all duration-500 animate-fade-in group hover:scale-105 hover:shadow-xl hover:shadow-primary/20">
                       <CardHeader className="border-b border-border/20">
                         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -214,6 +214,11 @@ const PatchNotesSection: React.FC<PatchNotesSectionProps> = ({
                         </div>
                       </CardContent>
                     </Card>
+                    
+                    {/* Fade out gradient overlay when not expanded */}
+                    {!isExpanded && (
+                      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none z-20" />
+                    )}
                   </div>
                 </div>
               );
