@@ -217,7 +217,10 @@ const PatchNotesSection: React.FC<PatchNotesSectionProps> = ({
                     
                     {/* Fade out gradient overlay when not expanded */}
                     {!isExpanded && (
-                      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none z-20" />
+                      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-transparent via-transparent to-transparent pointer-events-none z-20" 
+                           style={{
+                             background: 'linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(255,255,255,0.1) 20%, rgba(255,255,255,0.3) 60%, rgba(255,255,255,0.8) 100%)'
+                           }} />
                     )}
                   </div>
                 </div>
