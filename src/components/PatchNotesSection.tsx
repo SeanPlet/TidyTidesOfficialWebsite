@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Calendar, Plus, Bug, Wrench, Sparkles } from 'lucide-react';
+import { Calendar, Plus, Bug, Wrench, Sparkles, ChevronDown, ChevronUp } from 'lucide-react';
 
 import fish from '@/assets/PatchNotesFish.png';
 
@@ -15,6 +15,7 @@ const PatchNotesSection: React.FC<PatchNotesSectionProps> = ({
   fishOffsetX = 785,
   fishOffsetY = -90,
 }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
   const patchNotes = [
     {
       version: '0.3.2',
@@ -106,86 +107,180 @@ const PatchNotesSection: React.FC<PatchNotesSectionProps> = ({
 
         {/* Patch Notes */}
         <div className="max-w-4xl mx-auto space-y-8">
-          {patchNotes.map((patch, index) => (
-            <div key={index} className="relative">
-              {/* Mascot behind the FIRST card only */}
-              {index === 0 && (
-                <div
-                  className="absolute top-0 left-0 pointer-events-none select-none hidden md:block"
-                  style={{ transform: `translate(${fishOffsetX}px, ${fishOffsetY}px)` }}
-                >
-                  <div className="relative z-0">
-                    {/* Glow BEHIND the fish (no animation) */}
-                    <div
-                      aria-hidden="true"
-                      className="absolute -z-10 rounded-full blur-2xl"
-                      style={{
-                        width: '12rem',
-                        height: '12rem',
-                        top: '-1.5rem',
-                        left: '-1.25rem',
-                        background:
-                          'radial-gradient(closest-side, rgba(217, 240, 12, 0.55), rgba(147,197,253,0))',
-                      }}
-                    />
-                    {/* Fish ABOVE the glow */}
-                    <img
-                      src={fish}
-                      alt=""
-                      aria-hidden="true"
-                      className="relative z-10 w-24 md:w-32 lg:w-40 float-gentle"
-                    />
-                  </div>
-                </div>
-              )}
-
-              <Card
-                className="relative z-10 underwater-glass border-border/30 hover:border-primary/30 transition-all duration-500 animate-fade-in group hover:scale-105 hover:shadow-xl hover:shadow-primary/20"
-                style={{ animationDelay: `${index * 0.3}s` }}
-              >
-                <CardHeader className="border-b border-border/20">
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                    <CardTitle className="text-2xl font-bold text-primary">
-                      Version {patch.version}
-                    </CardTitle>
-                    <div className="flex items-center gap-4">
-                      {getTypeBadge(patch.type)}
-                      <div className="flex items-center text-muted-foreground">
-                        <Calendar className="h-4 w-4 mr-2" />
-                        {patch.date}
-                      </div>
+          {patchNotes.map((patch, index) => {
+            // First patch always visible
+            if (index === 0) {
+              return (
+                <div key={index} className="relative">
+                  {/* Mascot behind the FIRST card only */}
+                  <div
+                    className="absolute top-0 left-0 pointer-events-none select-none hidden md:block"
+                    style={{ transform: `translate(${fishOffsetX}px, ${fishOffsetY}px)` }}
+                  >
+                    <div className="relative z-0">
+                      {/* Glow BEHIND the fish (no animation) */}
+                      <div
+                        aria-hidden="true"
+                        className="absolute -z-10 rounded-full blur-2xl"
+                        style={{
+                          width: '12rem',
+                          height: '12rem',
+                          top: '-1.5rem',
+                          left: '-1.25rem',
+                          background:
+                            'radial-gradient(closest-side, rgba(217, 240, 12, 0.55), rgba(147,197,253,0))',
+                        }}
+                      />
+                      {/* Fish ABOVE the glow */}
+                      <img
+                        src={fish}
+                        alt=""
+                        aria-hidden="true"
+                        className="relative z-10 w-24 md:w-32 lg:w-40 float-gentle"
+                      />
                     </div>
                   </div>
-                </CardHeader>
 
-                <CardContent className="p-6">
-                  <div className="space-y-4">
-                    {patch.changes.map((change, changeIndex) => (
-                      <div
-                        key={changeIndex}
-                        className="flex items-center gap-3 p-3 rounded-lg bg-background/5 hover:bg-primary/10 transition-all duration-300 hover:transform hover:scale-102 cursor-pointer hover:border-l-4 hover:border-primary"
-                      >
-                        <div className="group-hover:animate-pulse">{getTypeIcon(change.type)}</div>
-                        <span className="text-foreground/90 leading-relaxed flex-1 group-hover:text-primary transition-colors duration-300">
-                          {change.text}
-                        </span>
+                  <Card className="relative z-10 underwater-glass border-border/30 hover:border-primary/30 transition-all duration-500 animate-fade-in group hover:scale-105 hover:shadow-xl hover:shadow-primary/20">
+                    <CardHeader className="border-b border-border/20">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                        <CardTitle className="text-2xl font-bold text-primary">
+                          Version {patch.version}
+                        </CardTitle>
+                        <div className="flex items-center gap-4">
+                          {getTypeBadge(patch.type)}
+                          <div className="flex items-center text-muted-foreground">
+                            <Calendar className="h-4 w-4 mr-2" />
+                            {patch.date}
+                          </div>
+                        </div>
                       </div>
-                    ))}
+                    </CardHeader>
+
+                    <CardContent className="p-6">
+                      <div className="space-y-4">
+                        {patch.changes.map((change, changeIndex) => (
+                          <div
+                            key={changeIndex}
+                            className="flex items-center gap-3 p-3 rounded-lg bg-background/5 hover:bg-primary/10 transition-all duration-300 hover:transform hover:scale-102 cursor-pointer hover:border-l-4 hover:border-primary"
+                          >
+                            <div className="group-hover:animate-pulse">{getTypeIcon(change.type)}</div>
+                            <span className="text-foreground/90 leading-relaxed flex-1 group-hover:text-primary transition-colors duration-300">
+                              {change.text}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              );
+            }
+
+            // Second patch - half visible/fading
+            if (index === 1) {
+              return (
+                <div key={index} className="relative">
+                  <div className={`transition-all duration-500 ${!isExpanded ? 'opacity-50 blur-sm pointer-events-none' : 'opacity-100 blur-0'}`}>
+                    <Card className="relative z-10 underwater-glass border-border/30 hover:border-primary/30 transition-all duration-500 animate-fade-in group hover:scale-105 hover:shadow-xl hover:shadow-primary/20">
+                      <CardHeader className="border-b border-border/20">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                          <CardTitle className="text-2xl font-bold text-primary">
+                            Version {patch.version}
+                          </CardTitle>
+                          <div className="flex items-center gap-4">
+                            {getTypeBadge(patch.type)}
+                            <div className="flex items-center text-muted-foreground">
+                              <Calendar className="h-4 w-4 mr-2" />
+                              {patch.date}
+                            </div>
+                          </div>
+                        </div>
+                      </CardHeader>
+
+                      <CardContent className="p-6">
+                        <div className="space-y-4">
+                          {patch.changes.map((change, changeIndex) => (
+                            <div
+                              key={changeIndex}
+                              className="flex items-center gap-3 p-3 rounded-lg bg-background/5 hover:bg-primary/10 transition-all duration-300 hover:transform hover:scale-102 cursor-pointer hover:border-l-4 hover:border-primary"
+                            >
+                              <div className="group-hover:animate-pulse">{getTypeIcon(change.type)}</div>
+                              <span className="text-foreground/90 leading-relaxed flex-1 group-hover:text-primary transition-colors duration-300">
+                                {change.text}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
                   </div>
-                </CardContent>
-              </Card>
-            </div>
-          ))}
+                </div>
+              );
+            }
+
+            // Rest of patches - hidden initially
+            return (
+              <div 
+                key={index} 
+                className={`relative transition-all duration-500 overflow-hidden ${
+                  isExpanded ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+                }`}
+              >
+                <Card className="relative z-10 underwater-glass border-border/30 hover:border-primary/30 transition-all duration-500 animate-fade-in group hover:scale-105 hover:shadow-xl hover:shadow-primary/20">
+                  <CardHeader className="border-b border-border/20">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                      <CardTitle className="text-2xl font-bold text-primary">
+                        Version {patch.version}
+                      </CardTitle>
+                      <div className="flex items-center gap-4">
+                        {getTypeBadge(patch.type)}
+                        <div className="flex items-center text-muted-foreground">
+                          <Calendar className="h-4 w-4 mr-2" />
+                          {patch.date}
+                        </div>
+                      </div>
+                    </div>
+                  </CardHeader>
+
+                  <CardContent className="p-6">
+                    <div className="space-y-4">
+                      {patch.changes.map((change, changeIndex) => (
+                        <div
+                          key={changeIndex}
+                          className="flex items-center gap-3 p-3 rounded-lg bg-background/5 hover:bg-primary/10 transition-all duration-300 hover:transform hover:scale-102 cursor-pointer hover:border-l-4 hover:border-primary"
+                        >
+                          <div className="group-hover:animate-pulse">{getTypeIcon(change.type)}</div>
+                          <span className="text-foreground/90 leading-relaxed flex-1 group-hover:text-primary transition-colors duration-300">
+                            {change.text}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            );
+          })}
         </div>
 
-        {/* View All Button */}
+        {/* Expand Button */}
         <div className="text-center mt-12">
           <Button
             variant="outline"
             size="lg"
+            onClick={() => setIsExpanded(!isExpanded)}
             className="bg-primary/10 border-primary/30 text-primary hover:bg-primary/15 hover:border-primary/40 hover:scale-105 transition-all duration-300"
           >
-            View All Patch Notes
+            {isExpanded ? (
+              <>
+                Show Less <ChevronUp className="ml-2 h-4 w-4" />
+              </>
+            ) : (
+              <>
+                Show More Patch Notes <ChevronDown className="ml-2 h-4 w-4" />
+              </>
+            )}
           </Button>
         </div>
       </div>
