@@ -129,7 +129,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
               
               <Button 
                 className="bg-accent hover:bg-accent/90 text-accent-foreground px-6 py-3 rounded-full w-full mt-auto"
-                onClick={() => window.open('mailto:tidytidescogame@gmail.com', '_blank')}
+                onClick={() => window.open('mailto:tidytidescogame@gmail.com')}
               >
                 <Mail className="mr-2 h-4 w-4" />
                 Email Us
