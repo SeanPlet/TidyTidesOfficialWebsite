@@ -75,13 +75,13 @@ const PatchNotesSection: React.FC<PatchNotesSectionProps> = ({
         );
       case 'Minor Update':
         return (
-          <Badge className="bg-primary/20 text-primary border-primary/30 hover:bg-primary/30 hover:border-primary/50 transition-all duration-300">
+          <Badge className="bg-accent/20 text-accent border-accent/30 hover:bg-accent/30 hover:border-accent/50 transition-all duration-300">
             Minor Update
           </Badge>
         );  
       case 'Major Update':
         return (
-          <Badge className="bg-secondary/20 text-secondary border-secondary/30 hover:bg-secondary/30 hover:border-secondary/50 transition-all duration-300">
+          <Badge className="bg-accent/20 text-accent border-accent/30 hover:bg-accent/30 hover:border-accent/50 transition-all duration-300">
             Major Update
           </Badge>
         );
