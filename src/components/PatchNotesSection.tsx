@@ -18,8 +18,8 @@ const PatchNotesSection: React.FC<PatchNotesSectionProps> = ({
   const patchNotes = [
     {
       version: '0.3.4',
-      date: 'September 1, 2025',
-      type: 'Feature Update',
+      date: 'Sep 1, 2025',
+      type: 'Minor Update',
       changes: [
         { type: 'added', text: 'Added stone characters of our character across the level' },
         { type: 'added', text: 'Additional jellyfish for the player to use to navigate the whale' },
@@ -29,7 +29,7 @@ const PatchNotesSection: React.FC<PatchNotesSectionProps> = ({
     },
     {
       version: '0.2.1',
-      date: 'August 18, 2025',
+      date: 'Aug 18, 2025',
       type: 'Bug Fixes',
       changes: [
         { type: 'fixed', text: 'Resolved duplicate customization menu from displaying' },
@@ -40,7 +40,7 @@ const PatchNotesSection: React.FC<PatchNotesSectionProps> = ({
     },
     {
       version: '0.1.0',
-      date: 'August 4, 2025',
+      date: 'Aug 4, 2025',
       type: 'Major Update',
       changes: [
         { type: 'added', text: 'Added passive crabs that walk around the level' },
@@ -67,18 +67,18 @@ const PatchNotesSection: React.FC<PatchNotesSectionProps> = ({
 
   const getTypeBadge = (type: string) => {
     switch (type) {
-      case 'Feature Update':
-        return (
-          <Badge className="bg-primary/20 text-primary border-primary/30 hover:bg-primary/30 hover:border-primary/50 transition-all duration-300">
-            Feature Update
-          </Badge>
-        );
       case 'Bug Fixes':
         return (
           <Badge className="bg-accent/20 text-accent border-accent/30 hover:bg-accent/30 hover:border-accent/50 transition-all duration-300">
             Bug Fixes
           </Badge>
         );
+      case 'Minor Update':
+        return (
+          <Badge className="bg-primary/20 text-primary border-primary/30 hover:bg-primary/30 hover:border-primary/50 transition-all duration-300">
+            Minor Update
+          </Badge>
+        );  
       case 'Major Update':
         return (
           <Badge className="bg-secondary/20 text-secondary border-secondary/30 hover:bg-secondary/30 hover:border-secondary/50 transition-all duration-300">
