@@ -1,53 +1,51 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { ImageIcon, Maximize2 } from 'lucide-react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
+import { ImageIcon, Play } from 'lucide-react';
 
 const GallerySection = () => {
-  const [selectedImage, setSelectedImage] = useState<number | null>(null);
-
   // Placeholder screenshots - these can be replaced with actual uploaded images
   const screenshots = [
     {
       id: 1,
       src: '/placeholder.svg',
       alt: 'Gameplay Screenshot 1',
-      caption: 'Four players cleaning a massive whale together',
-      featured: true
+      title: 'Co-op Cleaning',
+      description: 'Four players tackle massive whale together'
     },
     {
       id: 2,
       src: '/placeholder.svg',
       alt: 'Gameplay Screenshot 2', 
-      caption: 'Using fire hydrant hose to clean tough grime',
-      featured: false
+      title: 'Power Tools',
+      description: 'Fire hydrant hose cuts through tough grime'
     },
     {
       id: 3,
       src: '/placeholder.svg',
       alt: 'Gameplay Screenshot 3',
-      caption: 'Traversing the whale using jellyfish platforms',
-      featured: false
+      title: 'Whale Traversal',
+      description: 'Bouncing on jellyfish platforms'
     },
     {
       id: 4,
       src: '/placeholder.svg',
       alt: 'Gameplay Screenshot 4',
-      caption: 'Characters trapped in the glass fishbowl',
-      featured: true
+      title: 'Glass Prison',
+      description: 'Trapped in the ocean depths'
     },
     {
       id: 5,
       src: '/placeholder.svg',
       alt: 'Gameplay Screenshot 5',
-      caption: 'Stone character statues across the level',
-      featured: false
-    },
-    {
-      id: 6,
-      src: '/placeholder.svg',
-      alt: 'Gameplay Screenshot 6',
-      caption: 'Cleaning tools and equipment scattered around',
-      featured: false
+      title: 'Ancient Statues',
+      description: 'Stone characters scattered across levels'
     },
   ];
 
@@ -67,82 +65,76 @@ const GallerySection = () => {
           </p>
         </div>
 
-        {/* Gallery Grid */}
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-auto">
-            {screenshots.map((screenshot, index) => (
-              <div 
-                key={screenshot.id}
-                className={`relative group cursor-pointer animate-fade-in ${
-                  screenshot.featured ? 'md:col-span-2 md:row-span-2' : ''
-                }`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-                onClick={() => setSelectedImage(screenshot.id)}
-              >
-                <Card className="h-full underwater-glass border-border/30 hover:border-primary/50 transition-all duration-500 group-hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/20 overflow-hidden">
-                  <CardContent className="p-0 h-full">
-                    <div className={`relative bg-background/10 overflow-hidden ${
-                      screenshot.featured ? 'aspect-video' : 'aspect-square'
-                    }`}>
-                      {/* Placeholder background */}
-                      <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/10 to-accent/5">
-                        <div className="text-center">
-                          <ImageIcon className={`text-primary/40 mx-auto mb-2 ${
-                            screenshot.featured ? 'h-24 w-24' : 'h-16 w-16'
-                          }`} />
-                          <p className="text-sm text-foreground/60 px-4">
-                            {screenshot.caption}
-                          </p>
-                        </div>
-                      </div>
-                      
-                      {/* Hover overlay */}
-                      <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-                        <div className="text-center">
-                          <Maximize2 className="h-8 w-8 text-white mx-auto mb-2" />
-                          <p className="text-white font-medium">View Full Size</p>
-                        </div>
-                      </div>
-                      
-                      {/* Gradient border effect */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Modal for full-size viewing */}
-        {selectedImage && (
-          <div 
-            className="fixed inset-0 bg-background/90 backdrop-blur-md z-50 flex items-center justify-center p-4"
-            onClick={() => setSelectedImage(null)}
+        {/* Compact Carousel */}
+        <div className="max-w-5xl mx-auto">
+          <Carousel 
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
           >
-            <div className="relative max-w-4xl max-h-full">
-              <button
-                onClick={() => setSelectedImage(null)}
-                className="absolute -top-12 right-0 text-foreground/80 hover:text-foreground text-xl font-bold z-10"
-              >
-                ✕
-              </button>
-              <div className="underwater-glass rounded-lg overflow-hidden">
-                <div className="aspect-video bg-background/20 flex items-center justify-center">
-                  <div className="text-center">
-                    <ImageIcon className="h-32 w-32 text-primary/40 mx-auto mb-4" />
-                    <p className="text-lg text-foreground/80 mb-2">
-                      {screenshots.find(s => s.id === selectedImage)?.caption}
-                    </p>
-                    <p className="text-sm text-foreground/60">
-                      Full resolution screenshot will appear here
-                    </p>
+            <CarouselContent className="-ml-1">
+              {screenshots.map((screenshot, index) => (
+                <CarouselItem key={screenshot.id} className="pl-1 basis-full sm:basis-1/2 lg:basis-1/3">
+                  <div className="p-2">
+                    <Card className="group relative overflow-hidden bg-gradient-to-br from-background/40 to-background/20 border border-primary/20 hover:border-accent/40 transition-all duration-500">
+                      <CardContent className="p-0">
+                        {/* Image container */}
+                        <div className="relative aspect-[16/10] bg-gradient-to-br from-primary/10 via-background/5 to-accent/10 overflow-hidden">
+                          {/* Animated background pattern */}
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                          
+                          {/* Content */}
+                          <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                            <div className="relative">
+                              <ImageIcon className="h-12 w-12 text-primary/60 mx-auto mb-3 group-hover:text-accent transition-colors duration-300" />
+                              <div className="absolute -inset-2 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                            </div>
+                            
+                            <h3 className="text-lg font-bold text-primary mb-2 group-hover:text-accent transition-colors duration-300">
+                              {screenshot.title}
+                            </h3>
+                            <p className="text-sm text-foreground/70 group-hover:text-foreground/90 transition-colors duration-300">
+                              {screenshot.description}
+                            </p>
+                          </div>
+                          
+                          {/* Hover overlay */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-background/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <div className="transform scale-75 group-hover:scale-100 transition-transform duration-300">
+                              <Play className="h-8 w-8 text-accent drop-shadow-lg" />
+                            </div>
+                          </div>
+                        </div>
+                        
+                        {/* Bottom accent bar */}
+                        <div className="h-1 bg-gradient-to-r from-primary/40 to-accent/40 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                      </CardContent>
+                    </Card>
                   </div>
-                </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            
+            {/* Custom navigation */}
+            <div className="flex items-center justify-center gap-4 mt-8">
+              <CarouselPrevious className="relative static translate-y-0 bg-background/20 border-primary/30 hover:bg-primary/10 hover:border-accent/50 text-primary hover:text-accent" />
+              
+              {/* Dots indicator */}
+              <div className="flex gap-2">
+                {screenshots.map((_, index) => (
+                  <div
+                    key={index}
+                    className="w-2 h-2 rounded-full bg-primary/30 hover:bg-accent/60 transition-all duration-300"
+                  />
+                ))}
               </div>
+              
+              <CarouselNext className="relative static translate-y-0 bg-background/20 border-primary/30 hover:bg-primary/10 hover:border-accent/50 text-primary hover:text-accent" />
             </div>
-          </div>
-        )}
+          </Carousel>
+        </div>
       </div>
     </section>
   );
