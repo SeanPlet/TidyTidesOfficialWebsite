@@ -6,7 +6,7 @@ import underwaterHero from '@/assets/Franchise.jpg';
 import tidyTidesLogo from '@/assets/TidyTidesLogo.png';
 
 const HeroSection = () => {
-  return <section className="relative min-h-screen flex items-center justify-center ocean-surface pt-16">
+  return <section className="relative min-h-screen flex items-center justify-center ocean-surface">
       {/* Background Image */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30" style={{
       backgroundImage: `url(${underwaterHero})`
