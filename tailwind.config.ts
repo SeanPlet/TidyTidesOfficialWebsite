@@ -20,6 +20,7 @@ export default {
 		extend: {
 			fontFamily: {
 				'sour-gummy': ['Sour Gummy', 'cursive'],
+				'bricolage': ['Bricolage Grotesque', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
