@@ -9,8 +9,8 @@ const HeroSection = () => {
   return <section className="relative min-h-screen flex items-center justify-center ocean-surface">
       {/* Background Image */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30" style={{
-      backgroundImage: `url(${underwaterHero})`
-    }} />
+        backgroundImage: `url(${underwaterHero})`
+      }} />
       
       {/* Caustic Light Effects */}
       <div className="caustic-lights" />
@@ -24,7 +24,7 @@ const HeroSection = () => {
 
         {/* Main Title */}
         <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold text-primary mb-6 drop-shadow-lg break-words">
-          Dive Into The
+          Dive Into The 
           <span className="block text-accent">Chaos</span>
         </h1>
         
