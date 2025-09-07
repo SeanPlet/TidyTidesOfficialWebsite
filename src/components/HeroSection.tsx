@@ -23,9 +23,11 @@ const HeroSection = () => {
         </div>
 
         {/* Main Title */}
-        <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold font-sour-gummy text-primary mb-6 drop-shadow-lg break-words">
-          Dive Into The 
-          <span className="block text-accent">Chaos</span>
+        <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold font-sour-gummy text-primary mb-6 drop-shadow-lg">
+          <span className="block">Dive Into</span>
+          <span className="block">
+            The <span className="text-accent">Chaos</span>
+          </span>
         </h1>
         
         {/* Subtitle */}
