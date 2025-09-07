@@ -21,7 +21,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold font-sour-gummy text-primary mb-6 break-words border-[4.6px] border-[#004258] p-4 rounded-lg">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold font-sour-gummy text-primary mb-6 break-words" style={{WebkitTextStroke: '4.6px #004258'}}>
             Stay Connected
           </h2>
           <div className="w-24 h-1 bg-accent mx-auto mb-8" />
@@ -69,7 +69,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                   </svg>
                 </div>
                 
-                <h3 className="text-2xl font-bold font-sour-gummy text-primary mb-4 border-[4.6px] border-[#004258] p-3 rounded-lg">
+                <h3 className="text-2xl font-bold font-sour-gummy text-primary mb-4" style={{WebkitTextStroke: '4.6px #004258'}}>
                   Join Our Discord
                 </h3>
                 
@@ -107,7 +107,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                 <Mail className="h-10 w-10 text-accent" />
               </div>
               
-              <h3 className="text-2xl font-bold font-sour-gummy text-accent mb-4 border-[4.6px] border-[#004258] p-3 rounded-lg">
+              <h3 className="text-2xl font-bold font-sour-gummy text-accent mb-4" style={{WebkitTextStroke: '4.6px #004258'}}>
                 Email the Team
               </h3>
               

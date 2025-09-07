@@ -25,7 +25,7 @@ const TeamSection = () => {
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold font-sour-gummy text-primary mb-6 break-words border-[4.6px] border-[#004258] p-4 rounded-lg">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold font-sour-gummy text-primary mb-6 break-words" style={{WebkitTextStroke: '4.6px #004258'}}>
             Meet the Crew
           </h2>
           <div className="w-24 h-1 bg-accent mx-auto mb-8" />
@@ -69,7 +69,7 @@ const TeamSection = () => {
 
               {/* Name + role */}
               <div className="text-center">
-                <h3 className="text-sm font-semibold font-sour-gummy text-primary mb-1 border-[4.6px] border-[#004258] p-2 rounded">
+                <h3 className="text-sm font-semibold font-sour-gummy text-primary mb-1" style={{WebkitTextStroke: '4.6px #004258'}}>
                   {member.name}
                 </h3>
                 <Badge className="bg-accent/20 text-accent border-accent/30 hover:bg-accent/30 hover:border-accent/50 transition-all duration-300 text-xs">
