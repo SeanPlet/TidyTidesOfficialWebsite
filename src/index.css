@@ -54,6 +54,9 @@ All colors MUST be HSL.
     --wave-motion: 4s ease-in-out infinite alternate;
     --bubble-rise: 6s linear infinite;
     --float-gentle: 3s ease-in-out infinite alternate;
+    
+    /* Custom heading border */
+    --heading-border: 195 100% 17%;
 
     --radius: 1rem;
 
@@ -302,5 +305,15 @@ All colors MUST be HSL.
     100% {
       filter: drop-shadow(0 0 30px hsl(var(--primary) / 0.5));
     }
+  }
+
+  /* Pixel border utility for headings */
+  .heading-border {
+    position: relative;
+    display: inline-block;
+    padding: 8px 16px;
+    border: 4.6px solid hsl(var(--heading-border));
+    background: hsl(var(--heading-border) / 0.1);
+    border-radius: 4px;
   }
 }
