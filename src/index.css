@@ -303,17 +303,4 @@ All colors MUST be HSL.
       filter: drop-shadow(0 0 30px hsl(var(--primary) / 0.5));
     }
   }
-
-  /* Text outline effect using solid drop shadow */
-  .text-outline {
-    filter: 
-      drop-shadow(-4.6px -4.6px 0 #004258)
-      drop-shadow(4.6px -4.6px 0 #004258)
-      drop-shadow(-4.6px 4.6px 0 #004258)
-      drop-shadow(4.6px 4.6px 0 #004258)
-      drop-shadow(-4.6px 0 0 #004258)
-      drop-shadow(4.6px 0 0 #004258)
-      drop-shadow(0 -4.6px 0 #004258)
-      drop-shadow(0 4.6px 0 #004258);
-  }
 }
