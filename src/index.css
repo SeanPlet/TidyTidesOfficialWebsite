@@ -304,8 +304,9 @@ All colors MUST be HSL.
     }
   }
 
-  /* Solid heading shadow */
-  .heading-shadow {
-    filter: drop-shadow(4.6px 4.6px 0 #004258);
+  /* Text stroke for headings */
+  .text-stroke {
+    -webkit-text-stroke: 2px #004258;
+    text-stroke: 2px #004258;
   }
 }
