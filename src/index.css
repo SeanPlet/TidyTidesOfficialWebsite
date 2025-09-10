@@ -303,4 +303,10 @@ All colors MUST be HSL.
       filter: drop-shadow(0 0 30px hsl(var(--primary) / 0.5));
     }
   }
+
+  /* Text stroke for headings */
+  .text-stroke {
+    -webkit-text-stroke: 4.6px #004258;
+    text-stroke: 4.6px #004258;
+  }
 }
