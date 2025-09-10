@@ -303,4 +303,9 @@ All colors MUST be HSL.
       filter: drop-shadow(0 0 30px hsl(var(--primary) / 0.5));
     }
   }
+
+  /* Solid heading shadow */
+  .heading-shadow {
+    filter: drop-shadow(4.6px 4.6px 0 #004258);
+  }
 }
