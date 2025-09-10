@@ -304,24 +304,16 @@ All colors MUST be HSL.
     }
   }
 
-  /* Text outline effect using dense shadow pattern for complete coverage */
+  /* Text outline effect using solid drop shadow */
   .text-outline {
-    text-shadow: 
-      /* Dense circular pattern with small increments for complete coverage */
-      -4.6px -4.6px 0 #004258, -4.6px -3.8px 0 #004258, -4.6px -3px 0 #004258, -4.6px -2.2px 0 #004258,
-      -4.6px -1.4px 0 #004258, -4.6px -0.6px 0 #004258, -4.6px 0.2px 0 #004258, -4.6px 1px 0 #004258,
-      -4.6px 1.8px 0 #004258, -4.6px 2.6px 0 #004258, -4.6px 3.4px 0 #004258, -4.6px 4.2px 0 #004258,
-      -4.6px 4.6px 0 #004258, -3.8px 4.6px 0 #004258, -3px 4.6px 0 #004258, -2.2px 4.6px 0 #004258,
-      -1.4px 4.6px 0 #004258, -0.6px 4.6px 0 #004258, 0.2px 4.6px 0 #004258, 1px 4.6px 0 #004258,
-      1.8px 4.6px 0 #004258, 2.6px 4.6px 0 #004258, 3.4px 4.6px 0 #004258, 4.2px 4.6px 0 #004258,
-      4.6px 4.6px 0 #004258, 4.6px 3.8px 0 #004258, 4.6px 3px 0 #004258, 4.6px 2.2px 0 #004258,
-      4.6px 1.4px 0 #004258, 4.6px 0.6px 0 #004258, 4.6px -0.2px 0 #004258, 4.6px -1px 0 #004258,
-      4.6px -1.8px 0 #004258, 4.6px -2.6px 0 #004258, 4.6px -3.4px 0 #004258, 4.6px -4.2px 0 #004258,
-      4.6px -4.6px 0 #004258, 3.8px -4.6px 0 #004258, 3px -4.6px 0 #004258, 2.2px -4.6px 0 #004258,
-      1.4px -4.6px 0 #004258, 0.6px -4.6px 0 #004258, -0.2px -4.6px 0 #004258, -1px -4.6px 0 #004258,
-      -1.8px -4.6px 0 #004258, -2.6px -4.6px 0 #004258, -3.4px -4.6px 0 #004258, -4.2px -4.6px 0 #004258,
-      /* Additional inner ring for extra density */
-      -3.5px -3.5px 0 #004258, -3.5px 0 0 #004258, -3.5px 3.5px 0 #004258, 0 3.5px 0 #004258,
-      3.5px 3.5px 0 #004258, 3.5px 0 0 #004258, 3.5px -3.5px 0 #004258, 0 -3.5px 0 #004258;
+    filter: 
+      drop-shadow(-4.6px -4.6px 0 #004258)
+      drop-shadow(4.6px -4.6px 0 #004258)
+      drop-shadow(-4.6px 4.6px 0 #004258)
+      drop-shadow(4.6px 4.6px 0 #004258)
+      drop-shadow(-4.6px 0 0 #004258)
+      drop-shadow(4.6px 0 0 #004258)
+      drop-shadow(0 -4.6px 0 #004258)
+      drop-shadow(0 4.6px 0 #004258);
   }
 }
