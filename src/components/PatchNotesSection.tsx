@@ -12,8 +12,8 @@ type PatchNotesSectionProps = {
 };
 
 const PatchNotesSection: React.FC<PatchNotesSectionProps> = ({
-  fishOffsetX = 785,
-  fishOffsetY = -90,
+  fishOffsetX = 790,
+  fishOffsetY = -70,
 }) => {
   const patchNotes = [
     {
