@@ -27,29 +27,6 @@ const PatchNotesSection: React.FC<PatchNotesSectionProps> = ({
         { type: 'fixed', text: 'Fixed a bug where the player could fall through the mesh and get stuck' },
       ],
     },
-    {
-      version: '0.2.1',
-      date: 'Aug 18, 2025',
-      type: 'Bug Fixes',
-      changes: [
-        { type: 'fixed', text: 'Resolved duplicate customization menu from displaying' },
-        { type: 'fixed', text: 'Fixed the issue where players can go above the rappel hooks' },
-        { type: 'improved', text: 'Optimized fishbowl collisions' },
-        { type: 'added', text: 'New SFX whenever the player runs into the glass fishbowl' },
-      ],
-    },
-    {
-      version: '0.1.0',
-      date: 'Aug 4, 2025',
-      type: 'Major Update',
-      changes: [
-        { type: 'added', text: 'Added passive crabs that walk around the level' },
-        { type: 'added', text: 'Added the announcer system to react to player interactions' },
-        { type: 'added', text: 'Added new traversal mechanics' },
-        { type: 'improved', text: 'Added a "Thank you" message after a user submits feedback' },
-        { type: 'fixed', text: 'Resolved issue where player could not enter the manager room' },
-      ],
-    },
   ];
 
   const getTypeIcon = (type: string) => {
