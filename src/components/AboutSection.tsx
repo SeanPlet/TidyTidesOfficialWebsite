@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Users, Fish, Timer, Wrench, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Users, Fish, Timer, Wrench, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 
 import fourFishCharacters from '@/assets/FourPlayerFish.png';
 import featureCoop from '@/assets/feature-coop.jpg';
@@ -10,6 +11,7 @@ import featureTraversal from '@/assets/feature-traversal.jpg';
 const AboutSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isImageModalOpen, setIsImageModalOpen] = useState(false);
   
   const features = [
     {
@@ -128,15 +130,35 @@ const AboutSection = () => {
             <div className="relative underwater-glass border-border/30 hover:border-primary/50 transition-colors rounded-xl overflow-hidden">
               {/* Feature Image */}
               <div className="relative h-80 w-full overflow-hidden">
-                <img
-                  src={features[currentIndex].image}
-                  alt={features[currentIndex].title}
-                  className={`w-full h-full object-cover transition-all duration-1000 ease-in-out transform ${
-                    isTransitioning 
-                      ? 'opacity-0 scale-110' 
-                      : 'opacity-100 scale-100'
-                  }`}
-                />
+                <Dialog open={isImageModalOpen} onOpenChange={setIsImageModalOpen}>
+                  <DialogTrigger asChild>
+                    <img
+                      src={features[currentIndex].image}
+                      alt={features[currentIndex].title}
+                      className={`w-full h-full object-cover transition-all duration-1000 ease-in-out transform cursor-pointer hover:scale-105 ${
+                        isTransitioning 
+                          ? 'opacity-0 scale-110' 
+                          : 'opacity-100 scale-100'
+                      }`}
+                      onClick={() => setIsImageModalOpen(true)}
+                    />
+                  </DialogTrigger>
+                  <DialogContent className="max-w-4xl w-full p-0 bg-transparent border-none">
+                    <div className="relative">
+                      <img
+                        src={features[currentIndex].image}
+                        alt={features[currentIndex].title}
+                        className="w-full h-auto rounded-lg"
+                      />
+                      <button
+                        onClick={() => setIsImageModalOpen(false)}
+                        className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+                      >
+                        <X className="h-6 w-6" />
+                      </button>
+                    </div>
+                  </DialogContent>
+                </Dialog>
                 
                 {/* Left Navigation Button */}
                 <button
