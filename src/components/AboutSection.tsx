@@ -1,10 +1,12 @@
-import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
+import React, { useEffect, useState } from 'react';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Users, Fish, Timer, Wrench } from 'lucide-react';
 
 import fourFishCharacters from '@/assets/FourPlayerFish.png';
 
 const AboutSection = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  
   const features = [
     {
       icon: Users,
@@ -28,6 +30,15 @@ const AboutSection = () => {
     }
   ];
 
+  // Auto-cycle through features every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % features.length);
+    }, 4000);
+    
+    return () => clearInterval(interval);
+  }, [features.length]);
+
   return (
     <section className="py-16 ocean-shallow relative overflow-hidden">
       <div className="caustic-shallow" />
@@ -48,51 +59,65 @@ const AboutSection = () => {
           </p>
         </div>
 
-        {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {features.map((feature, index) => (
-            <div key={index} className="relative overflow-visible">
-              {/* Mascot behind the first card */}
-              {index === 0 && (
-                <div className="absolute lg:-top-28  sm:-top-24 left-1/2 transform -translate-x-1/2 z-0 pointer-events-none select-none hidden sm:block">
-                  <div className="relative z-0">
-                    {/* Glow behind the fish */}
-                    <div
-                      aria-hidden="true"
-                      className="absolute -z-10 rounded-full blur-2xl"
-                      style={{
-                        width: '24rem',
-                        height: '20rem',
-                        top: '-2rem',
-                        left: '-4rem',
-                        background:
-                          'radial-gradient(closest-side, rgba(255,255,255,0.9), rgba(147,197,253,0.6), rgba(147,197,253,0)'
-                      }}
-                    />
-                    {/* Fish ABOVE the glow */}
-                    <img
-                      src={fourFishCharacters}
-                      alt="Character illustration"
-                      className="relative z-10 w-56 h-auto object-contain opacity-90 float-gentle max-w-none"
-                    />
-                  </div>
-                </div>
-              )}
-
-              <Card
-                className="underwater-glass border-border/30 hover:border-primary/50 transition-colors wave-motion relative z-10 overflow-visible"
-                style={{ animationDelay: `${index * 0.5}s` }}
-              >
-                <CardContent className="p-6 text-center">
-                  <feature.icon className="h-12 w-12 text-accent mx-auto mb-4" />
-                  <h4 className="text-xl font-bold text-primary mb-2">
-                    {feature.title}
-                  </h4>
-                  <p className="text-foreground/80">{feature.description}</p>
-                </CardContent>
-              </Card>
+        {/* Features Carousel */}
+        <div className="relative max-w-2xl mx-auto mb-16">
+          {/* Mascot floating above carousel */}
+          <div className="absolute -top-32 left-1/2 transform -translate-x-1/2 z-0 pointer-events-none select-none hidden sm:block">
+            <div className="relative z-0">
+              {/* Glow behind the fish */}
+              <div
+                aria-hidden="true"
+                className="absolute -z-10 rounded-full blur-2xl"
+                style={{
+                  width: '24rem',
+                  height: '20rem',
+                  top: '-2rem',
+                  left: '-4rem',
+                  background:
+                    'radial-gradient(closest-side, rgba(255,255,255,0.9), rgba(147,197,253,0.6), rgba(147,197,253,0)'
+                }}
+              />
+              {/* Fish ABOVE the glow */}
+              <img
+                src={fourFishCharacters}
+                alt="Character illustration"
+                className="relative z-10 w-56 h-auto object-contain opacity-90 float-gentle max-w-none"
+              />
             </div>
-          ))}
+          </div>
+
+          {/* Single Feature Display */}
+          <div className="relative z-10">
+            <div className="underwater-glass border-border/30 hover:border-primary/50 transition-colors rounded-xl p-8 text-center min-h-[300px] flex flex-col justify-center items-center">
+              <div className="mb-6">
+                {React.createElement(features[currentIndex].icon, { 
+                  className: "h-16 w-16 text-accent mx-auto mb-4 transition-all duration-500" 
+                })}
+              </div>
+              <h4 className="text-2xl font-bold text-primary mb-4 font-sour-gummy">
+                {features[currentIndex].title}
+              </h4>
+              <p className="text-lg text-foreground/80 leading-relaxed">
+                {features[currentIndex].description}
+              </p>
+            </div>
+            
+            {/* Indicator dots */}
+            <div className="flex justify-center mt-6 space-x-2">
+              {features.map((_, index) => (
+                <button
+                  key={index}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentIndex 
+                      ? 'bg-accent scale-125' 
+                      : 'bg-accent/30 hover:bg-accent/50'
+                  }`}
+                  onClick={() => setCurrentIndex(index)}
+                  aria-label={`View feature ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
