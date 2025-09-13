@@ -9,6 +9,7 @@ import featureTraversal from '@/assets/feature-traversal.jpg';
 
 const AboutSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   
   const features = [
     {
@@ -38,21 +39,42 @@ const AboutSection = () => {
   ];
 
   const nextFeature = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % features.length);
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % features.length);
+      setIsTransitioning(false);
+    }, 150);
   };
 
   const prevFeature = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + features.length) % features.length);
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentIndex((prevIndex) => (prevIndex - 1 + features.length) % features.length);
+      setIsTransitioning(false);
+    }, 150);
+  };
+
+  const goToFeature = (index: number) => {
+    if (isTransitioning || index === currentIndex) return;
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentIndex(index);
+      setIsTransitioning(false);
+    }, 150);
   };
 
   // Auto-cycle through features every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % features.length);
+      if (!isTransitioning) {
+        nextFeature();
+      }
     }, 4000);
     
     return () => clearInterval(interval);
-  }, [features.length]);
+  }, [isTransitioning]);
 
   return (
     <section className="py-16 ocean-shallow relative overflow-hidden">
@@ -105,17 +127,22 @@ const AboutSection = () => {
           <div className="relative z-10">
             <div className="relative underwater-glass border-border/30 hover:border-primary/50 transition-colors rounded-xl overflow-hidden">
               {/* Feature Image */}
-              <div className="relative h-80 w-full">
+              <div className="relative h-80 w-full overflow-hidden">
                 <img
                   src={features[currentIndex].image}
                   alt={features[currentIndex].title}
-                  className="w-full h-full object-cover transition-all duration-500"
+                  className={`w-full h-full object-cover transition-all duration-700 ease-out transform ${
+                    isTransitioning 
+                      ? 'opacity-0 scale-110' 
+                      : 'opacity-100 scale-100'
+                  }`}
                 />
                 
                 {/* Left Navigation Button */}
                 <button
                   onClick={prevFeature}
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+                  disabled={isTransitioning}
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 disabled:opacity-50 text-white p-2 rounded-full transition-all duration-300 hover:scale-110"
                   aria-label="Previous feature"
                 >
                   <ChevronLeft className="h-6 w-6" />
@@ -124,7 +151,8 @@ const AboutSection = () => {
                 {/* Right Navigation Button */}
                 <button
                   onClick={nextFeature}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+                  disabled={isTransitioning}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 disabled:opacity-50 text-white p-2 rounded-full transition-all duration-300 hover:scale-110"
                   aria-label="Next feature"
                 >
                   <ChevronRight className="h-6 w-6" />
@@ -132,10 +160,16 @@ const AboutSection = () => {
                 
                 {/* Content Overlay at Bottom */}
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6">
-                  <div className="flex flex-col items-center text-center text-white">
+                  <div className={`flex flex-col items-center text-center text-white transition-all duration-500 ease-out transform ${
+                    isTransitioning 
+                      ? 'opacity-0 translate-y-4' 
+                      : 'opacity-100 translate-y-0'
+                  }`}>
                     <div className="mb-3">
                       {React.createElement(features[currentIndex].icon, { 
-                        className: "h-10 w-10 text-accent mx-auto transition-all duration-500" 
+                        className: `h-10 w-10 text-accent mx-auto transition-all duration-500 transform ${
+                          isTransitioning ? 'scale-0 rotate-180' : 'scale-100 rotate-0'
+                        }` 
                       })}
                     </div>
                     <h4 className="text-xl font-bold mb-2 font-sour-gummy">
@@ -154,12 +188,13 @@ const AboutSection = () => {
               {features.map((_, index) => (
                 <button
                   key={index}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  className={`w-3 h-3 rounded-full transition-all duration-500 transform ${
                     index === currentIndex 
-                      ? 'bg-accent scale-125' 
-                      : 'bg-accent/30 hover:bg-accent/50'
+                      ? 'bg-accent scale-125 shadow-lg shadow-accent/50' 
+                      : 'bg-accent/30 hover:bg-accent/50 hover:scale-110'
                   }`}
-                  onClick={() => setCurrentIndex(index)}
+                  onClick={() => goToFeature(index)}
+                  disabled={isTransitioning}
                   aria-label={`View feature ${index + 1}`}
                 />
               ))}
