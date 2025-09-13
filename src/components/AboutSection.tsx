@@ -44,7 +44,7 @@ const AboutSection = () => {
     setTimeout(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % features.length);
       setIsTransitioning(false);
-    }, 150);
+    }, 400);
   };
 
   const prevFeature = () => {
@@ -53,7 +53,7 @@ const AboutSection = () => {
     setTimeout(() => {
       setCurrentIndex((prevIndex) => (prevIndex - 1 + features.length) % features.length);
       setIsTransitioning(false);
-    }, 150);
+    }, 400);
   };
 
   const goToFeature = (index: number) => {
@@ -62,16 +62,16 @@ const AboutSection = () => {
     setTimeout(() => {
       setCurrentIndex(index);
       setIsTransitioning(false);
-    }, 150);
+    }, 400);
   };
 
-  // Auto-cycle through features every 4 seconds
+  // Auto-cycle through features every 6.5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       if (!isTransitioning) {
         nextFeature();
       }
-    }, 4000);
+    }, 6500);
     
     return () => clearInterval(interval);
   }, [isTransitioning]);
@@ -131,7 +131,7 @@ const AboutSection = () => {
                 <img
                   src={features[currentIndex].image}
                   alt={features[currentIndex].title}
-                  className={`w-full h-full object-cover transition-all duration-700 ease-out transform ${
+                  className={`w-full h-full object-cover transition-all duration-1000 ease-in-out transform ${
                     isTransitioning 
                       ? 'opacity-0 scale-110' 
                       : 'opacity-100 scale-100'
@@ -160,14 +160,14 @@ const AboutSection = () => {
                 
                 {/* Content Overlay at Bottom */}
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6">
-                  <div className={`flex flex-col items-center text-center text-white transition-all duration-500 ease-out transform ${
+                  <div className={`flex flex-col items-center text-center text-white transition-all duration-1000 ease-in-out transform ${
                     isTransitioning 
-                      ? 'opacity-0 translate-y-4' 
+                      ? 'opacity-0 translate-y-6' 
                       : 'opacity-100 translate-y-0'
                   }`}>
                     <div className="mb-3">
                       {React.createElement(features[currentIndex].icon, { 
-                        className: `h-10 w-10 text-accent mx-auto transition-all duration-500 transform ${
+                        className: `h-10 w-10 text-accent mx-auto transition-all duration-800 ease-in-out transform ${
                           isTransitioning ? 'scale-0 rotate-180' : 'scale-100 rotate-0'
                         }` 
                       })}
