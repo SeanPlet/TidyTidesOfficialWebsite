@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Users, Fish, Timer, Wrench } from 'lucide-react';
 
 import fourFishCharacters from '@/assets/FourPlayerFish.png';
