@@ -100,31 +100,6 @@ const AboutSection = () => {
 
         {/* Features Carousel */}
         <div className="relative max-w-2xl mx-auto mb-16">
-          {/* Mascot floating above carousel */}
-          <div className="absolute -top-32 left-1/2 transform -translate-x-1/2 z-0 pointer-events-none select-none hidden sm:block">
-            <div className="relative z-0">
-              {/* Glow behind the fish */}
-              <div
-                aria-hidden="true"
-                className="absolute -z-10 rounded-full blur-2xl"
-                style={{
-                  width: '24rem',
-                  height: '20rem',
-                  top: '-2rem',
-                  left: '-4rem',
-                  background:
-                    'radial-gradient(closest-side, rgba(255,255,255,0.9), rgba(147,197,253,0.6), rgba(147,197,253,0)'
-                }}
-              />
-              {/* Fish ABOVE the glow */}
-              <img
-                src={fourFishCharacters}
-                alt="Character illustration"
-                className="relative z-10 w-56 h-auto object-contain opacity-90 float-gentle max-w-none"
-              />
-            </div>
-          </div>
-
           {/* Image Feature Display with Navigation */}
           <div className="relative z-10">
             <div className="relative underwater-glass border-border/30 hover:border-primary/50 transition-colors rounded-xl overflow-hidden">
@@ -144,18 +119,13 @@ const AboutSection = () => {
                     />
                   </DialogTrigger>
                   <DialogContent className="max-w-4xl w-full p-0 bg-transparent border-none">
-                    <div className="relative">
+                    <div className="relative aspect-[16/9] w-full">
                       <img
                         src={features[currentIndex].image}
                         alt={features[currentIndex].title}
-                        className="w-full h-auto rounded-lg"
+                        className="w-full h-full object-cover rounded-lg"
+                        style={{ aspectRatio: '16/9' }}
                       />
-                      <button
-                        onClick={() => setIsImageModalOpen(false)}
-                        className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
-                      >
-                        <X className="h-6 w-6" />
-                      </button>
                     </div>
                   </DialogContent>
                 </Dialog>
