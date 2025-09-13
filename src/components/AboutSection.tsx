@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Users, Fish, Timer, Wrench } from 'lucide-react';
+import { Users, Fish, Timer, Wrench, ChevronLeft, ChevronRight } from 'lucide-react';
 
 import fourFishCharacters from '@/assets/FourPlayerFish.png';
+import featureCoop from '@/assets/feature-coop.jpg';
+import featureAction from '@/assets/feature-action.jpg';
+import featureTools from '@/assets/feature-tools.jpg';
+import featureTraversal from '@/assets/feature-traversal.jpg';
 
 const AboutSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -10,24 +14,36 @@ const AboutSection = () => {
     {
       icon: Users,
       title: "4-Player Co-op",
-      description: "Team up with friends to tackle the messiest whales in the ocean"
+      description: "Team up with friends to tackle the messiest whales in the ocean",
+      image: featureCoop
     },
     {
       icon: Timer,
       title: "Fast-Paced Action",
-      description: "Race against time to scrub away grime and earn your freedom"
+      description: "Race against time to scrub away grime and earn your freedom",
+      image: featureAction
     },
     {
       icon: Wrench,
       title: "Tool Time",
-      description: "The ocean's messes aren't alike, each needs the right tool"
+      description: "The ocean's messes aren't alike, each needs the right tool",
+      image: featureTools
     },
     {
       icon: Fish,
       title: "Whale Traversal",
-      description: "Bounce on jellyfish and swing from hooks to traverse massive whales"
+      description: "Bounce on jellyfish and swing from hooks to traverse massive whales",
+      image: featureTraversal
     }
   ];
+
+  const nextFeature = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % features.length);
+  };
+
+  const prevFeature = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + features.length) % features.length);
+  };
 
   // Auto-cycle through features every 4 seconds
   useEffect(() => {
@@ -85,20 +101,52 @@ const AboutSection = () => {
             </div>
           </div>
 
-          {/* Single Feature Display */}
+          {/* Image Feature Display with Navigation */}
           <div className="relative z-10">
-            <div className="underwater-glass border-border/30 hover:border-primary/50 transition-colors rounded-xl p-8 text-center min-h-[300px] flex flex-col justify-center items-center">
-              <div className="mb-6">
-                {React.createElement(features[currentIndex].icon, { 
-                  className: "h-16 w-16 text-accent mx-auto mb-4 transition-all duration-500" 
-                })}
+            <div className="relative underwater-glass border-border/30 hover:border-primary/50 transition-colors rounded-xl overflow-hidden">
+              {/* Feature Image */}
+              <div className="relative h-80 w-full">
+                <img
+                  src={features[currentIndex].image}
+                  alt={features[currentIndex].title}
+                  className="w-full h-full object-cover transition-all duration-500"
+                />
+                
+                {/* Left Navigation Button */}
+                <button
+                  onClick={prevFeature}
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+                  aria-label="Previous feature"
+                >
+                  <ChevronLeft className="h-6 w-6" />
+                </button>
+                
+                {/* Right Navigation Button */}
+                <button
+                  onClick={nextFeature}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+                  aria-label="Next feature"
+                >
+                  <ChevronRight className="h-6 w-6" />
+                </button>
+                
+                {/* Content Overlay at Bottom */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6">
+                  <div className="flex flex-col items-center text-center text-white">
+                    <div className="mb-3">
+                      {React.createElement(features[currentIndex].icon, { 
+                        className: "h-10 w-10 text-accent mx-auto transition-all duration-500" 
+                      })}
+                    </div>
+                    <h4 className="text-xl font-bold mb-2 font-sour-gummy">
+                      {features[currentIndex].title}
+                    </h4>
+                    <p className="text-sm text-white/90 leading-relaxed">
+                      {features[currentIndex].description}
+                    </p>
+                  </div>
+                </div>
               </div>
-              <h4 className="text-2xl font-bold text-primary mb-4 font-sour-gummy">
-                {features[currentIndex].title}
-              </h4>
-              <p className="text-lg text-foreground/80 leading-relaxed">
-                {features[currentIndex].description}
-              </p>
             </div>
             
             {/* Indicator dots */}
