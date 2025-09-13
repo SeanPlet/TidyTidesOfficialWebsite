@@ -2,11 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Users, Fish, Timer, Wrench, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 
-import fourFishCharacters from '@/assets/FourPlayerFish.png';
-import featureCoop from '@/assets/feature-coop.jpg';
-import featureAction from '@/assets/feature-action.jpg';
-import featureTools from '@/assets/feature-tools.jpg';
-import featureTraversal from '@/assets/feature-traversal.jpg';
+import featureCoop from '@/assets/AncientStatue.png';
+import featureAction from '@/assets/GameMenu.png';
+import featureTools from '@/assets/CleaningTools.png';
+import featureTraversal from '@/assets/Environment.png';
 
 const AboutSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -99,12 +98,12 @@ const AboutSection = () => {
         </div>
 
         {/* Features Carousel */}
-        <div className="relative max-w-2xl mx-auto mb-16">
+        <div className="relative max-w-4xl w-full mx-auto mb-16">
           {/* Image Feature Display with Navigation */}
           <div className="relative z-10">
             <div className="relative underwater-glass border-border/30 hover:border-primary/50 transition-colors rounded-xl overflow-hidden">
               {/* Feature Image */}
-              <div className="relative h-80 w-full overflow-hidden">
+              <div className="relative w-full overflow-hidden">
                 <Dialog open={isImageModalOpen} onOpenChange={setIsImageModalOpen}>
                   <DialogTrigger asChild>
                     <img
