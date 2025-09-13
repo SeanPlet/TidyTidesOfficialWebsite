@@ -68,14 +68,15 @@ const AboutSection = () => {
 
   // Auto-cycle through features every 6.5 seconds
   useEffect(() => {
+    if (isImageModalOpen) return;
     const interval = setInterval(() => {
       if (!isTransitioning) {
         nextFeature();
       }
     }, 6500);
-    
+
     return () => clearInterval(interval);
-  }, [isTransitioning]);
+  }, [isTransitioning, isImageModalOpen]);
 
   return (
     <section className="py-16 ocean-shallow relative overflow-hidden">
@@ -101,7 +102,7 @@ const AboutSection = () => {
         <div className="relative max-w-4xl w-full mx-auto mb-16">
           {/* Image Feature Display with Navigation */}
           <div className="relative z-10">
-            <div className="relative underwater-glass border-border/30 hover:border-primary/50 transition-colors rounded-xl overflow-hidden">
+            <div className="relative underwater-glass border-2 border-border/30 hover:border-accent shadow-lg hover:shadow-accent/30 transition-all duration-300 rounded-xl overflow-hidden">
               {/* Feature Image */}
               <div className="relative w-full overflow-hidden">
                 <Dialog open={isImageModalOpen} onOpenChange={setIsImageModalOpen}>
@@ -117,8 +118,8 @@ const AboutSection = () => {
                       onClick={() => setIsImageModalOpen(true)}
                     />
                   </DialogTrigger>
-                  <DialogContent className="max-w-4xl w-full p-0 bg-transparent border-none">
-                    <div className="relative aspect-[16/9] w-full">
+                  <DialogContent className="max-w-6xl w-full p-0 bg-transparent border-none flex items-center justify-center">
+                    <div className="relative w-full h-[70vh] flex items-center justify-center aspect-[16/9]">
                       <img
                         src={features[currentIndex].image}
                         alt={features[currentIndex].title}
