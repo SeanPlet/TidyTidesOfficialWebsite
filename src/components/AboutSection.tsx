@@ -99,36 +99,40 @@ const AboutSection = () => {
         </div>
 
         {/* Features Carousel */}
-        <div className="relative max-w-6xl w-full mx-auto mb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+        <div className="relative max-w-7xl w-full mx-auto mb-16">
+          <div className="flex items-center justify-center gap-8">
             
-            {/* Feature Content Bubbles */}
-            <div className="lg:order-1 order-2">
-              <div className={`underwater-glass border-2 border-border/30 hover:border-accent shadow-lg hover:shadow-accent/30 transition-all duration-700 rounded-2xl p-6 ${
+            {/* Left Feature Bubble */}
+            <div className="hidden lg:flex flex-col items-center">
+              <div className={`underwater-glass border-2 border-border/30 hover:border-accent shadow-lg hover:shadow-accent/30 transition-all duration-700 rounded-full p-6 w-32 h-32 flex flex-col items-center justify-center ${
                 isTransitioning 
-                  ? 'opacity-0 translate-x-4 scale-95' 
+                  ? 'opacity-0 -translate-x-4 scale-95' 
                   : 'opacity-100 translate-x-0 scale-100'
               }`}>
-                <div className="flex flex-col items-center text-center">
-                  <div className={`mb-4 transition-all duration-700 cubic-bezier(0.25, 0.46, 0.45, 0.94) transform ${
-                    isTransitioning ? 'scale-0 rotate-180' : 'scale-100 rotate-0'
-                  }`}>
-                    {React.createElement(features[currentIndex].icon, { 
-                      className: "h-12 w-12 text-accent mx-auto"
-                    })}
-                  </div>
-                  <h4 className="text-2xl font-bold mb-3 font-sour-gummy text-foreground">
-                    {features[currentIndex].title}
-                  </h4>
-                  <p className="text-foreground/80 leading-relaxed">
-                    {features[currentIndex].description}
-                  </p>
+                <div className={`transition-all duration-700 cubic-bezier(0.25, 0.46, 0.45, 0.94) transform ${
+                  isTransitioning ? 'scale-0 rotate-180' : 'scale-100 rotate-0'
+                }`}>
+                  {React.createElement(features[currentIndex].icon, { 
+                    className: "h-8 w-8 text-accent"
+                  })}
                 </div>
+              </div>
+              <div className={`mt-4 text-center max-w-xs transition-all duration-700 ${
+                isTransitioning 
+                  ? 'opacity-0 translate-y-2' 
+                  : 'opacity-100 translate-y-0'
+              }`}>
+                <h4 className="text-lg font-bold mb-2 font-sour-gummy text-foreground">
+                  {features[currentIndex].title}
+                </h4>
+                <p className="text-sm text-foreground/70 leading-relaxed">
+                  {features[currentIndex].description}
+                </p>
               </div>
             </div>
 
-            {/* Image Gallery */}
-            <div className="lg:col-span-2 lg:order-2 order-1">
+            {/* Central Image Gallery */}
+            <div className="flex-1 max-w-2xl">
               <div className="relative underwater-glass border-2 border-border/30 hover:border-accent shadow-lg hover:shadow-accent/30 transition-all duration-300 rounded-xl overflow-hidden">
                 <div className="relative w-full overflow-hidden">
                   <Dialog open={isImageModalOpen} onOpenChange={setIsImageModalOpen}>
@@ -193,6 +197,60 @@ const AboutSection = () => {
                     aria-label={`View feature ${index + 1}`}
                   />
                 ))}
+              </div>
+            </div>
+
+            {/* Right Feature Bubble */}
+            <div className="hidden lg:flex flex-col items-center">
+              <div className={`underwater-glass border-2 border-border/30 hover:border-accent shadow-lg hover:shadow-accent/30 transition-all duration-700 rounded-full p-6 w-32 h-32 flex flex-col items-center justify-center ${
+                isTransitioning 
+                  ? 'opacity-0 translate-x-4 scale-95' 
+                  : 'opacity-100 translate-x-0 scale-100'
+              }`}>
+                <div className={`transition-all duration-700 cubic-bezier(0.25, 0.46, 0.45, 0.94) transform ${
+                  isTransitioning ? 'scale-0 rotate-180' : 'scale-100 rotate-0'
+                }`}>
+                  {React.createElement(features[currentIndex].icon, { 
+                    className: "h-8 w-8 text-accent"
+                  })}
+                </div>
+              </div>
+              <div className={`mt-4 text-center max-w-xs transition-all duration-700 ${
+                isTransitioning 
+                  ? 'opacity-0 translate-y-2' 
+                  : 'opacity-100 translate-y-0'
+              }`}>
+                <h4 className="text-lg font-bold mb-2 font-sour-gummy text-foreground">
+                  {features[currentIndex].title}
+                </h4>
+                <p className="text-sm text-foreground/70 leading-relaxed">
+                  {features[currentIndex].description}
+                </p>
+              </div>
+            </div>
+
+            {/* Mobile Feature Content (below gallery on mobile) */}
+            <div className="lg:hidden w-full mt-8">
+              <div className={`underwater-glass border-2 border-border/30 hover:border-accent shadow-lg hover:shadow-accent/30 transition-all duration-700 rounded-2xl p-6 ${
+                isTransitioning 
+                  ? 'opacity-0 translate-y-4 scale-95' 
+                  : 'opacity-100 translate-y-0 scale-100'
+              }`}>
+                <div className="flex flex-col items-center text-center">
+                  <div className={`mb-4 transition-all duration-700 cubic-bezier(0.25, 0.46, 0.45, 0.94) transform ${
+                    isTransitioning ? 'scale-0 rotate-180' : 'scale-100 rotate-0'
+                  }`}>
+                    {React.createElement(features[currentIndex].icon, { 
+                      className: "h-12 w-12 text-accent mx-auto"
+                    })}
+                  </div>
+                  <h4 className="text-2xl font-bold mb-3 font-sour-gummy text-foreground">
+                    {features[currentIndex].title}
+                  </h4>
+                  <p className="text-foreground/80 leading-relaxed">
+                    {features[currentIndex].description}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
