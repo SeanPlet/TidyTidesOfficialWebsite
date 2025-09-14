@@ -110,10 +110,10 @@ const AboutSection = () => {
                     <img
                       src={features[currentIndex].image}
                       alt={features[currentIndex].title}
-                      className={`w-full h-full object-cover transition-all duration-1000 ease-in-out transform cursor-pointer hover:scale-105 ${
+                      className={`w-full h-full object-cover transition-all duration-700 cubic-bezier(0.25, 0.46, 0.45, 0.94) transform cursor-pointer hover:scale-105 ${
                         isTransitioning 
-                          ? 'opacity-0 scale-110' 
-                          : 'opacity-100 scale-100'
+                          ? 'opacity-0 scale-95 blur-sm' 
+                          : 'opacity-100 scale-100 blur-0'
                       }`}
                       onClick={() => setIsImageModalOpen(true)}
                     />
@@ -152,10 +152,10 @@ const AboutSection = () => {
                 
                 {/* Content Overlay at Bottom */}
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6">
-                  <div className={`flex flex-col items-center text-center text-white transition-all duration-1000 ease-in-out transform ${
+                  <div className={`flex flex-col items-center text-center text-white transition-all duration-700 cubic-bezier(0.25, 0.46, 0.45, 0.94) transform ${
                     isTransitioning 
-                      ? 'opacity-0 translate-y-6' 
-                      : 'opacity-100 translate-y-0'
+                      ? 'opacity-0 translate-y-4 scale-95' 
+                      : 'opacity-100 translate-y-0 scale-100'
                   }`}>
                     <div className="mb-3">
                       {React.createElement(features[currentIndex].icon, { 
