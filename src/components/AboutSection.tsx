@@ -100,7 +100,7 @@ const AboutSection = () => {
 
         {/* Image Gallery */}
         <div className="relative max-w-4xl mx-auto mb-16">
-          <div className="flex items-center justify-center gap-8">
+          <div className="flex items-center justify-center gap-6">
             {/* Left Navigation Button */}
             <button
               onClick={prevFeature}
@@ -143,7 +143,7 @@ const AboutSection = () => {
               </div>
               
               {/* Indicator dots */}
-              <div className="flex justify-center mt-6 space-x-2">
+              <div className="flex justify-center mt-6 space-x-3">
                 {features.map((_, index) => (
                   <button
                     key={index}
