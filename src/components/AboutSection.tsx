@@ -99,97 +99,101 @@ const AboutSection = () => {
         </div>
 
         {/* Features Carousel */}
-        <div className="relative max-w-4xl w-full mx-auto mb-16">
-          {/* Image Feature Display with Navigation */}
-          <div className="relative z-10">
-            <div className="relative underwater-glass border-2 border-border/30 hover:border-accent shadow-lg hover:shadow-accent/30 transition-all duration-300 rounded-xl overflow-hidden">
-              {/* Feature Image */}
-              <div className="relative w-full overflow-hidden">
-                <Dialog open={isImageModalOpen} onOpenChange={setIsImageModalOpen}>
-                  <DialogTrigger asChild>
-                    <img
-                      src={features[currentIndex].image}
-                      alt={features[currentIndex].title}
-                      className={`w-full h-full object-cover transition-all duration-700 cubic-bezier(0.25, 0.46, 0.45, 0.94) transform cursor-pointer hover:scale-105 ${
-                        isTransitioning 
-                          ? 'opacity-0 scale-95 blur-sm' 
-                          : 'opacity-100 scale-100 blur-0'
-                      }`}
-                      onClick={() => setIsImageModalOpen(true)}
-                    />
-                  </DialogTrigger>
-                  <DialogContent className="max-w-6xl w-full p-0 bg-transparent border-none flex items-center justify-center">
-                    <div className="relative w-full h-[70vh] flex items-center justify-center aspect-[16/9]">
-                      <img
-                        src={features[currentIndex].image}
-                        alt={features[currentIndex].title}
-                        className="w-full h-full object-cover rounded-lg"
-                        style={{ aspectRatio: '16/9' }}
-                      />
-                    </div>
-                  </DialogContent>
-                </Dialog>
-                
-                {/* Left Navigation Button */}
-                <button
-                  onClick={prevFeature}
-                  disabled={isTransitioning}
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 disabled:opacity-50 text-white p-2 rounded-full transition-all duration-300 hover:scale-110"
-                  aria-label="Previous feature"
-                >
-                  <ChevronLeft className="h-6 w-6" />
-                </button>
-                
-                {/* Right Navigation Button */}
-                <button
-                  onClick={nextFeature}
-                  disabled={isTransitioning}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 disabled:opacity-50 text-white p-2 rounded-full transition-all duration-300 hover:scale-110"
-                  aria-label="Next feature"
-                >
-                  <ChevronRight className="h-6 w-6" />
-                </button>
-                
-                {/* Content Overlay at Bottom */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6">
-                  <div className={`flex flex-col items-center text-center text-white transition-all duration-700 cubic-bezier(0.25, 0.46, 0.45, 0.94) transform ${
-                    isTransitioning 
-                      ? 'opacity-0 translate-y-4 scale-95' 
-                      : 'opacity-100 translate-y-0 scale-100'
+        <div className="relative max-w-6xl w-full mx-auto mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+            
+            {/* Feature Content Bubbles */}
+            <div className="lg:order-1 order-2">
+              <div className={`underwater-glass border-2 border-border/30 hover:border-accent shadow-lg hover:shadow-accent/30 transition-all duration-700 rounded-2xl p-6 ${
+                isTransitioning 
+                  ? 'opacity-0 translate-x-4 scale-95' 
+                  : 'opacity-100 translate-x-0 scale-100'
+              }`}>
+                <div className="flex flex-col items-center text-center">
+                  <div className={`mb-4 transition-all duration-700 cubic-bezier(0.25, 0.46, 0.45, 0.94) transform ${
+                    isTransitioning ? 'scale-0 rotate-180' : 'scale-100 rotate-0'
                   }`}>
-                    <div className="mb-3">
-                      {React.createElement(features[currentIndex].icon, { 
-                        className: `h-10 w-10 text-accent mx-auto transition-all duration-800 ease-in-out transform ${
-                          isTransitioning ? 'scale-0 rotate-180' : 'scale-100 rotate-0'
-                        }` 
-                      })}
-                    </div>
-                    <h4 className="text-xl font-bold mb-2 font-sour-gummy">
-                      {features[currentIndex].title}
-                    </h4>
-                    <p className="text-sm text-white/90 leading-relaxed">
-                      {features[currentIndex].description}
-                    </p>
+                    {React.createElement(features[currentIndex].icon, { 
+                      className: "h-12 w-12 text-accent mx-auto"
+                    })}
                   </div>
+                  <h4 className="text-2xl font-bold mb-3 font-sour-gummy text-foreground">
+                    {features[currentIndex].title}
+                  </h4>
+                  <p className="text-foreground/80 leading-relaxed">
+                    {features[currentIndex].description}
+                  </p>
                 </div>
               </div>
             </div>
-            
-            {/* Indicator dots */}
-            <div className="flex justify-center mt-6 space-x-2">
-              {features.map((_, index) => (
-                <button
-                  key={index}
-                  className={`w-3 h-3 rounded-full transition-all duration-500 transform ${
-                    index === currentIndex 
-                      ? 'bg-accent scale-125 shadow-lg shadow-accent/50' 
-                      : 'bg-accent/30 hover:bg-accent/50 hover:scale-110'
-                  }`}
-                  onClick={() => goToFeature(index)}
-                  disabled={isTransitioning}
-                  aria-label={`View feature ${index + 1}`}
-                />
-              ))}
+
+            {/* Image Gallery */}
+            <div className="lg:col-span-2 lg:order-2 order-1">
+              <div className="relative underwater-glass border-2 border-border/30 hover:border-accent shadow-lg hover:shadow-accent/30 transition-all duration-300 rounded-xl overflow-hidden">
+                <div className="relative w-full overflow-hidden">
+                  <Dialog open={isImageModalOpen} onOpenChange={setIsImageModalOpen}>
+                    <DialogTrigger asChild>
+                      <img
+                        src={features[currentIndex].image}
+                        alt={features[currentIndex].title}
+                        className={`w-full h-full object-cover transition-all duration-700 cubic-bezier(0.25, 0.46, 0.45, 0.94) transform cursor-pointer hover:scale-105 ${
+                          isTransitioning 
+                            ? 'opacity-0 scale-95 blur-sm' 
+                            : 'opacity-100 scale-100 blur-0'
+                        }`}
+                        onClick={() => setIsImageModalOpen(true)}
+                      />
+                    </DialogTrigger>
+                    <DialogContent className="max-w-6xl w-full p-0 bg-transparent border-none flex items-center justify-center">
+                      <div className="relative w-full h-[70vh] flex items-center justify-center aspect-[16/9]">
+                        <img
+                          src={features[currentIndex].image}
+                          alt={features[currentIndex].title}
+                          className="w-full h-full object-cover rounded-lg"
+                          style={{ aspectRatio: '16/9' }}
+                        />
+                      </div>
+                    </DialogContent>
+                  </Dialog>
+                  
+                  {/* Left Navigation Button */}
+                  <button
+                    onClick={prevFeature}
+                    disabled={isTransitioning}
+                    className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 disabled:opacity-50 text-white p-2 rounded-full transition-all duration-300 hover:scale-110"
+                    aria-label="Previous feature"
+                  >
+                    <ChevronLeft className="h-6 w-6" />
+                  </button>
+                  
+                  {/* Right Navigation Button */}
+                  <button
+                    onClick={nextFeature}
+                    disabled={isTransitioning}
+                    className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 disabled:opacity-50 text-white p-2 rounded-full transition-all duration-300 hover:scale-110"
+                    aria-label="Next feature"
+                  >
+                    <ChevronRight className="h-6 w-6" />
+                  </button>
+                </div>
+              </div>
+              
+              {/* Indicator dots */}
+              <div className="flex justify-center mt-6 space-x-2">
+                {features.map((_, index) => (
+                  <button
+                    key={index}
+                    className={`w-3 h-3 rounded-full transition-all duration-500 transform ${
+                      index === currentIndex 
+                        ? 'bg-accent scale-125 shadow-lg shadow-accent/50' 
+                        : 'bg-accent/30 hover:bg-accent/50 hover:scale-110'
+                    }`}
+                    onClick={() => goToFeature(index)}
+                    disabled={isTransitioning}
+                    aria-label={`View feature ${index + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
