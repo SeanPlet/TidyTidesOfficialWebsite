@@ -304,8 +304,20 @@ All colors MUST be HSL.
     }
   }
 
-  /* Solid heading shadow */
+  /* Responsive heading shadow */
   .heading-shadow {
-    filter: drop-shadow(4.6px 4.6px 0 #004258);
+    filter: drop-shadow(2px 2px 0 #004258);
+  }
+  
+  @media (min-width: 640px) {
+    .heading-shadow {
+      filter: drop-shadow(3px 3px 0 #004258);
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .heading-shadow {
+      filter: drop-shadow(4.6px 4.6px 0 #004258);
+    }
   }
 }
