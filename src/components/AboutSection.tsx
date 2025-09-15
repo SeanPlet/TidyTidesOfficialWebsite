@@ -105,10 +105,10 @@ const AboutSection = () => {
             <button
               onClick={prevFeature}
               disabled={isTransitioning}
-              className="underwater-glass border-2 border-border/30 hover:border-accent shadow-lg hover:shadow-accent/30 disabled:opacity-50 text-foreground p-3 rounded-full transition-all duration-300 hover:scale-110"
+              className="underwater-glass border-2 border-border/30 hover:border-accent shadow-lg hover:shadow-accent/30 disabled:opacity-50 text-foreground p-2 sm:p-3 rounded-full transition-all duration-300 hover:scale-110"
               aria-label="Previous feature"
             >
-              <ChevronLeft className="h-6 w-6" />
+              <ChevronLeft className="h-4 w-4 sm:h-6 sm:w-6" />
             </button>
 
             {/* Central Image Gallery */}
@@ -164,10 +164,10 @@ const AboutSection = () => {
             <button
               onClick={nextFeature}
               disabled={isTransitioning}
-              className="underwater-glass border-2 border-border/30 hover:border-accent shadow-lg hover:shadow-accent/30 disabled:opacity-50 text-foreground p-3 rounded-full transition-all duration-300 hover:scale-110"
+              className="underwater-glass border-2 border-border/30 hover:border-accent shadow-lg hover:shadow-accent/30 disabled:opacity-50 text-foreground p-2 sm:p-3 rounded-full transition-all duration-300 hover:scale-110"
               aria-label="Next feature"
             >
-              <ChevronRight className="h-6 w-6" />
+              <ChevronRight className="h-4 w-4 sm:h-6 sm:w-6" />
             </button>
           </div>
         </div>
