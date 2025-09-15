@@ -4,17 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Calendar, Plus, Bug, Wrench, Sparkles } from 'lucide-react';
 
-import fish from '@/assets/PatchNotesFish.png';
-
-type PatchNotesSectionProps = {
-  fishOffsetX?: number;
-  fishOffsetY?: number;
-};
-
-const PatchNotesSection: React.FC<PatchNotesSectionProps> = ({
-  fishOffsetX = 790,
-  fishOffsetY = -70,
-}) => {
+const PatchNotesSection: React.FC = () => {
   const patchNotes = [
     {
       version: '0.3.4',
@@ -85,37 +75,6 @@ const PatchNotesSection: React.FC<PatchNotesSectionProps> = ({
         <div className="max-w-4xl mx-auto space-y-8">
           {patchNotes.map((patch, index) => (
             <div key={index} className="relative">
-              {/* Mascot behind the FIRST card only */}
-              {index === 0 && (
-                <div
-                  className="absolute top-0 left-0 pointer-events-none select-none hidden md:block"
-                  style={{ transform: `translate(${fishOffsetX}px, ${fishOffsetY}px)` }}
-                >
-                  <div className="relative z-0">
-                    {/* Glow BEHIND the fish (no animation) */}
-                    <div
-                      aria-hidden="true"
-                      className="absolute -z-10 rounded-full blur-2xl"
-                      style={{
-                        width: '12rem',
-                        height: '12rem',
-                        top: '-1.5rem',
-                        left: '-1.25rem',
-                        background:
-                          'radial-gradient(closest-side, rgba(217, 240, 12, 0.55), rgba(147,197,253,0))',
-                      }}
-                    />
-                    {/* Fish ABOVE the glow */}
-                    <img
-                      src={fish}
-                      alt=""
-                      aria-hidden="true"
-                      className="relative z-10 w-24 md:w-32 lg:w-40 float-gentle"
-                    />
-                  </div>
-                </div>
-              )}
-
               <Card
                 className="relative z-10 underwater-glass border-border/30 hover:border-primary/30 transition-all duration-500 animate-fade-in group hover:scale-105 hover:shadow-xl hover:shadow-primary/20"
                 style={{ animationDelay: `${index * 0.3}s` }}
