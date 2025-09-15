@@ -57,7 +57,7 @@ const AboutSection = () => {
     if (isImageModalOpen) return;
     const interval = setInterval(() => {
       if (!isTransitioning) nextFeature();
-    }, 9000);
+    }, 5000);
     return () => clearInterval(interval);
   }, [isTransitioning, isImageModalOpen, currentIndex]);
 
@@ -79,7 +79,8 @@ const AboutSection = () => {
           </p>
         </div>
 
-        <div className="relative max-w-4xl mx-auto mb-2">
+        {/* Wider gallery container */}
+        <div className="relative max-w-7xl mx-auto mb-2">
           <div className="flex items-center justify-center gap-6">
             <button
               onClick={prevFeature}
@@ -90,9 +91,11 @@ const AboutSection = () => {
               <ChevronLeft className="h-4 w-4 sm:h-6 sm:w-6" />
             </button>
 
-            <div className="flex-1 max-w-2xl">
+            {/* Much bigger gallery box */}
+            <div className="flex-1 w-full max-w-6xl">
               <div className="relative underwater-glass border-2 border-border/30 hover:border-accent shadow-lg hover:shadow-accent/30 transition-all duration-300 rounded-xl overflow-hidden">
-                <div className="relative w-full overflow-hidden aspect-[16/9]">
+                {/* Taller, responsive height instead of fixed 16:9 */}
+                <div className="relative w-full overflow-hidden h-[220px] sm:h-[360px] md:h-[480px] lg:h-[560px] xl:h-[640px]">
                   {isTransitioning ? (
                     <>
                       <img
