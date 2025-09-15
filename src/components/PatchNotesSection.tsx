@@ -7,14 +7,14 @@ import { Calendar, Plus, Bug, Wrench, Sparkles } from 'lucide-react';
 const PatchNotesSection: React.FC = () => {
   const patchNotes = [
     {
-      version: '0.3.4',
-      date: 'Sep 1, 2025',
+      version: '0.3.5',
+      date: 'Sep 15, 2025',
       type: 'Minor Update',
       changes: [
-        { type: 'added', text: 'Added stone characters of our character across the level' },
-        { type: 'added', text: 'Additional jellyfish for the player to use to navigate the whale' },
-        { type: 'improved', text: 'Make the fire hydrant hose more accurate' },
-        { type: 'fixed', text: 'Fixed a bug where the player could fall through the mesh and get stuck' },
+        { type: 'added', text: 'Implemented a whale exit event' },
+        { type: 'added', text: 'Power Pearls now randomly spawn in a random location' },
+        { type: 'improved', text: 'Replaced the UI with a new user-friendly design' },
+        { type: 'fixed', text: 'Changed fishbowl location to resolve collision issues' },
       ],
     },
   ];
