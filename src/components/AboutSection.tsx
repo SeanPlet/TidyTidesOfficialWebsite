@@ -99,7 +99,7 @@ const AboutSection = () => {
         </div>
 
         {/* Image Gallery */}
-        <div className="relative max-w-4xl mx-auto mb-4">
+        <div className="relative max-w-4xl mx-auto mb-2">
           <div className="flex items-center justify-center gap-6">
             {/* Left Navigation Button */}
             <button
