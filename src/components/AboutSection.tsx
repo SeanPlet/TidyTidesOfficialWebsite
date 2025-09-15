@@ -147,20 +147,15 @@ const AboutSection = () => {
                 {features.map((_, index) => (
                   <button
                     key={index}
-                    className={`relative rounded-full transition-all duration-500 transform ${
+                    className={`w-3 h-3 rounded-full transition-all duration-500 transform ${
                       index === currentIndex 
-                        ? 'w-4 h-4 bg-accent scale-125 shadow-lg shadow-accent/50' 
-                        : 'w-3 h-3 bg-accent/30 hover:bg-accent/50 hover:scale-110'
+                        ? 'bg-accent scale-125 shadow-lg shadow-accent/50' 
+                        : 'bg-accent/30 hover:bg-accent/50 hover:scale-110'
                     }`}
                     onClick={() => goToFeature(index)}
                     disabled={isTransitioning}
                     aria-label={`View feature ${index + 1}`}
-                  >
-                    {/* Timer ring only shows for active dot when not in modal or transitioning */}
-                    {index === currentIndex && !isImageModalOpen && !isTransitioning && (
-                      <div className="absolute inset-0 timer-ring" />
-                    )}
-                  </button>
+                  />
                 ))}
               </div>
             </div>
