@@ -147,10 +147,10 @@ const AboutSection = () => {
                 {features.map((_, index) => (
                   <button
                     key={index}
-                    className={`relative w-3 h-3 rounded-full transition-all duration-500 transform ${
+                    className={`relative rounded-full transition-all duration-500 transform ${
                       index === currentIndex 
-                        ? 'bg-accent scale-125 shadow-lg shadow-accent/50 timer-dot' 
-                        : 'bg-accent/30 hover:bg-accent/50 hover:scale-110'
+                        ? 'w-4 h-4 bg-accent scale-125 shadow-lg shadow-accent/50' 
+                        : 'w-3 h-3 bg-accent/30 hover:bg-accent/50 hover:scale-110'
                     }`}
                     onClick={() => goToFeature(index)}
                     disabled={isTransitioning}

@@ -180,10 +180,10 @@ All colors MUST be HSL.
 
   @keyframes timer-progress {
     0% {
-      background: conic-gradient(from -90deg, hsl(var(--accent)) 0deg, transparent 0deg);
+      background: conic-gradient(from -90deg, hsl(var(--ring)) 0deg, transparent 0deg);
     }
     100% {
-      background: conic-gradient(from -90deg, hsl(var(--accent)) 360deg, transparent 360deg);
+      background: conic-gradient(from -90deg, hsl(var(--ring)) 360deg, transparent 360deg);
     }
   }
 
@@ -342,9 +342,11 @@ All colors MUST be HSL.
   /* Timer ring for indicator dots */
   .timer-ring {
     border-radius: 50%;
-    background: conic-gradient(from -90deg, hsl(var(--accent)) 0deg, transparent 0deg);
+    background: conic-gradient(from -90deg, hsl(var(--ring)) 0deg, transparent 0deg);
     animation: timer-progress 6.5s linear infinite;
-    mask: radial-gradient(circle at center, transparent 60%, black 62%, black 100%);
-    -webkit-mask: radial-gradient(circle at center, transparent 60%, black 62%, black 100%);
+    mask: radial-gradient(circle at center, transparent 45%, black 55%, black 100%);
+    -webkit-mask: radial-gradient(circle at center, transparent 45%, black 55%, black 100%);
+    pointer-events: none;
+    z-index: 10;
   }
 }
