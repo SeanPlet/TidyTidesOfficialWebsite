@@ -7,12 +7,6 @@ import featureAction from '@/assets/GameMenu.png';
 import featureTools from '@/assets/CleaningTools.png';
 import featureTraversal from '@/assets/Environment.png';
 
-import toolPlunger from '@/assets/Tool-Plunger.png';
-import toolVacuum from '@/assets/Tool-Vacuum.png';
-import toolHose from '@/assets/Tool-Hose.png';
-import toolBrush from '@/assets/Tool-Sponge.png';
-import toolHook from '@/assets/Tool-Hook.png';
-
 const ANIM_MS = 1800 as const;
 type FadeStage = 'idle' | 'start' | 'run';
 
@@ -199,53 +193,6 @@ const AboutSection = () => {
             >
               <ChevronRight className="h-4 w-4 sm:h-6 sm:w-6" />
             </button>
-          </div>
-        </div>
-
-        {/* Tools Section */}
-        <div className="max-w-6xl mx-auto mt-12">
-          <div className="text-center mb-6">
-            <h3 className="text-xl sm:text-2xl font-bold font-sour-gummy text-primary mb-2 heading-shadow">
-              The Right Tool for the Job
-            </h3>
-            <p className="text-sm text-foreground/80">No grime is the same – each mess requires its own special touch</p>
-          </div>
-
-          <div className="underwater-glass border-2 border-border/30 hover:border-accent shadow-lg hover:shadow-accent/30 transition-all duration-300 rounded-xl p-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
-              <div className="flex flex-col items-center text-center">
-                <img src={toolPlunger} alt="Plunger tool" className="w-8 h-8 mb-2" />
-                <h4 className="text-sm font-bold text-primary font-sour-gummy mb-1">Plunger</h4>
-                <p className="text-xs text-foreground/80">Removes stubborn barnacles</p>
-              </div>
-
-              <div className="flex flex-col items-center text-center">
-                <img src={toolVacuum} alt="Vacuum tool" className="w-8 h-8 mb-2" />
-                <h4 className="text-sm font-bold text-primary font-sour-gummy mb-1">Vacuum</h4>
-                <p className="text-xs text-foreground/80">Sucks up clingy algae clusters</p>
-              </div>
-
-              <div className="flex flex-col items-center text-center">
-                <img src={toolHose} alt="Hose tool" className="w-8 h-8 mb-2" />
-                <h4 className="text-sm font-bold text-primary font-sour-gummy mb-1">Hose</h4>
-                <p className="text-xs text-foreground/80">Sprays away slick oil spills</p>
-              </div>
-
-              <div className="flex flex-col items-center text-center">
-                <img src={toolBrush} alt="Brush tool" className="w-8 h-8 mb-2" />
-                <h4 className="text-sm font-bold text-primary font-sour-gummy mb-1">Brush</h4>
-                <p className="text-xs text-foreground/80">Scrubs through thick, crusty mud</p>
-              </div>
-            </div>
-
-            <div className="border-t border-border/30 pt-3">
-              <div className="flex items-center justify-center gap-2">
-                <img src={toolHook} alt="Hook tool" className="w-6 h-6" />
-                <p className="text-xs text-foreground/80 text-center">
-                  Use tires, jellyfish, and fishing hooks to navigate around the giant whale
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
