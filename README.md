@@ -1,73 +1,40 @@
-# Welcome to your Lovable project
+# 🌊 TidyTidesCo Website  
 
-## Project info
+This repository contains the official website for **Tidy Tides Co.** — the chaotic co-op cleaning game where you and your friends scrub the ocean’s dirtiest, most majestic clients: whales 🐋.  
 
-**URL**: https://lovable.dev/projects/0a062378-0f47-4968-bea0-309a0375a856
+The site serves as a **hub for trailers, game info, and links** (Itch.io, socials, email, etc).  
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🚀 Live Site  
 
-**Use Lovable**
+🔗 [TidyTidesCo Website](https://seanplet.github.io/TidyTidesOfficialWebsite/)  
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/0a062378-0f47-4968-bea0-309a0375a856) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🛠 Tech Stack  
 
-**Use your preferred IDE**
+- [Vite](https://vitejs.dev/) – fast bundler and dev server  
+- [React](https://react.dev/) – UI library  
+- [TypeScript](https://www.typescriptlang.org/) – type safety  
+- [shadcn/ui](https://ui.shadcn.com/) – component system  
+- [Tailwind CSS](https://tailwindcss.com/) – utility-first styling  
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 💻 Local Development  
 
-Follow these steps:
+To run the site locally:  
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+```bash
+# 1. Clone the repository
+git clone https://github.com/SeanPlet/TidyTidesOfficialWebsite.git
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# 2. Enter the project folder
+cd TidyTidesOfficialWebsite
 
-# Step 3: Install the necessary dependencies.
-npm i
+# 3. Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 4. Start the dev server
 npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/0a062378-0f47-4968-bea0-309a0375a856) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
