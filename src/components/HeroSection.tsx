@@ -38,7 +38,11 @@ const HeroSection = () => {
             <Play className="mr-2 h-5 w-5" />
             Watch Trailer
           </Button>
-          <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg font-semibold rounded-full shadow-lg backdrop-blur-md">
+          <Button 
+            size="lg" 
+            className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg font-semibold rounded-full shadow-lg backdrop-blur-md"
+            onClick={() => window.open('https://drive.google.com/drive/folders/1fIJ1qKXSAzSWOjWC7_McjABMzqSbixM0', '_blank')}
+          >
             <ExternalLink className="mr-2 h-5 w-5" />
             Playtest Now
           </Button>
