@@ -75,7 +75,7 @@ const AboutSection = () => {
 
         <div className="max-w-4xl mx-auto text-center mb-20">
           <p className="text-xl text-foreground/90 leading-relaxed">
-            The crew ruined the Flying Dutchman's whale-taxi business and were cursed with the inability to swim. As punishment, they were trapped in a giant glass fishbowl at the bottom of the ocean, forced to clean whales for eternity until their debt is paid off. The only way out is to scrub their way to freedom, one whale at a time.
+            The crew ruined Davy Jones’ Flying Dutchman whale-taxi business and were cursed with the inability to swim. As punishment, they were trapped in a giant glass fishbowl at the bottom of the ocean, forced to clean whales for eternity until their debt is paid off. The only way out is to scrub their way to freedom, one whale at a time.
           </p>
         </div>
 
