@@ -34,7 +34,11 @@ const HeroSection = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg font-semibold rounded-full shadow-lg backdrop-blur-md">
+          <Button 
+            size="lg" 
+            className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg font-semibold rounded-full shadow-lg backdrop-blur-md"
+            onClick={() => window.open('https://drive.google.com/drive/folders/1W5Weiis6hPp2ov7BjUkXMj0bJUrnV3yU', '_blank')}
+          >
             <Play className="mr-2 h-5 w-5" />
             Watch Trailer
           </Button>
