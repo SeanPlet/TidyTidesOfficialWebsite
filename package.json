@@ -10,8 +10,8 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build && powershell -Command \"Copy-Item -Path dist/index.html -Destination dist/404.html -Force; New-Item -Path dist/.nojekyll -ItemType File -Force | Out-Null\"",
-    "deploy": "gh-pages -d dist -c www.tidytides.co.za"
+    "predeploy": "npm run build && node -e \"require('fs').writeFileSync('dist/CNAME','www.tidytides.co.za')\"",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
