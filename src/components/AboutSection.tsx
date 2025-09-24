@@ -7,6 +7,7 @@ import featureAction from '@/assets/GameMenu.png';
 import featureTools from '@/assets/CleaningTools.png';
 import featureTraversal from '@/assets/Environment.png';
 import bubbleImage from '@/assets/Bubble_1.png';
+import bubbleImage2 from '@/assets/Bubble_2.png';
 
 const ANIM_MS = 1800 as const;
 type FadeStage = 'idle' | 'start' | 'run';
@@ -80,6 +81,12 @@ const AboutSection = () => {
             alt="Decorative bubbles" 
             className="absolute top-0 left-0 w-12 h-12 md:w-16 md:h-16 opacity-80 animate-pulse" 
             style={{ transform: 'translate(-50%, -25%)' }}
+          />
+          <img 
+            src={bubbleImage2} 
+            alt="Decorative bubbles" 
+            className="absolute bottom-0 right-0 w-10 h-10 md:w-14 md:h-14 opacity-70 animate-bounce" 
+            style={{ transform: 'translate(50%, 25%)' }}
           />
           <p className="text-xl text-foreground/90 leading-relaxed">
             The crew ruined Davy Jones' Flying Dutchman whale-taxi business and were cursed with the inability to swim. As punishment, they were trapped in a giant glass fishbowl at the bottom of the ocean, forced to clean whales for eternity until their debt is paid off. The only way out is to scrub their way to freedom, one whale at a time.
