@@ -3,6 +3,8 @@ import { ExternalLink, Play } from 'lucide-react';
 import underwaterHero from '@/assets/Franchise.jpg';
 
 import tidyTidesLogo from '@/assets/TidyTidesLogo.png';
+import bubble1 from '@/assets/Bubble_1.png';
+import bubble2 from '@/assets/Bubble_2.png';
 
 const HeroSection = () => {
   return <section className="relative min-h-screen flex items-center justify-center ocean-surface">
@@ -22,12 +24,16 @@ const HeroSection = () => {
         </div>
 
         {/* Main Title */}
-        <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold font-sour-gummy text-primary mb-6 heading-shadow">
-          <span className="block">Dive Into</span>
-          <span className="block">
-            The <span className="text-accent">Chaos</span>
-          </span>
-        </h1>
+        <div className="flex items-center justify-center gap-4 sm:gap-8">
+          <img src={bubble1} alt="" className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 animate-pulse opacity-80" />
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold font-sour-gummy text-primary mb-6 heading-shadow">
+            <span className="block">Dive Into</span>
+            <span className="block">
+              The <span className="text-accent">Chaos</span>
+            </span>
+          </h1>
+          <img src={bubble2} alt="" className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 animate-pulse opacity-80" />
+        </div>
         
         {/* Subtitle */}
         <p className="text-xl md:text-2xl text-foreground/90 mb-8 max-w-2xl mx-auto leading-relaxed">Cleaning whales has never been messier with friends</p>
