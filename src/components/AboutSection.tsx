@@ -6,6 +6,7 @@ import featureCoop from '@/assets/AncientStatue.png';
 import featureAction from '@/assets/GameMenu.png';
 import featureTools from '@/assets/CleaningTools.png';
 import featureTraversal from '@/assets/Environment.png';
+import bubbleImage from '@/assets/Bubble_1.png';
 
 const ANIM_MS = 1800 as const;
 type FadeStage = 'idle' | 'start' | 'run';
@@ -73,9 +74,15 @@ const AboutSection = () => {
           <div className="w-24 h-1 bg-accent mx-auto mb-8" />
         </div>
 
-        <div className="max-w-4xl mx-auto text-center mb-20">
+        <div className="max-w-4xl mx-auto text-center mb-20 relative">
+          <img 
+            src={bubbleImage} 
+            alt="Decorative bubbles" 
+            className="absolute top-0 left-0 w-12 h-12 md:w-16 md:h-16 opacity-80 animate-pulse" 
+            style={{ transform: 'translate(-50%, -25%)' }}
+          />
           <p className="text-xl text-foreground/90 leading-relaxed">
-            The crew ruined Davy Jones’ Flying Dutchman whale-taxi business and were cursed with the inability to swim. As punishment, they were trapped in a giant glass fishbowl at the bottom of the ocean, forced to clean whales for eternity until their debt is paid off. The only way out is to scrub their way to freedom, one whale at a time.
+            The crew ruined Davy Jones' Flying Dutchman whale-taxi business and were cursed with the inability to swim. As punishment, they were trapped in a giant glass fishbowl at the bottom of the ocean, forced to clean whales for eternity until their debt is paid off. The only way out is to scrub their way to freedom, one whale at a time.
           </p>
         </div>
 
