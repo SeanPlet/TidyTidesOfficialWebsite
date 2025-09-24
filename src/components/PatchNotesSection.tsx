@@ -3,8 +3,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Calendar, Plus, Bug, Wrench, Sparkles } from 'lucide-react';
-import bubble1 from '@/assets/Bubble_1.png';
-import bubble2 from '@/assets/Bubble_2.png';
 
 const PatchNotesSection: React.FC = () => {
   const patchNotes = [
@@ -66,11 +64,7 @@ const PatchNotesSection: React.FC = () => {
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-4 sm:gap-8">
-            <img src={bubble1} alt="" className="w-6 h-6 sm:w-8 sm:h-8 md:w-12 md:h-12 animate-pulse opacity-80" />
-            <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold font-sour-gummy text-primary mb-6 break-words heading-shadow">Patch Notes</h2>
-            <img src={bubble2} alt="" className="w-6 h-6 sm:w-8 sm:h-8 md:w-12 md:h-12 animate-pulse opacity-80" />
-          </div>
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold font-sour-gummy text-primary mb-6 break-words heading-shadow">Patch Notes</h2>
           <div className="w-24 h-1 bg-accent mx-auto mb-8" />
           <p className="text-xl text-foreground/80 max-w-4xl mx-auto">
             Dive into the latest updates and improvements to your underwater cleaning adventure

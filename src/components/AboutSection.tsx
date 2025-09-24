@@ -6,8 +6,6 @@ import featureCoop from '@/assets/AncientStatue.png';
 import featureAction from '@/assets/GameMenu.png';
 import featureTools from '@/assets/CleaningTools.png';
 import featureTraversal from '@/assets/Environment.png';
-import bubble1 from '@/assets/Bubble_1.png';
-import bubble2 from '@/assets/Bubble_2.png';
 
 const ANIM_MS = 1800 as const;
 type FadeStage = 'idle' | 'start' | 'run';
@@ -69,13 +67,9 @@ const AboutSection = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-4 sm:gap-8">
-            <img src={bubble1} alt="" className="w-6 h-6 sm:w-8 sm:h-8 md:w-12 md:h-12 animate-pulse opacity-80" />
-            <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold font-sour-gummy text-primary mb-6 break-words heading-shadow">
-              The Story
-            </h2>
-            <img src={bubble2} alt="" className="w-6 h-6 sm:w-8 sm:h-8 md:w-12 md:h-12 animate-pulse opacity-80" />
-          </div>
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold font-sour-gummy text-primary mb-6 break-words heading-shadow">
+            The Story
+          </h2>
           <div className="w-24 h-1 bg-accent mx-auto mb-8" />
         </div>
 
