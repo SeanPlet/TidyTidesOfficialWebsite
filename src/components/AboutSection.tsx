@@ -85,7 +85,7 @@ const AboutSection = () => {
           <img 
             src={bubbleImage2} 
             alt="Decorative bubbles" 
-            className="absolute bottom-0 right-0 w-10 h-10 md:w-14 md:h-14 opacity-70 animate-bounce" 
+            className="absolute bottom-0 right-0 w-10 h-10 md:w-14 md:h-14 opacity-70 animate-pulse" 
             style={{ transform: 'translate(50%, 25%)' }}
           />
           <p className="text-xl text-foreground/90 leading-relaxed">
